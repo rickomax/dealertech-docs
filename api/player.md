@@ -8,7 +8,7 @@ nav_order: 3
 # `player`
 {: .no_toc }
 
-Extends  with player-specific Lua bindings for input, movement, camera and view model control.
+Represents player-specific Lua bindings for input, movement, camera and view model control.
 {{: .fs-5 }}
 
 **Inherits:** `GameEntity`

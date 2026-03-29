@@ -8,10 +8,8 @@ nav_order: 1
 # `entity`
 {: .no_toc }
 
-Base class for all Lua-scriptable game entities.
+Represents entity properties, movement, state, and network variables to Lua scripts.
 {{: .fs-5 }}
-
-Exposes entity properties, movement, state, and network variables to Lua scripts.
 
 **Inherits:** `NetworkBehaviour`
 

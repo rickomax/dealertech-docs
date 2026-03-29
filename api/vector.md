@@ -8,10 +8,8 @@ nav_order: 25
 # `vector`
 {: .no_toc }
 
-A pooled 3D vector type exposed to Lua scripts.
+A three-component vector object.
 {{: .fs-5 }}
-
-Wraps  and provides common vector math operations as static Lua-callable methods.
 
 ---
 
@@ -40,7 +38,7 @@ Creates a new vector with the given components.
 | `y` | `number` | The Y component. |
 | `z` | `number` | The Z component. |
 
-**Returns** `LuaVector` — A pooled vector with the specified components.
+**Returns** `LuaVector` — A vector with the specified components.
 
 ---
 
@@ -231,13 +229,13 @@ Static
 
 Computes pitch/yaw/roll angles from a set of basis vectors.
 
-The resulting angles represent the orientation described by and .
+The resulting angles represent the orientation described by "forward" and "up".
 
 **Parameters**
 
 | Name | Type | Description |
 |:-----|:-----|:------------|
-| `right` | `LuaVector` | Reserved. Not used in the current implementation. |
+| `right` | `LuaVector` | The right basis vector. |
 | `forward` | `LuaVector` | The forward basis vector. |
 | `up` | `LuaVector` | The up basis vector. |
 

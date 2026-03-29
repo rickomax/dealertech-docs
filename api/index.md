@@ -11,9 +11,9 @@ All classes exposed to Lua scripts.
 
 | Class | Summary |
 |:------|:--------|
-| [`entity`](entity/) | Base class for all Lua-scriptable game entities. |
+| [`entity`](entity/) | Represents entity properties, movement, state, and network variables to Lua scripts. |
 | [`light`](light/) | *No description.* |
-| [`player`](player/) | Extends  with player-specific Lua bindings for input, movement, camera and view model control. |
+| [`player`](player/) | Represents player-specific Lua bindings for input, movement, camera and view model control. |
 | [`array`](array/) | *No description.* |
 | [`bsp`](bsp/) | *No description.* |
 | [`config`](config/) | *No description.* |
@@ -35,5 +35,5 @@ All classes exposed to Lua scripts.
 | [`ui_input_field`](ui_input_field/) | *No description.* |
 | [`ui_label`](ui_label/) | *No description.* |
 | [`ui_panel`](ui_panel/) | *No description.* |
-| [`vector`](vector/) | A pooled 3D vector type exposed to Lua scripts. |
-| [`vector4`](vector4/) | *No description.* |
+| [`vector`](vector/) | A three-component vector object. |
+| [`vector4`](vector4/) | A four-component vector object. |
