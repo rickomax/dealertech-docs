@@ -35,5 +35,5 @@ All classes exposed to Lua scripts.
 | [`ui_input_field`](ui_input_field/) | *No description.* |
 | [`ui_label`](ui_label/) | *No description.* |
 | [`ui_panel`](ui_panel/) | *No description.* |
-| [`vector`](vector/) | *No description.* |
+| [`vector`](vector/) | A pooled 3D vector type exposed to Lua scripts. |
 | [`vector4`](vector4/) | *No description.* |
