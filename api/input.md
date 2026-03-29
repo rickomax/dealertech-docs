@@ -20,7 +20,7 @@ nav_order: 10
 
 ## Methods
 
-### `read_vector( actionPath )`
+### `read_vector( path )`
 
 {: .label .label-blue }
 Static
@@ -29,13 +29,13 @@ Static
 
 | Name | Type | Description |
 |:-----|:-----|:------------|
-| `actionPath` | `string` |  |
+| `path` | `string` |  |
 
 **Returns** `LuaVector`
 
 ---
 
-### `read_input_down( actionPath )`
+### `read_input_down( path )`
 
 {: .label .label-blue }
 Static
@@ -44,13 +44,13 @@ Static
 
 | Name | Type | Description |
 |:-----|:-----|:------------|
-| `actionPath` | `string` |  |
+| `path` | `string` |  |
 
 **Returns** `number`
 
 ---
 
-### `read_input_pressed( actionPath )`
+### `read_input_pressed( path )`
 
 {: .label .label-blue }
 Static
@@ -59,7 +59,7 @@ Static
 
 | Name | Type | Description |
 |:-----|:-----|:------------|
-| `actionPath` | `string` |  |
+| `path` | `string` |  |
 
 **Returns** `number`
 

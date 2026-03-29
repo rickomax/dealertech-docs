@@ -69,6 +69,8 @@ Returns the world position of the player's camera.
 
 Sets the punch angles applied to the player's view.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -81,17 +83,21 @@ Sets the punch angles applied to the player's view.
 
 Sets the roll angle of the player.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
 |:-----|:-----|:------------|
-| `value` | `number` | The new roll angle in Quake units. |
+| `value` | `number` | The new roll angle in degrees. |
 
 ---
 
 ### `set_sway_amount( value )`
 
 Sets the weapon sway amount for this player.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -105,6 +111,8 @@ Sets the weapon sway amount for this player.
 
 Enables or disables third-person camera mode for this player.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -116,6 +124,8 @@ Enables or disables third-person camera mode for this player.
 ### `set_view_frame( name )`
 
 Sets the current animation frame of the player's view model.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -129,6 +139,8 @@ Sets the current animation frame of the player's view model.
 
 Sets the view height of the player.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -140,6 +152,8 @@ Sets the view height of the player.
 ### `set_view_model( filename )`
 
 Sets the view model displayed in first-person for this player.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -153,6 +167,8 @@ Sets the view model displayed in first-person for this player.
 
 Sets the view offset of the player relative to its origin.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -164,6 +180,8 @@ Sets the view offset of the player relative to its origin.
 ### `set_weapon_offset( offset )`
 
 Sets the weapon model position offset.
+
+This property is saved in save files.
 
 **Parameters**
 

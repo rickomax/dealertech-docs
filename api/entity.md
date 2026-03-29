@@ -124,6 +124,8 @@ Returns whether the entity is grounded.
 
 Sets the entity yaw angle.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -135,6 +137,8 @@ Sets the entity yaw angle.
 ### `set_angles( angles )`
 
 Sets the entity pitch, yaw and roll angles.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -148,6 +152,8 @@ Sets the entity pitch, yaw and roll angles.
 
 Sets the entity animation frame.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -159,6 +165,8 @@ Sets the entity animation frame.
 ### `set_health( value )`
 
 Sets the entity health.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -172,6 +180,8 @@ Sets the entity health.
 
 Sets the debug label text displayed on the entity.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -183,6 +193,8 @@ Sets the debug label text displayed on the entity.
 ### `set_model( filename )`
 
 Sets the entity model.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -196,6 +208,8 @@ Sets the entity model.
 
 Sets the entity move type.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -208,6 +222,8 @@ Sets the entity move type.
 
 Sets the entity origin.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -219,6 +235,8 @@ Sets the entity origin.
 ### `set_size( min, max )`
 
 Sets the entity axis-aligned bounding box.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -233,6 +251,8 @@ Sets the entity axis-aligned bounding box.
 
 Sets the entity solid type.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -244,6 +264,8 @@ Sets the entity solid type.
 ### `set_state( value )`
 
 Sets the entity state.
+
+This property is saved in save files.
 
 **Parameters**
 
@@ -273,6 +295,8 @@ Sets the value of a networked number variable.
 
 Creates the variable if it does not already exist.
 
+This property is saved in save files.
+
 **Parameters**
 
 | Name | Type | Description |
@@ -301,6 +325,8 @@ Returns the value of a networked string variable.
 Sets the value of a networked string variable.
 
 Creates the variable if it does not already exist.
+
+This property is saved in save files.
 
 **Parameters**
 
