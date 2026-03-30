@@ -20,6 +20,20 @@ nav_order: 10
 
 ## Methods
 
+### `bind( path, code )`
+
+{: .label .label-blue }
+Static
+
+**Parameters**
+
+| Name | Type | Description |
+|:-----|:-----|:------------|
+| `path` | `string` |  |
+| `code` | `string` |  |
+
+---
+
 ### `read_vector( path )`
 
 {: .label .label-blue }

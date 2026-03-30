@@ -160,6 +160,20 @@ This property is saved in save files.
 
 ---
 
+### `set_skin( skinIndex )`
+
+Sets the entity skin.
+
+This property is saved in save files.
+
+**Parameters**
+
+| Name | Type | Description |
+|:-----|:-----|:------------|
+| `skinIndex` | `number` | The new skin index. |
+
+---
+
 ### `set_health( value )`
 
 Sets the entity health.
