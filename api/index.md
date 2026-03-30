@@ -21,7 +21,7 @@ All classes exposed to Lua scripts.
 | [`entity_state`](entity_state/) | *No description.* |
 | [`font`](font/) | *No description.* |
 | [`input`](input/) | Provides access to the inputsystem. |
-| [`input_data`](input_data/) | *No description.* |
+| [`input_data`](input_data/) | A fixed-size float buffer used by the input system to pass raw input values. |
 | [`lights`](lights/) | *No description.* |
 | [`math`](math/) | *No description.* |
 | [`movementdata`](movementdata/) | *No description.* |
