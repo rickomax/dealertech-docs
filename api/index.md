@@ -20,7 +20,7 @@ All classes exposed to Lua scripts.
 | [`console_variable`](console_variable/) | *No description.* |
 | [`entity_state`](entity_state/) | *No description.* |
 | [`font`](font/) | *No description.* |
-| [`input`](input/) | *No description.* |
+| [`input`](input/) | Provides access to the inputsystem. |
 | [`input_data`](input_data/) | *No description.* |
 | [`lights`](lights/) | *No description.* |
 | [`math`](math/) | *No description.* |
