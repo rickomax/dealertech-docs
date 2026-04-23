@@ -5,7 +5,7 @@ parent: API Reference
 
 # `font`
 
-Lua API object exposed as <c>font</c>.
+Represents a loaded TextMeshPro font asset that can be assigned to `ui_label` and `ui_input_field` elements.
 
 **C# type:** `LuaFont`  
 
@@ -15,6 +15,6 @@ Lua API object exposed as <c>font</c>.
 
 ### `create`
 
-Lua member <c>create</c>.
+Loads and returns a font from the given filename under the `fonts` directory.
 
 `public static LuaFont Create(string filename)`

@@ -39,13 +39,13 @@ Creates a new vector with the given components.
 
 ### `copy`
 
-Lua member <c>copy</c>.
+Returns a new vector with the same components as <paramref name="instance"/>.
 
 `public static LuaVector Copy(LuaVector instance)`
 
 ### `copy_from`
 
-Lua member <c>copy_from</c>.
+Copies the components of <paramref name="instance"/> into this vector in place.
 
 `public void CopyFrom(LuaVector instance)`
 
@@ -105,7 +105,7 @@ Returns the magnitude (length) of the vector.
 
 ### `squared_length`
 
-Returns the squared magnitude of the vector. Prefer this over <see cref="Length"/> when comparing distances, as it avoids a square root.
+Returns the squared magnitude of the vector. Prefer this over `length` when comparing distances, as it avoids a square root.
 
 `public static float SquaredLength(LuaVector a)`
 
@@ -113,7 +113,7 @@ Returns the squared magnitude of the vector. Prefer this over <see cref="Length"
 
 Computes pitch/yaw/roll angles from a set of basis vectors. The resulting angles represent the orientation described by "forward" and "up".
 
-`public static LuaVector MakeAngles(`
+`public static LuaVector MakeAngles(LuaVector right, LuaVector forward, LuaVector up)`
 
 ### `make_vectors`
 

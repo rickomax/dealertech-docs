@@ -5,7 +5,7 @@ parent: API Reference
 
 # `ui_image`
 
-Lua API object exposed as <c>ui_image</c>.
+Exposes a raw image UI element to Lua. Created as a child of a `ui_panel` via `ui_image.create(panel)`.
 
 **C# type:** `LuaUIImage`  
 
@@ -15,30 +15,30 @@ Lua API object exposed as <c>ui_image</c>.
 
 ### `create`
 
-Lua member <c>create</c>.
+Creates a new image element and parents it under the given panel.
 
 `public static LuaUIImage Create(LuaUIPanel panel)`
 
 ### `set_image`
 
-Lua member <c>set_image</c>.
+Sets the texture displayed by the image.
 
 `public void SetImage(string filename)`
 
 ### `set_size`
 
-Lua member <c>set_size</c>.
+Sets the explicit size of the image in pixels.
 
 `public void SetSize(float width, float height)`
 
 ### `set_color`
 
-Lua member <c>set_color</c>.
+Sets the tint color of the image (RGBA in the range [0, 1]).
 
 `public void SetColor(LuaVector4 color)`
 
 ### `set_native_size`
 
-Lua member <c>set_native_size</c>.
+Resizes the image to match the native pixel dimensions of its texture.
 
 `public void SetNativeSize()`

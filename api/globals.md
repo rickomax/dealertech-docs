@@ -5,7 +5,7 @@ parent: API Reference
 
 # `globals`
 
-Lua globals registered in `LuaInterface.SetupEnvironment`.
+Lua globals registered in `LuaInterface.SetupEnvironment` and refreshed each frame in `LuaInterface.UpdateEnvironment`.
 
 ## Global functions and objects
 
@@ -41,5 +41,5 @@ Lua globals registered in `LuaInterface.SetupEnvironment`.
 - `move_type` → `new LuaMoveType()`
 - `solid` → `new LuaSolid()`
 - `frame_time` → `NetworkController.Instance.DeltaTime`
-- `time` → `NetworkController.Instance.ServerTime`
-- `me` → `instanceTable`
+- `time` → `NetworkController.Instance.ServerTime` (refreshed each frame)
+- `me` → the Lua instance table of the local player (set via `LuaInterface.SetMe` after player spawn)

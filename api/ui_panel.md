@@ -5,7 +5,7 @@ parent: API Reference
 
 # `ui_panel`
 
-Lua API object exposed as <c>ui_panel</c>.
+Exposes a container UI panel to Lua. Panels can host other UI elements and optionally scroll their content when created with `scrollable = true`.
 
 **C# type:** `LuaUIPanel`  
 
@@ -15,6 +15,6 @@ Lua API object exposed as <c>ui_panel</c>.
 
 ### `create`
 
-Lua member <c>create</c>.
+Creates a new UI panel, optionally parented to another panel and optionally scrollable.
 
 `public static LuaUIPanel Create(LuaUIPanel parent = null, bool scrollable = false)`

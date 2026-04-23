@@ -5,7 +5,7 @@ parent: API Reference
 
 # `light`
 
-Lua API object exposed as <c>light</c>.
+Represents a networked point light attached to the world or to a parent entity. Exposed to Lua as `light`; instances are created from Lua through `lights.create_light`.
 
 **C# type:** `GameLight`  
 
@@ -15,6 +15,6 @@ Lua API object exposed as <c>light</c>.
 
 ### `set_intensity`
 
-Lua member <c>set_intensity</c>.
+Sets the intensity of this light. Only runs on the server.
 
 `public void SetIntensity(float value)`

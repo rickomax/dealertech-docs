@@ -5,7 +5,7 @@ parent: API Reference
 
 # `console_variable`
 
-Lua API object exposed as <c>console_variable</c>.
+Represents a single console variable that can be read from and written to from Lua.
 
 **C# type:** `LuaConsoleVariable`  
 
@@ -15,12 +15,12 @@ Lua API object exposed as <c>console_variable</c>.
 
 ### `get`
 
-Lua member <c>get</c>.
+Returns the current value of the console variable.
 
 `public LuaValue Get()`
 
 ### `set`
 
-Lua member <c>set</c>.
+Sets the current value of the console variable.
 
 `public void Set(LuaValue value)`

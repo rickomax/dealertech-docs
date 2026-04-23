@@ -231,7 +231,7 @@ Returns the first entity whose unique id matches the given value.
 
 ### `get_entity_by_targetname`
 
-Lua member <c>get_entity_by_targetname</c>.
+Returns the first entity whose `targetname` property matches the given value.
 
 `public static GameEntity GetEntityByTargetName(string className)`
 

@@ -5,7 +5,7 @@ parent: API Reference
 
 # `config`
 
-Lua API object exposed as <c>config</c>.
+Provides Lua access to the persistent configuration store (typically user preferences and console variables).
 
 **C# type:** `LuaConfig`  
 
@@ -15,36 +15,36 @@ Lua API object exposed as <c>config</c>.
 
 ### `load`
 
-Lua member <c>load</c>.
+Loads the configuration from disk, replacing any in-memory values.
 
 `public static void Load()`
 
 ### `save`
 
-Lua member <c>save</c>.
+Writes the current in-memory configuration to disk.
 
 `public static void Save()`
 
 ### `get_number`
 
-Lua member <c>get_number</c>.
+Returns the numeric value stored under the given key.
 
 `public static float GetNumber(string key)`
 
 ### `set_number`
 
-Lua member <c>set_number</c>.
+Sets the numeric value stored under the given key.
 
 `public static void SetNumber(string key, float value)`
 
 ### `get_string`
 
-Lua member <c>get_string</c>.
+Returns the string value stored under the given key.
 
 `public static string GetString(string key)`
 
 ### `set_string`
 
-Lua member <c>set_string</c>.
+Sets the string value stored under the given key.
 
 `public static void SetString(string key, string value)`

@@ -5,7 +5,7 @@ parent: API Reference
 
 # `ui_label`
 
-Lua API object exposed as <c>ui_label</c>.
+Exposes a TextMeshPro text label UI element to Lua. Created as a child of a `ui_panel` via `ui_label.create(panel)`.
 
 **C# type:** `LuaUILabel`  
 
@@ -15,30 +15,30 @@ Lua API object exposed as <c>ui_label</c>.
 
 ### `create`
 
-Lua member <c>create</c>.
+Creates a new label element and parents it under the given panel.
 
 `public static LuaUILabel Create(LuaUIPanel panel)`
 
 ### `set_font`
 
-Lua member <c>set_font</c>.
+Sets the font used to render the label's text.
 
 `public void SetFont(LuaFont font)`
 
 ### `set_size`
 
-Lua member <c>set_size</c>.
+Sets the font size, in points, used to render the label's text.
 
 `public void SetSize(float size)`
 
 ### `set_color`
 
-Lua member <c>set_color</c>.
+Sets the color of the label's text (RGBA in the range [0, 1]).
 
 `public void SetColor(LuaVector4 color)`
 
 ### `set_text`
 
-Lua member <c>set_text</c>.
+Sets the text string displayed by the label.
 
 `public void SetText(string text)`

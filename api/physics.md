@@ -23,10 +23,10 @@ Returns entities inside an axis-aligned bounds volume.
 
 Traces a swept box from start to end and returns collision details.
 
-`public static LuaTraceResult TraceHull(`
+`public static LuaTraceResult TraceHull(LuaVector luaStart, LuaVector luaEnd, LuaVector luaMin, LuaVector luaMax, int collisionType, GameEntity ignore, bool debug)`
 
 ### `trace_line`
 
 Traces a line from start to end and returns first collision details.
 
-`public static LuaTraceResult TraceLine(`
+`public static LuaTraceResult TraceLine(LuaVector luaStart, LuaVector luaEnd, int collisionType, GameEntity ignore, bool debug)`

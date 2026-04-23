@@ -5,7 +5,7 @@ parent: API Reference
 
 # `solid`
 
-Lua API object exposed as <c>solid</c>.
+Provides integer constants that identify the solid/collision types used by `entity.set_solid`.
 
 **C# type:** `LuaSolid`  
 
@@ -15,30 +15,30 @@ Lua API object exposed as <c>solid</c>.
 
 ### `none`
 
-Lua member <c>none</c>.
+The entity is non-solid and does not interact with the collision system.
 
-`public int Not = (int)SolidType.Not;`
+`public int Not`
 
 ### `trigger`
 
-Lua member <c>trigger</c>.
+The entity reports touch events but does not block movement.
 
-`public int Trigger = (int)SolidType.Trigger;`
+`public int Trigger`
 
 ### `bbox`
 
-Lua member <c>bbox</c>.
+The entity collides as an axis-aligned bounding box.
 
-`public int BBox = (int)SolidType.BBox;`
+`public int BBox`
 
 ### `slidebox`
 
-Lua member <c>slidebox</c>.
+The entity collides as a bounding box and slides along contact surfaces.
 
-`public int SlideBox = (int)SolidType.SlideBox;`
+`public int SlideBox`
 
 ### `bsp`
 
-Lua member <c>bsp</c>.
+The entity collides using BSP brush geometry.
 
-`public int BSP = (int)SolidType.BSP;`
+`public int BSP`

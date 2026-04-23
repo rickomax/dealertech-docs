@@ -5,7 +5,7 @@ parent: API Reference
 
 # `array`
 
-Lua API object exposed as <c>array</c>.
+A dynamic, 1-indexed array of Lua values backed by a managed list. Unlike a plain Lua table, the array is reusable and can be preallocated through `array.create(capacity)`.
 
 **C# type:** `LuaArray`  
 
@@ -15,30 +15,30 @@ Lua API object exposed as <c>array</c>.
 
 ### `create`
 
-Lua member <c>create</c>.
+Creates a new empty array with the given initial capacity.
 
 `public static LuaArray Create(int capacity = 1)`
 
 ### `add`
 
-Lua member <c>add</c>.
+Appends <paramref name="value"/> to the end of the array.
 
 `public void Add(LuaValue value)`
 
 ### `get`
 
-Lua member <c>get</c>.
+Returns the value stored at the given 1-based index.
 
 `public LuaValue Get(int index)`
 
 ### `remove_at`
 
-Lua member <c>remove_at</c>.
+Removes the element at the given 1-based index, shifting subsequent elements left.
 
 `public void RemoveAt(int index)`
 
 ### `clear`
 
-Lua member <c>clear</c>.
+Removes all elements from the array.
 
 `public void Clear()`

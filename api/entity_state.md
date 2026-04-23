@@ -5,7 +5,7 @@ parent: API Reference
 
 # `entity_state`
 
-Lua API object exposed as <c>entity_state</c>.
+Represents a single named animation/logic state that an entity can switch to. Created from Lua via `entity_state.create` and registered in the global state table.
 
 **C# type:** `LuaEntityState`  
 
@@ -15,24 +15,24 @@ Lua API object exposed as <c>entity_state</c>.
 
 ### `frame`
 
-Lua member <c>frame</c>.
+The animation frame name played while this state is active.
 
-`public string Frame;`
+`public string Frame`
 
 ### `interval`
 
-Lua member <c>interval</c>.
+The tick interval, in seconds, at which the state's code runs.
 
-`public float Interval;`
+`public float Interval`
 
 ### `code`
 
-Lua member <c>code</c>.
+The Lua value (string or function) executed at each state tick. When a function is supplied, it may return the name of the next state to enter.
 
-`public LuaValue Code;`
+`public LuaValue Code`
 
 ### `create`
 
-Lua member <c>create</c>.
+Registers a new state with the given frame, tick interval, and code, and returns its index.
 
 `public static int Create(string frame, float interval, LuaValue code)`

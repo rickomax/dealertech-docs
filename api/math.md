@@ -5,7 +5,7 @@ parent: API Reference
 
 # `math`
 
-Lua API object exposed as <c>math</c>.
+Exposes common numeric helpers, trigonometry, and random-number utilities to Lua.
 
 **C# type:** `LuaMath`  
 
@@ -15,180 +15,180 @@ Lua API object exposed as <c>math</c>.
 
 ### `pi`
 
-Lua member <c>pi</c>.
+Returns the value of Pi (3.14159...).
 
 `public static float Pi()`
 
 ### `deg2rad`
 
-Lua member <c>deg2rad</c>.
+Conversion factor from degrees to radians.
 
-`public static float Deg2Rad => Mathf.Deg2Rad;`
+`public static float Deg2Rad`
 
 ### `rad2deg`
 
-Lua member <c>rad2deg</c>.
+Conversion factor from radians to degrees.
 
-`public static float Rad2Deg => Mathf.Rad2Deg;`
+`public static float Rad2Deg`
 
 ### `random`
 
-Lua member <c>random</c>.
+Returns a deterministic random number in the range [0, 1]. The underlying generator is seeded from the current server tick so that all peers agree on the result.
 
 `public static float Random()`
 
 ### `random_range`
 
-Lua member <c>random_range</c>.
+Returns a deterministic random number in the range [<paramref name="min"/>, <paramref name="max"/>]. The underlying generator is seeded from the current server tick so that all peers agree on the result.
 
 `public static float RandomRange(float min, float max)`
 
 ### `sin`
 
-Lua member <c>sin</c>.
+Returns the sine of the given angle in radians.
 
-`public static float Sin(float v) => Mathf.Sin(v);`
+`public static float Sin(float v)`
 
 ### `cos`
 
-Lua member <c>cos</c>.
+Returns the cosine of the given angle in radians.
 
-`public static float Cos(float v) => Mathf.Cos(v);`
+`public static float Cos(float v)`
 
 ### `tan`
 
-Lua member <c>tan</c>.
+Returns the tangent of the given angle in radians.
 
-`public static float Tan(float v) => Mathf.Tan(v);`
+`public static float Tan(float v)`
 
 ### `asin`
 
-Lua member <c>asin</c>.
+Returns the arc sine of <paramref name="v"/> in radians.
 
-`public static float Asin(float v) => Mathf.Asin(v);`
+`public static float Asin(float v)`
 
 ### `acos`
 
-Lua member <c>acos</c>.
+Returns the arc cosine of <paramref name="v"/> in radians.
 
-`public static float Acos(float v) => Mathf.Acos(v);`
+`public static float Acos(float v)`
 
 ### `atan`
 
-Lua member <c>atan</c>.
+Returns the arc tangent of <paramref name="v"/> in radians.
 
-`public static float Atan(float v) => Mathf.Atan(v);`
+`public static float Atan(float v)`
 
 ### `atan2`
 
-Lua member <c>atan2</c>.
+Returns the angle in radians whose tangent is <paramref name="y"/>/<paramref name="x"/>, using the signs of both arguments to determine the correct quadrant.
 
-`public static float Atan2(float y, float x) => Mathf.Atan2(y, x);`
+`public static float Atan2(float y, float x)`
 
 ### `abs`
 
-Lua member <c>abs</c>.
+Returns the absolute value of <paramref name="v"/>.
 
-`public static float Abs(float v) => Mathf.Abs(v);`
+`public static float Abs(float v)`
 
 ### `sign`
 
-Lua member <c>sign</c>.
+Returns the sign of <paramref name="v"/>.
 
-`public static float Sign(float v) => Mathf.Sign(v);`
+`public static float Sign(float v)`
 
 ### `sqrt`
 
-Lua member <c>sqrt</c>.
+Returns the square root of <paramref name="v"/>.
 
-`public static float Sqrt(float v) => Mathf.Sqrt(v);`
+`public static float Sqrt(float v)`
 
 ### `pow`
 
-Lua member <c>pow</c>.
+Returns <paramref name="a"/> raised to the power of <paramref name="b"/>.
 
-`public static float Pow(float a, float b) => Mathf.Pow(a, b);`
+`public static float Pow(float a, float b)`
 
 ### `exp`
 
-Lua member <c>exp</c>.
+Returns e raised to the power of <paramref name="v"/>.
 
-`public static float Exp(float v) => Mathf.Exp(v);`
+`public static float Exp(float v)`
 
 ### `log`
 
-Lua member <c>log</c>.
+Returns the natural (base-e) logarithm of <paramref name="v"/>.
 
-`public static float Log(float v) => Mathf.Log(v);`
+`public static float Log(float v)`
 
 ### `log10`
 
-Lua member <c>log10</c>.
+Returns the base-10 logarithm of <paramref name="v"/>.
 
-`public static float Log10(float v) => Mathf.Log10(v);`
+`public static float Log10(float v)`
 
 ### `floor`
 
-Lua member <c>floor</c>.
+Returns the largest integer less than or equal to <paramref name="v"/>.
 
-`public static float Floor(float v) => Mathf.Floor(v);`
+`public static float Floor(float v)`
 
 ### `ceil`
 
-Lua member <c>ceil</c>.
+Returns the smallest integer greater than or equal to <paramref name="v"/>.
 
-`public static float Ceil(float v) => Mathf.Ceil(v);`
+`public static float Ceil(float v)`
 
 ### `round`
 
-Lua member <c>round</c>.
+Returns <paramref name="v"/> rounded to the nearest integer.
 
-`public static float Round(float v) => Mathf.Round(v);`
+`public static float Round(float v)`
 
 ### `min`
 
-Lua member <c>min</c>.
+Returns the smallest of two values.
 
-`public static float Min(float a, float b) => Mathf.Min(a, b);`
+`public static float Min(float a, float b)`
 
 ### `max`
 
-Lua member <c>max</c>.
+Returns the largest of two values.
 
-`public static float Max(float a, float b) => Mathf.Max(a, b);`
+`public static float Max(float a, float b)`
 
 ### `clamp`
 
-Lua member <c>clamp</c>.
+Clamps <paramref name="v"/> into the range [<paramref name="min"/>, <paramref name="max"/>].
 
 `public static float Clamp(float v, float min, float max)`
 
 ### `lerp`
 
-Lua member <c>lerp</c>.
+Linearly interpolates between <paramref name="a"/> and <paramref name="b"/>. The interpolation factor is clamped to [0, 1].
 
 `public static float Lerp(float a, float b, float t)`
 
 ### `lerp_unclamped`
 
-Lua member <c>lerp_unclamped</c>.
+Linearly interpolates between <paramref name="a"/> and <paramref name="b"/> without clamping the interpolation factor.
 
 `public static float LerpUnclamped(float a, float b, float t)`
 
 ### `inverse_lerp`
 
-Lua member <c>inverse_lerp</c>.
+Returns the interpolation factor `t` in the range [0, 1] such that `lerp(a, b, t) == v`.
 
 `public static float InverseLerp(float a, float b, float v)`
 
 ### `repeat`
 
-Lua member <c>repeat</c>.
+Wraps <paramref name="t"/> into the range [0, <paramref name="length"/>] so that it never exceeds <paramref name="length"/> or goes negative.
 
 `public static float Repeat(float t, float length)`
 
 ### `pingpong`
 
-Lua member <c>pingpong</c>.
+Returns a value that oscillates back and forth between 0 and <paramref name="length"/> as <paramref name="t"/> increases.
 
 `public static float PingPong(float t, float length)`

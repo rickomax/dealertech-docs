@@ -5,7 +5,7 @@ parent: API Reference
 
 # `bsp`
 
-Lua API object exposed as <c>bsp</c>.
+Provides Lua access to the loaded BSP (Binary Space Partitioning) map, including map discovery and content queries.
 
 **C# type:** `LuaBSP`  
 
@@ -15,18 +15,18 @@ Lua API object exposed as <c>bsp</c>.
 
 ### `get_maps`
 
-Lua member <c>get_maps</c>.
+Returns the list of available BSP maps (without the `.bsp` extension) found under the `maps` directory.
 
 `public static LuaTable GetMaps()`
 
 ### `point_contents`
 
-Lua member <c>point_contents</c>.
+Returns the contents flags of the BSP leaf that contains the given point.
 
 `public static int PointContents(LuaVector vector)`
 
 ### `trace_contents`
 
-Lua member <c>trace_contents</c>.
+Traces a line through the BSP tree and fills <paramref name="result"/> with any contents hit.
 
-`public static void TraceContents(LuaVector start, LuaVector end, LuaTraceResult result`
+`public static void TraceContents(LuaVector start, LuaVector end, LuaTraceResult result)`

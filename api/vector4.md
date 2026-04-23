@@ -75,6 +75,6 @@ Returns the magnitude (length) of the vector.
 
 ### `squared_length`
 
-Returns the squared magnitude of the vector. Prefer this over <see cref="Length"/> when comparing distances, as it avoids a square root.
+Returns the squared magnitude of the vector. Prefer this over `length` when comparing distances, as it avoids a square root.
 
 `public static float SquaredLength(LuaVector4 a)`

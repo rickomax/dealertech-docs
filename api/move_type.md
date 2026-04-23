@@ -5,7 +5,7 @@ parent: API Reference
 
 # `move_type`
 
-Lua API object exposed as <c>move_type</c>.
+Provides integer constants that identify the movement types used by `entity.set_move_type`.
 
 **C# type:** `LuaMoveType`  
 
@@ -15,54 +15,54 @@ Lua API object exposed as <c>move_type</c>.
 
 ### `none`
 
-Lua member <c>none</c>.
+The entity is not moved by the physics simulation.
 
-`public int None = (int)MoveType.None;`
+`public int None`
 
 ### `walk`
 
-Lua member <c>walk</c>.
+The entity walks on the ground using character controller movement.
 
-`public int Walk = (int)MoveType.Walk;`
+`public int Walk`
 
 ### `step`
 
-Lua member <c>step</c>.
+The entity steps along the ground, snapping to surfaces.
 
-`public int Step = (int)MoveType.Step;`
+`public int Step`
 
 ### `fly`
 
-Lua member <c>fly</c>.
+The entity flies, ignoring gravity.
 
-`public int Fly = (int)MoveType.Fly;`
+`public int Fly`
 
 ### `toss`
 
-Lua member <c>toss</c>.
+The entity is tossed and affected by gravity, stopping on collision.
 
-`public int Toss = (int)MoveType.Toss;`
+`public int Toss`
 
 ### `flymissile`
 
-Lua member <c>flymissile</c>.
+The entity flies as a missile, ignoring gravity and stopping on collision.
 
-`public int FlyMissile = (int)MoveType.FlyMissile;`
+`public int FlyMissile`
 
 ### `bounce`
 
-Lua member <c>bounce</c>.
+The entity bounces off surfaces it collides with.
 
-`public int Bounce = (int)MoveType.Bounce;`
+`public int Bounce`
 
 ### `push`
 
-Lua member <c>push</c>.
+The entity is push-driven, moving other entities out of the way.
 
-`public int Push = (int)MoveType.Push;`
+`public int Push`
 
 ### `noclip`
 
-Lua member <c>noclip</c>.
+The entity moves freely and ignores world collision.
 
-`public int NoClip = (int)MoveType.NoClip;`
+`public int NoClip`

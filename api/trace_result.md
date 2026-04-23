@@ -5,7 +5,7 @@ parent: API Reference
 
 # `trace_result`
 
-Lua API object exposed as <c>trace_result</c>.
+Represents the result of a physics trace query such as `physics.trace_line` or `physics.trace_hull`.
 
 **C# type:** `LuaTraceResult`  
 
@@ -15,36 +15,36 @@ Lua API object exposed as <c>trace_result</c>.
 
 ### `start_solid`
 
-Lua member <c>start_solid</c>.
+`true` if the trace started inside a solid volume.
 
-`public bool StartSolid;`
+`public bool StartSolid`
 
 ### `fraction`
 
-Lua member <c>fraction</c>.
+The fraction of the trace's length, in the range [0, 1], at which the hit occurred. A value of `1` indicates the trace completed without hitting anything.
 
-`public float Fraction;`
+`public float Fraction`
 
 ### `end_position`
 
-Lua member <c>end_position</c>.
+The final position of the trace; equal to the hit point on collision, or the trace's end point otherwise.
 
-`public LuaVector EndPosition;`
+`public LuaVector EndPosition`
 
 ### `normal`
 
-Lua member <c>normal</c>.
+The surface normal at the hit point, or a zero vector when nothing was hit.
 
-`public LuaVector Normal;`
+`public LuaVector Normal`
 
 ### `distance`
 
-Lua member <c>distance</c>.
+The distance along the trace at which the hit occurred.
 
-`public float Distance;`
+`public float Distance`
 
 ### `hit_table`
 
-Lua member <c>hit_table</c>.
+The Lua instance table of the hit entity, or `nil` when nothing was hit.
 
-`public LuaTable HitTable;`
+`public LuaTable HitTable`

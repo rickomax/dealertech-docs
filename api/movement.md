@@ -5,7 +5,7 @@ parent: API Reference
 
 # `movement`
 
-Lua API object exposed as <c>movement</c>.
+Output movement written by the Lua `process_movement` function each tick. The engine reads these values back to apply the new state to the player.
 
 **C# type:** `LuaMovement`  
 
@@ -15,96 +15,42 @@ Lua API object exposed as <c>movement</c>.
 
 ### `angles`
 
-Lua member <c>angles</c>.
+The new pitch/yaw/roll angles to apply to the player.
 
-`public LuaVector Angles = new();`
-
-### `velocity`
-
-Lua member <c>velocity</c>.
-
-`public LuaVector Velocity = new();`
-
-### `is_grounded`
-
-Lua member <c>is_grounded</c>.
-
-`public bool IsGrounded;`
-
-### `flag1`
-
-Lua member <c>flag1</c>.
-
-`public bool Flag1;`
-
-### `flag2`
-
-Lua member <c>flag2</c>.
-
-`public bool Flag2;`
-
-### `flag3`
-
-Lua member <c>flag3</c>.
-
-`public bool Flag3;`
-
-### `flag4`
-
-Lua member <c>flag4</c>.
-
-`public bool Flag4;`
-
-### `angles`
-
-Lua member <c>angles</c>.
-
-`public LuaVector Angles = new();`
-
-### `position`
-
-Lua member <c>position</c>.
-
-`public LuaVector Position = new();`
+`public LuaVector Angles`
 
 ### `velocity`
 
-Lua member <c>velocity</c>.
+The new velocity vector to apply to the player.
 
-`public LuaVector Velocity = new();`
+`public LuaVector Velocity`
 
 ### `is_grounded`
 
-Lua member <c>is_grounded</c>.
+Whether the player should be considered grounded after this tick.
 
-`public bool IsGrounded;`
-
-### `was_grounded`
-
-Lua member <c>was_grounded</c>.
-
-`public bool WasGrounded;`
+`public bool IsGrounded`
 
 ### `flag1`
 
-Lua member <c>flag1</c>.
+Generic script-defined flag written back to the server tick state.
 
-`public bool Flag1;`
+`public bool Flag1`
 
 ### `flag2`
 
-Lua member <c>flag2</c>.
+Generic script-defined flag written back to the server tick state.
 
-`public bool Flag2;`
+`public bool Flag2`
 
 ### `flag3`
 
-Lua member <c>flag3</c>.
+Generic script-defined flag written back to the server tick state.
 
-`public bool Flag3;`
+`public bool Flag3`
 
 ### `flag4`
 
-Lua member <c>flag4</c>.
+Generic script-defined flag written back to the server tick state.
 
-`public bool Flag4;`
+`public bool Flag4`

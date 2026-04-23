@@ -5,7 +5,7 @@ parent: API Reference
 
 # `movement_data`
 
-Lua API object exposed as <c>movement_data</c>.
+Input movement snapshot passed into the Lua `process_movement` function each tick, describing the player's state before movement is applied.
 
 **C# type:** `LuaMovementData`  
 
@@ -15,96 +15,54 @@ Lua API object exposed as <c>movement_data</c>.
 
 ### `angles`
 
-Lua member <c>angles</c>.
+The current pitch/yaw/roll angles of the player.
 
-`public LuaVector Angles = new();`
-
-### `velocity`
-
-Lua member <c>velocity</c>.
-
-`public LuaVector Velocity = new();`
-
-### `is_grounded`
-
-Lua member <c>is_grounded</c>.
-
-`public bool IsGrounded;`
-
-### `flag1`
-
-Lua member <c>flag1</c>.
-
-`public bool Flag1;`
-
-### `flag2`
-
-Lua member <c>flag2</c>.
-
-`public bool Flag2;`
-
-### `flag3`
-
-Lua member <c>flag3</c>.
-
-`public bool Flag3;`
-
-### `flag4`
-
-Lua member <c>flag4</c>.
-
-`public bool Flag4;`
-
-### `angles`
-
-Lua member <c>angles</c>.
-
-`public LuaVector Angles = new();`
+`public LuaVector Angles`
 
 ### `position`
 
-Lua member <c>position</c>.
+The current world-space position of the player.
 
-`public LuaVector Position = new();`
+`public LuaVector Position`
 
 ### `velocity`
 
-Lua member <c>velocity</c>.
+The current velocity of the player.
 
-`public LuaVector Velocity = new();`
+`public LuaVector Velocity`
 
 ### `is_grounded`
 
-Lua member <c>is_grounded</c>.
+Whether the player was grounded at the start of this tick.
 
-`public bool IsGrounded;`
+`public bool IsGrounded`
 
 ### `was_grounded`
 
-Lua member <c>was_grounded</c>.
+Whether the player was grounded at the end of the previous tick.
 
-`public bool WasGrounded;`
+`public bool WasGrounded`
 
 ### `flag1`
 
-Lua member <c>flag1</c>.
+Generic script-defined flag read from the previous tick state.
 
-`public bool Flag1;`
+`public bool Flag1`
 
 ### `flag2`
 
-Lua member <c>flag2</c>.
+Generic script-defined flag read from the previous tick state.
 
-`public bool Flag2;`
+`public bool Flag2`
 
 ### `flag3`
 
-Lua member <c>flag3</c>.
+Generic script-defined flag read from the previous tick state.
 
-`public bool Flag3;`
+`public bool Flag3`
 
 ### `flag4`
 
-Lua member <c>flag4</c>.
+Generic script-defined flag read from the previous tick state.
 
-`public bool Flag4;`
+`public bool Flag4`

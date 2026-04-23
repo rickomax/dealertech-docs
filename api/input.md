@@ -45,7 +45,7 @@ Reads the current float value directly from a raw device control path. Use this 
 
 ### `was_pressed`
 
-Lua member <c>was_pressed</c>.
+Returns whether a raw control transitioned from released to pressed since the last call. Unlike `is_held`, this returns `1` only on the first frame the control is pressed.
 
 `public static float WasPressed(string path)`
 
