@@ -1,4 +1,5 @@
 ---
+layout: default
 title: trace_result
 parent: API Reference
 ---

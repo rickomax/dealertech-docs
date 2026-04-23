@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ui_input_field
 parent: API Reference
 ---

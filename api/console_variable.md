@@ -1,4 +1,5 @@
 ---
+layout: default
 title: console_variable
 parent: API Reference
 ---

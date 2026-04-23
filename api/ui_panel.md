@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ui_panel
 parent: API Reference
 ---

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: physics
 parent: API Reference
 ---

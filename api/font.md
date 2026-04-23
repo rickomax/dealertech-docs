@@ -1,4 +1,5 @@
 ---
+layout: default
 title: font
 parent: API Reference
 ---

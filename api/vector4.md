@@ -1,4 +1,5 @@
 ---
+layout: default
 title: vector4
 parent: API Reference
 ---

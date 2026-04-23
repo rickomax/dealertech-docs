@@ -1,4 +1,5 @@
 ---
+layout: default
 title: entity
 parent: API Reference
 ---

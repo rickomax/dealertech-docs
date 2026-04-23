@@ -1,4 +1,5 @@
 ---
+layout: default
 title: solid
 parent: API Reference
 ---

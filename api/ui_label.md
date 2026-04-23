@@ -1,4 +1,5 @@
 ---
+layout: default
 title: ui_label
 parent: API Reference
 ---

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: particles
 parent: API Reference
 ---

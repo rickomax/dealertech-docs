@@ -1,4 +1,5 @@
 ---
+layout: default
 title: player
 parent: API Reference
 ---

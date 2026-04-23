@@ -1,4 +1,5 @@
 ---
+layout: default
 title: move_type
 parent: API Reference
 ---

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: entity_state
 parent: API Reference
 ---
