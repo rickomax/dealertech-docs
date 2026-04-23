@@ -1,38 +1,26 @@
 ---
-layout: default
 title: console_variable
 parent: API Reference
-nav_order: 7
 ---
 
 # `console_variable`
-{: .no_toc }
 
----
+Lua API object exposed as <c>console_variable</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaConsoleVariable`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaConsoleVariable.cs`
 
----
+## Members
 
-## Methods
+### `get`
 
-### `get(  )`
+Lua member <c>get</c>.
 
-**Returns** `LuaValue`
+`public LuaValue Get()`
 
----
+### `set`
 
-### `set( value )`
+Lua member <c>set</c>.
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `LuaValue` |  |
-
----
-
+`public void Set(LuaValue value)`

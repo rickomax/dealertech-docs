@@ -1,37 +1,20 @@
 ---
-layout: default
 title: font
 parent: API Reference
-nav_order: 9
 ---
 
 # `font`
-{: .no_toc }
 
----
+Lua API object exposed as <c>font</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaFont`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaFont.cs`
 
----
+## Members
 
-## Methods
+### `create`
 
-### `create( filename )`
+Lua member <c>create</c>.
 
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `filename` | `string` |  |
-
-**Returns** `LuaFont`
-
----
-
+`public static LuaFont Create(string filename)`

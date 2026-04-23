@@ -1,81 +1,32 @@
 ---
-layout: default
 title: physics
 parent: API Reference
-nav_order: 17
 ---
 
 # `physics`
-{: .no_toc }
 
----
+Provides Lua-exposed physics queries and trace operations.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaPhysics`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaPhysics.cs`
 
----
+## Members
 
-## Methods
+### `get_entities_in_bounds`
 
-### `get_entities_in_bounds( mins, maxs, count )`
+Returns entities inside an axis-aligned bounds volume.
 
-{: .label .label-blue }
-Static
+`public static LuaArray GetEntitiesInBounds(LuaVector mins, LuaVector maxs, out int count)`
 
-**Parameters**
+### `trace_hull`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `mins` | `LuaVector` |  |
-| `maxs` | `LuaVector` |  |
-| `count` | `number` |  |
+Traces a swept box from start to end and returns collision details.
 
-**Returns** `LuaArray`
+`public static LuaTraceResult TraceHull(`
 
----
+### `trace_line`
 
-### `trace_hull( luaStart, luaEnd, luaMin, luaMax, collisionType, ignore, getTraceContents, debug )`
+Traces a line from start to end and returns first collision details.
 
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `luaStart` | `LuaVector` |  |
-| `luaEnd` | `LuaVector` |  |
-| `luaMin` | `LuaVector` |  |
-| `luaMax` | `LuaVector` |  |
-| `collisionType` | `number` |  |
-| `ignore` | `GameEntity` |  |
-| `getTraceContents` | `boolean` |  |
-| `debug` | `boolean` |  |
-
-**Returns** `LuaTraceResult`
-
----
-
-### `trace_line( luaStart, luaEnd, collisionType, ignore, getTraceContents, debug )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `luaStart` | `LuaVector` |  |
-| `luaEnd` | `LuaVector` |  |
-| `collisionType` | `number` |  |
-| `ignore` | `GameEntity` |  |
-| `getTraceContents` | `boolean` |  |
-| `debug` | `boolean` |  |
-
-**Returns** `LuaTraceResult`
-
----
-
+`public static LuaTraceResult TraceLine(`

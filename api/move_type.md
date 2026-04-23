@@ -1,76 +1,68 @@
 ---
-layout: default
 title: move_type
 parent: API Reference
-nav_order: 15
 ---
 
 # `move_type`
-{: .no_toc }
 
----
+Lua API object exposed as <c>move_type</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaMoveType`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaMoveType.cs`
 
----
-
-## Fields
+## Members
 
 ### `none`
 
-**Type:** `number`
+Lua member <c>none</c>.
 
----
+`public int None = (int)MoveType.None;`
 
 ### `walk`
 
-**Type:** `number`
+Lua member <c>walk</c>.
 
----
+`public int Walk = (int)MoveType.Walk;`
 
 ### `step`
 
-**Type:** `number`
+Lua member <c>step</c>.
 
----
+`public int Step = (int)MoveType.Step;`
 
 ### `fly`
 
-**Type:** `number`
+Lua member <c>fly</c>.
 
----
+`public int Fly = (int)MoveType.Fly;`
 
 ### `toss`
 
-**Type:** `number`
+Lua member <c>toss</c>.
 
----
+`public int Toss = (int)MoveType.Toss;`
 
 ### `flymissile`
 
-**Type:** `number`
+Lua member <c>flymissile</c>.
 
----
+`public int FlyMissile = (int)MoveType.FlyMissile;`
 
 ### `bounce`
 
-**Type:** `number`
+Lua member <c>bounce</c>.
 
----
+`public int Bounce = (int)MoveType.Bounce;`
 
 ### `push`
 
-**Type:** `number`
+Lua member <c>push</c>.
 
----
+`public int Push = (int)MoveType.Push;`
 
 ### `noclip`
 
-**Type:** `number`
+Lua member <c>noclip</c>.
 
----
-
+`public int NoClip = (int)MoveType.NoClip;`

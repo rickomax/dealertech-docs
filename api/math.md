@@ -1,465 +1,194 @@
 ---
-layout: default
 title: math
 parent: API Reference
-nav_order: 13
 ---
 
 # `math`
-{: .no_toc }
 
----
+Lua API object exposed as <c>math</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaMath`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaMath.cs`
 
----
+## Members
 
-## Methods
+### `pi`
 
-### `pi(  )`
+Lua member <c>pi</c>.
 
-{: .label .label-blue }
-Static
-
-**Returns** `number`
-
----
-
-### `random(  )`
-
-{: .label .label-blue }
-Static
-
-**Returns** `number`
-
----
-
-### `random_range( min, max )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `min` | `number` |  |
-| `max` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `sin( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `cos( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `tan( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `asin( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `acos( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `atan( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `atan2( y, x )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `y` | `number` |  |
-| `x` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `abs( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `sign( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `sqrt( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `pow( a, b )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `a` | `number` |  |
-| `b` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `exp( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `log( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `log10( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `floor( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `ceil( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `round( v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `min( a, b )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `a` | `number` |  |
-| `b` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `max( a, b )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `a` | `number` |  |
-| `b` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `clamp( v, min, max )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `v` | `number` |  |
-| `min` | `number` |  |
-| `max` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `lerp( a, b, t )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `a` | `number` |  |
-| `b` | `number` |  |
-| `t` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `lerp_unclamped( a, b, t )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `a` | `number` |  |
-| `b` | `number` |  |
-| `t` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `inverse_lerp( a, b, v )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `a` | `number` |  |
-| `b` | `number` |  |
-| `v` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `repeat( t, length )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `t` | `number` |  |
-| `length` | `number` |  |
-
-**Returns** `number`
-
----
-
-### `pingpong( t, length )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `t` | `number` |  |
-| `length` | `number` |  |
-
-**Returns** `number`
-
----
-
-## Properties
+`public static float Pi()`
 
 ### `deg2rad`
 
-{: .label .label-blue }
-Static
+Lua member <c>deg2rad</c>.
 
-**Type:** `number`
-
----
+`public static float Deg2Rad => Mathf.Deg2Rad;`
 
 ### `rad2deg`
 
-{: .label .label-blue }
-Static
+Lua member <c>rad2deg</c>.
 
-**Type:** `number`
+`public static float Rad2Deg => Mathf.Rad2Deg;`
 
----
+### `random`
 
+Lua member <c>random</c>.
+
+`public static float Random()`
+
+### `random_range`
+
+Lua member <c>random_range</c>.
+
+`public static float RandomRange(float min, float max)`
+
+### `sin`
+
+Lua member <c>sin</c>.
+
+`public static float Sin(float v) => Mathf.Sin(v);`
+
+### `cos`
+
+Lua member <c>cos</c>.
+
+`public static float Cos(float v) => Mathf.Cos(v);`
+
+### `tan`
+
+Lua member <c>tan</c>.
+
+`public static float Tan(float v) => Mathf.Tan(v);`
+
+### `asin`
+
+Lua member <c>asin</c>.
+
+`public static float Asin(float v) => Mathf.Asin(v);`
+
+### `acos`
+
+Lua member <c>acos</c>.
+
+`public static float Acos(float v) => Mathf.Acos(v);`
+
+### `atan`
+
+Lua member <c>atan</c>.
+
+`public static float Atan(float v) => Mathf.Atan(v);`
+
+### `atan2`
+
+Lua member <c>atan2</c>.
+
+`public static float Atan2(float y, float x) => Mathf.Atan2(y, x);`
+
+### `abs`
+
+Lua member <c>abs</c>.
+
+`public static float Abs(float v) => Mathf.Abs(v);`
+
+### `sign`
+
+Lua member <c>sign</c>.
+
+`public static float Sign(float v) => Mathf.Sign(v);`
+
+### `sqrt`
+
+Lua member <c>sqrt</c>.
+
+`public static float Sqrt(float v) => Mathf.Sqrt(v);`
+
+### `pow`
+
+Lua member <c>pow</c>.
+
+`public static float Pow(float a, float b) => Mathf.Pow(a, b);`
+
+### `exp`
+
+Lua member <c>exp</c>.
+
+`public static float Exp(float v) => Mathf.Exp(v);`
+
+### `log`
+
+Lua member <c>log</c>.
+
+`public static float Log(float v) => Mathf.Log(v);`
+
+### `log10`
+
+Lua member <c>log10</c>.
+
+`public static float Log10(float v) => Mathf.Log10(v);`
+
+### `floor`
+
+Lua member <c>floor</c>.
+
+`public static float Floor(float v) => Mathf.Floor(v);`
+
+### `ceil`
+
+Lua member <c>ceil</c>.
+
+`public static float Ceil(float v) => Mathf.Ceil(v);`
+
+### `round`
+
+Lua member <c>round</c>.
+
+`public static float Round(float v) => Mathf.Round(v);`
+
+### `min`
+
+Lua member <c>min</c>.
+
+`public static float Min(float a, float b) => Mathf.Min(a, b);`
+
+### `max`
+
+Lua member <c>max</c>.
+
+`public static float Max(float a, float b) => Mathf.Max(a, b);`
+
+### `clamp`
+
+Lua member <c>clamp</c>.
+
+`public static float Clamp(float v, float min, float max)`
+
+### `lerp`
+
+Lua member <c>lerp</c>.
+
+`public static float Lerp(float a, float b, float t)`
+
+### `lerp_unclamped`
+
+Lua member <c>lerp_unclamped</c>.
+
+`public static float LerpUnclamped(float a, float b, float t)`
+
+### `inverse_lerp`
+
+Lua member <c>inverse_lerp</c>.
+
+`public static float InverseLerp(float a, float b, float v)`
+
+### `repeat`
+
+Lua member <c>repeat</c>.
+
+`public static float Repeat(float t, float length)`
+
+### `pingpong`
+
+Lua member <c>pingpong</c>.
+
+`public static float PingPong(float t, float length)`

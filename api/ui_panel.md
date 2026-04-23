@@ -1,40 +1,20 @@
 ---
-layout: default
 title: ui_panel
 parent: API Reference
-nav_order: 24
 ---
 
 # `ui_panel`
-{: .no_toc }
 
-**Inherits:** `LuaUIElement`
+Lua API object exposed as <c>ui_panel</c>.
 
----
+**C# type:** `LuaUIPanel`  
 
-## Contents
-{: .no_toc .text-delta }
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaUIPanel.cs`
 
-1. TOC
-{:toc}
+## Members
 
----
+### `create`
 
-## Methods
+Lua member <c>create</c>.
 
-### `create( parent, scrollable )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `parent` | `LuaUIPanel` |  *(default: `null`)* |
-| `scrollable` | `boolean` |  *(default: `false`)* |
-
-**Returns** `LuaUIPanel`
-
----
-
+`public static LuaUIPanel Create(LuaUIPanel parent = null, bool scrollable = false)`

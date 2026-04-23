@@ -1,79 +1,44 @@
 ---
-layout: default
 title: ui_label
 parent: API Reference
-nav_order: 23
 ---
 
 # `ui_label`
-{: .no_toc }
 
-**Inherits:** `LuaUIElement`
+Lua API object exposed as <c>ui_label</c>.
 
----
+**C# type:** `LuaUILabel`  
 
-## Contents
-{: .no_toc .text-delta }
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaUILabel.cs`
 
-1. TOC
-{:toc}
+## Members
 
----
+### `create`
 
-## Methods
+Lua member <c>create</c>.
 
-### `create( panel )`
+`public static LuaUILabel Create(LuaUIPanel panel)`
 
-{: .label .label-blue }
-Static
+### `set_font`
 
-**Parameters**
+Lua member <c>set_font</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `panel` | `LuaUIPanel` |  |
+`public void SetFont(LuaFont font)`
 
-**Returns** `LuaUILabel`
+### `set_size`
 
----
+Lua member <c>set_size</c>.
 
-### `set_font( font )`
+`public void SetSize(float size)`
 
-**Parameters**
+### `set_color`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `font` | `LuaFont` |  |
+Lua member <c>set_color</c>.
 
----
+`public void SetColor(LuaVector4 color)`
 
-### `set_size( size )`
+### `set_text`
 
-**Parameters**
+Lua member <c>set_text</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `size` | `number` |  |
-
----
-
-### `set_color( color )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `color` | `LuaVector4` |  |
-
----
-
-### `set_text( text )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `text` | `string` |  |
-
----
-
+`public void SetText(string text)`

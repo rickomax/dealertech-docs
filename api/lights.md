@@ -1,71 +1,32 @@
 ---
-layout: default
 title: lights
 parent: API Reference
-nav_order: 12
 ---
 
 # `lights`
-{: .no_toc }
 
----
+Lua API object exposed as <c>lights</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaLights`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaLights.cs`
 
----
+## Members
 
-## Methods
+### `get_computed_style`
 
-### `get_computed_style( index )`
+Lua member <c>get_computed_style</c>.
 
-{: .label .label-blue }
-Static
+`public static float GetComputedStyle(int index)`
 
-**Parameters**
+### `set_style`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `index` | `number` |  |
+Lua member <c>set_style</c>.
 
-**Returns** `number`
+`public static void SetStyle(int index, string style)`
 
----
+### `create_light`
 
-### `set_style( index, style )`
+Lua member <c>create_light</c>.
 
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `index` | `number` |  |
-| `style` | `string` |  |
-
----
-
-### `create_light( position, color, intensity, radius, isStatic, parent )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `position` | `LuaVector` |  |
-| `color` | `LuaVector` |  |
-| `intensity` | `number` |  |
-| `radius` | `number` |  |
-| `isStatic` | `boolean` |  |
-| `parent` | `GameEntity` |  *(default: `null`)* |
-
-**Returns** `GameLight`
-
----
-
+`public static GameLight CreateLight(LuaVector position,`

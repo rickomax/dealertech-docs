@@ -1,193 +1,98 @@
 ---
-layout: default
 title: player
 parent: API Reference
-nav_order: 3
 ---
 
 # `player`
-{: .no_toc }
 
 Represents player-specific Lua bindings for input, movement, camera and view model control.
-{{: .fs-5 }}
 
-**Inherits:** `GameEntity`
+**C# type:** `GamePlayer`  
 
----
+**Source:** `Assets/DealerTech/Runtime/Entities/GamePlayer/GamePlayerLua.cs`
 
-## Contents
-{: .no_toc .text-delta }
+## Members
 
-1. TOC
-{:toc}
-
----
-
-## Methods
-
-### `is_owner(  )`
+### `is_owner`
 
 Returns whether this player entity is owned by the local client.
 
-**Returns** `boolean` — true if the local client owns this player entity.
+`public bool LuaIsOwner()`
 
----
-
-### `get_punch_angles(  )`
+### `get_punch_angles`
 
 Returns the current punch angles applied to the player's view.
 
-**Returns** `LuaVector` — The punch angles as a Lua vector.
+`public LuaVector GetPunchAngles()`
 
----
-
-### `get_view_height(  )`
+### `get_view_height`
 
 Returns the current view height of the player.
 
-**Returns** `number` — The view height value.
+`public float GetViewHeight()`
 
----
-
-### `get_view_offset(  )`
+### `get_view_offset`
 
 Returns the view offset of the player relative to its origin.
 
-**Returns** `LuaVector` — The view offset as a Lua vector, or the default value if not called on the server.
+`public LuaVector GetViewOffset()`
 
----
-
-### `get_view_origin(  )`
+### `get_view_origin`
 
 Returns the world position of the player's camera.
 
-**Returns** `LuaVector` — The camera world position as a Lua vector, or the default value if not called on the server.
+`public LuaVector GetViewOrigin()`
 
----
-
-### `set_punch_angles( value )`
+### `set_punch_angles`
 
 Sets the punch angles applied to the player's view.
 
-This property is saved in save files.
+`public void SetPunchAngles(LuaVector value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `LuaVector` | The new punch angles as a Lua vector. |
-
----
-
-### `set_roll( value )`
+### `set_roll`
 
 Sets the roll angle of the player.
 
-This property is saved in save files.
+`public void SetRoll(float value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new roll angle in degrees. |
-
----
-
-### `set_sway_amount( value )`
+### `set_sway_amount`
 
 Sets the weapon sway amount for this player.
 
-This property is saved in save files.
+`public void SetSwayAmount(float value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new sway amount. |
-
----
-
-### `set_third_person( value )`
+### `set_third_person`
 
 Enables or disables third-person camera mode for this player.
 
-This property is saved in save files.
+`public void SetThirdPerson(bool value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `boolean` | true to enable third-person mode; false for first-person. |
-
----
-
-### `set_view_frame( name )`
+### `set_view_frame`
 
 Sets the current animation frame of the player's view model.
 
-This property is saved in save files.
+`public void SetViewFrame(string name)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `name` | `string` | The animation frame name. |
-
----
-
-### `set_view_height( height )`
+### `set_view_height`
 
 Sets the view height of the player.
 
-This property is saved in save files.
+`public void SetViewHeight(float height)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `height` | `number` | The new view height value. |
-
----
-
-### `set_view_model( filename )`
+### `set_view_model`
 
 Sets the view model displayed in first-person for this player.
 
-This property is saved in save files.
+`public void SetViewModel(string filename)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `filename` | `string` | The MDL filename of the view model. |
-
----
-
-### `set_view_offset( offset )`
+### `set_view_offset`
 
 Sets the view offset of the player relative to its origin.
 
-This property is saved in save files.
+`public void SetViewOffset(LuaVector offset)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `offset` | `LuaVector` | The new view offset as a Lua vector. |
-
----
-
-### `set_weapon_offset( offset )`
+### `set_weapon_offset`
 
 Sets the weapon model position offset.
 
-This property is saved in save files.
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `offset` | `LuaVector` | The new weapon offset as a Lua vector. |
-
----
-
+`public void SetWeaponOffset(LuaVector offset)`

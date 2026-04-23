@@ -1,52 +1,44 @@
 ---
-layout: default
 title: solid
 parent: API Reference
-nav_order: 19
 ---
 
 # `solid`
-{: .no_toc }
 
----
+Lua API object exposed as <c>solid</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaSolid`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaSolid.cs`
 
----
-
-## Fields
+## Members
 
 ### `none`
 
-**Type:** `number`
+Lua member <c>none</c>.
 
----
+`public int Not = (int)SolidType.Not;`
 
 ### `trigger`
 
-**Type:** `number`
+Lua member <c>trigger</c>.
 
----
+`public int Trigger = (int)SolidType.Trigger;`
 
 ### `bbox`
 
-**Type:** `number`
+Lua member <c>bbox</c>.
 
----
+`public int BBox = (int)SolidType.BBox;`
 
 ### `slidebox`
 
-**Type:** `number`
+Lua member <c>slidebox</c>.
 
----
+`public int SlideBox = (int)SolidType.SlideBox;`
 
 ### `bsp`
 
-**Type:** `number`
+Lua member <c>bsp</c>.
 
----
-
+`public int BSP = (int)SolidType.BSP;`

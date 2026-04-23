@@ -1,119 +1,56 @@
 ---
-layout: default
 title: input
 parent: API Reference
-nav_order: 10
 ---
 
 # `input`
-{: .no_toc }
 
 Provides access to the inputsystem.
-{{: .fs-5 }}
 
----
+**C# type:** `LuaInput`  
 
-## Contents
-{: .no_toc .text-delta }
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaInput.cs`
 
-1. TOC
-{:toc}
+## Members
 
----
+### `bind`
 
-## Methods
+Binds a Lua code string to an input action path. The code is evaluated every time the action is performed.
 
-### `bind( path, code )`
+`public static void Bind(string path, string code)`
 
-{: .label .label-blue }
-Static
-
-Binds a Lua code string to an input action path.
-
-The code is evaluated every time the action is performed.
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `path` | `string` | The binding path to listen on (e.g. <Keyboard>/space). |
-| `code` | `string` | The Lua code string to evaluate when the action fires. |
-
----
-
-### `read_vector( path )`
-
-{: .label .label-blue }
-Static
+### `read_vector`
 
 Reads a 2D axis value from a named input action and returns it as a Lua vector.
 
-**Parameters**
+`public static LuaVector ReadVector(string path)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `path` | `string` | The name of the input action to read (e.g. "Move"). |
-
-**Returns** `LuaVector` — The action's current 2D value as a Lua vector with Z set to 0, or a zero vector if the action is not found.
-
----
-
-### `read_input_down( path )`
-
-{: .label .label-blue }
-Static
+### `read_input_down`
 
 Returns whether a named input action was pressed during the current frame.
 
-**Parameters**
+`public static float ReadInputDown(string path)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `path` | `string` | The name of the input action to query (e.g. "Jump"). |
+### `read_input_pressed`
 
-**Returns** `number` — 1 if the action was pressed this frame; 0 otherwise. Returns 0 if the action is not found.
+Returns whether a named input action is currently held down. Unlike <see cref="ReadInputDown"/>, this returns <c>1</c> for every frame the action remains pressed, not just the frame it was first pressed.
 
-**See also:** [`ReadInputPressed`](#readinputpressed)
+`public static float ReadInputPressed(string path)`
 
----
+### `read_raw_float`
 
-### `read_input_pressed( path )`
+Reads the current float value directly from a raw device control path. Use this for low-level hardware access when named actions are not available or not appropriate (e.g. <c>&lt;Gamepad&gt;/leftStick/x</c>).
 
-{: .label .label-blue }
-Static
+`public static float ReadRawFloat(string path)`
 
-Returns whether a named input action is currently held down.
+### `was_pressed`
 
-Unlike , this returns 1 for every frame the action remains pressed, not just the frame it was first pressed.
+Lua member <c>was_pressed</c>.
 
-**Parameters**
+`public static float WasPressed(string path)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `path` | `string` | The name of the input action to query (e.g. "Jump"). |
+### `is_held`
 
-**Returns** `number` — 1 if the action is currently pressed; 0 otherwise. Returns 0 if the action is not found.
+Returns whether a raw control is currently being held down.
 
-**See also:** [`ReadInputDown`](#readinputdown)
-
----
-
-### `read_raw_float( path )`
-
-{: .label .label-blue }
-Static
-
-Reads the current float value directly from a raw device control path.
-
-Use this for low-level hardware access when named actions are not available or not appropriate (e.g. <Gamepad>/leftStick/x).
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `path` | `string` | The raw control path to read from. |
-
-**Returns** `number` — The current float value of the control, or 0 if the control is not found or is not a float control.
-
----
-
+`public static float IsHeld(string path)`

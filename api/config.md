@@ -1,94 +1,50 @@
 ---
-layout: default
 title: config
 parent: API Reference
-nav_order: 6
 ---
 
 # `config`
-{: .no_toc }
 
----
+Lua API object exposed as <c>config</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaConfig`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaConfig.cs`
 
----
+## Members
 
-## Methods
+### `load`
 
-### `load(  )`
+Lua member <c>load</c>.
 
-{: .label .label-blue }
-Static
+`public static void Load()`
 
----
+### `save`
 
-### `save(  )`
+Lua member <c>save</c>.
 
-{: .label .label-blue }
-Static
+`public static void Save()`
 
----
+### `get_number`
 
-### `get_number( key )`
+Lua member <c>get_number</c>.
 
-{: .label .label-blue }
-Static
+`public static float GetNumber(string key)`
 
-**Parameters**
+### `set_number`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` |  |
+Lua member <c>set_number</c>.
 
-**Returns** `number`
+`public static void SetNumber(string key, float value)`
 
----
+### `get_string`
 
-### `set_number( key, value )`
+Lua member <c>get_string</c>.
 
-{: .label .label-blue }
-Static
+`public static string GetString(string key)`
 
-**Parameters**
+### `set_string`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` |  |
-| `value` | `number` |  |
+Lua member <c>set_string</c>.
 
----
-
-### `get_string( key )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` |  |
-
-**Returns** `string`
-
----
-
-### `set_string( key, value )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` |  |
-| `value` | `string` |  |
-
----
-
+`public static void SetString(string key, string value)`

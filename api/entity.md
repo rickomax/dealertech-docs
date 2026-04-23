@@ -1,462 +1,254 @@
 ---
-layout: default
 title: entity
 parent: API Reference
-nav_order: 1
 ---
 
 # `entity`
-{: .no_toc }
 
 Represents entity properties, movement, state, and network variables to Lua scripts.
-{{: .fs-5 }}
 
-**Inherits:** `NetworkBehaviour`
+**C# type:** `GameEntity`  
 
----
+**Source:** `Assets/DealerTech/Runtime/Entities/GameEntity/GameEntityLua.cs`
 
-## Contents
-{: .no_toc .text-delta }
+## Members
 
-1. TOC
-{:toc}
+### `indexer`
 
----
+Gets or sets a property value by key.
 
-## Methods
+`public string this[string key]`
 
-### `get_velocity(  )`
+### `get_unique_id`
+
+Returns the entity unique ID.
+
+`public int GetUniqueId()`
+
+### `get_velocity`
 
 Returns the current velocity of the entity.
 
-**Returns** `LuaVector` — The entity velocity as a Lua vector.
+`public LuaVector GetVelocity()`
 
----
-
-### `get_angle(  )`
+### `get_angle`
 
 Returns the current yaw angle of the entity.
 
-**Returns** `number` — The entity yaw angle in degrees.
+`public float GetAngle()`
 
----
-
-### `get_angles(  )`
+### `get_angles`
 
 Returns the current angles of the entity.
 
-**Returns** `LuaVector` — The entity pitch, yaw and roll angles as a Lua vector.
+`public LuaVector GetAngles()`
 
----
-
-### `get_brush_size(  )`
+### `get_brush_size`
 
 Returns the brush size of the entity.
 
-**Returns** `LuaVector` — The brush extents as a Lua vector, or a zero vector if the entity solid type is not .
+`public LuaVector GetBrushSize()`
 
----
-
-### `get_frame(  )`
+### `get_frame`
 
 Returns the current animation frame name of the entity.
 
-**Returns** `string` — The current animation frame name.
+`public string GetFrame()`
 
----
-
-### `get_health(  )`
+### `get_health`
 
 Returns the current health of the entity.
 
-**Returns** `number` — The entity health value.
+`public float GetHealth()`
 
----
-
-### `get_model(  )`
+### `get_model`
 
 Returns the current model filename of the entity.
 
-**Returns** `string` — The MDL filename.
+`public string GetModel()`
 
----
-
-### `get_origin(  )`
+### `get_origin`
 
 Returns the current origin of the entity.
 
-**Returns** `LuaVector` — The entity world position as a Lua vector.
+`public LuaVector GetOrigin()`
 
----
-
-### `get_size( mins, maxs )`
-
-Returns the axis-aligned bounding box of the entity.
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `mins` | `LuaVector` | The minimum bounds corner. |
-| `maxs` | `LuaVector` | The maximum bounds corner. |
-
----
-
-### `get_state(  )`
+### `get_state`
 
 Returns the current state index of the entity.
 
-**Returns** `string` — The current state index as a string.
+`public string GetState()`
 
----
-
-### `is_grounded(  )`
+### `is_grounded`
 
 Returns whether the entity is grounded.
 
-**Returns** `boolean` — true if the entity is grounded.
+`public bool IsGrounded()`
 
----
-
-### `set_angle( value )`
+### `set_angle`
 
 Sets the entity yaw angle.
 
-This property is saved in save files.
+`public void SetAngle(float value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new yaw angle in degrees. |
-
----
-
-### `set_angles( angles )`
+### `set_angles`
 
 Sets the entity pitch, yaw and roll angles.
 
-This property is saved in save files.
+`public void SetAngles(LuaVector angles)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `angles` | `LuaVector` | The new angles as a Lua vector. |
-
----
-
-### `set_frame( name )`
+### `set_frame`
 
 Sets the entity animation frame.
 
-This property is saved in save files.
+`public void SetFrame(string name)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `name` | `string` | The animation frame name. |
-
----
-
-### `set_skin( skinIndex )`
+### `set_skin`
 
 Sets the entity skin.
 
-This property is saved in save files.
+`public void SetSkin(int skinIndex)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `skinIndex` | `number` | The new skin index. |
-
----
-
-### `set_health( value )`
+### `set_health`
 
 Sets the entity health.
 
-This property is saved in save files.
+`public void SetHealth(float value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new health value. |
-
----
-
-### `set_label( label )`
+### `set_label`
 
 Sets the debug label text displayed on the entity.
 
-This property is saved in save files.
+`public void SetLabel(string label)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `label` | `string` | The label text to display. |
-
----
-
-### `set_model( filename )`
+### `set_model`
 
 Sets the entity model.
 
-This property is saved in save files.
+`public void SetModel(string filename)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `filename` | `string` | The MDL filename. |
-
----
-
-### `set_move_type( value )`
+### `set_move_type`
 
 Sets the entity move type.
 
-This property is saved in save files.
+`public void SetMoveType(int value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new move type. |
-
----
-
-### `set_origin( origin )`
+### `set_origin`
 
 Sets the entity origin.
 
-This property is saved in save files.
+`public void SetOrigin(LuaVector origin)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `origin` | `LuaVector` | The new world position as a Lua vector. |
-
----
-
-### `set_size( min, max )`
+### `set_size`
 
 Sets the entity axis-aligned bounding box.
 
-This property is saved in save files.
+`public void SetSize(LuaVector min, LuaVector max)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `min` | `LuaVector` | The minimum bounds corner. |
-| `max` | `LuaVector` | The maximum bounds corner. |
-
----
-
-### `set_solid( value )`
+### `set_solid`
 
 Sets the entity solid type.
 
-This property is saved in save files.
+`public void SetSolid(int value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new solid type. |
-
----
-
-### `set_state( value )`
+### `set_state`
 
 Sets the entity state.
 
-This property is saved in save files.
+`public void SetState(int value)`
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` | The new state index. Pass -1 to clear the current state. |
-
----
-
-### `get_net_number( key )`
+### `get_net_number`
 
 Returns the value of a networked number variable.
 
-**Parameters**
+`public float GetNetworkNumber(string key)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` | The variable key. |
+### `set_net_number`
 
-**Returns** `number` — The stored value, or the default float value if the key does not exist.
+Sets the value of a networked number variable. Creates the variable if it does not already exist.
 
----
+`public void SetNetworkNumber(string key, float value)`
 
-### `set_net_number( key, value )`
-
-Sets the value of a networked number variable.
-
-Creates the variable if it does not already exist.
-
-This property is saved in save files.
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` | The variable key. |
-| `value` | `number` | The new value. |
-
----
-
-### `get_net_string( key )`
+### `get_net_string`
 
 Returns the value of a networked string variable.
 
-**Parameters**
+`public string GetNetworkString(string key)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` | The variable key. |
+### `set_net_string`
 
-**Returns** `string` — The stored value, or the default string value if the key does not exist.
+Sets the value of a networked string variable. Creates the variable if it does not already exist.
 
----
+`public void SetNetworkString(string key, string value)`
 
-### `set_net_string( key, value )`
-
-Sets the value of a networked string variable.
-
-Creates the variable if it does not already exist.
-
-This property is saved in save files.
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `key` | `string` | The variable key. |
-| `value` | `string` | The new value. |
-
----
-
-### `move( velocity, angles )`
+### `move`
 
 Moves the entity by the given velocity and sets its angles.
 
-**Parameters**
+`public void Move(LuaVector velocity, LuaVector angles)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `velocity` | `LuaVector` | The velocity vector to apply. |
-| `angles` | `LuaVector` | The new entity angles. |
+### `check_client`
 
----
+Checks the next player in the list for line-of-sight visibility from this entity. Iterates through all connected players in a round-robin fashion.
 
-### `check_client(  )`
+`public LuaValue CheckClient()`
 
-Checks the next player in the list for line-of-sight visibility from this entity.
-
-Iterates through all connected players in a round-robin fashion.
-
-**Returns** `LuaValue` — The Lua instance table of the first visible player found, or nil if no player is visible or alive.
-
----
-
-### `play_sound( filename, channel, volume, attenuation )`
+### `play_sound`
 
 Plays a sound at the entity position.
 
-**Parameters**
+`public void PlaySound(string filename, int channel, float volume, float attenuation)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `filename` | `string` | The sound filename. |
-| `channel` | `number` | The audio channel to play on. |
-| `volume` | `number` | The playback volume, in the range [0, 1]. |
-| `attenuation` | `number` | The distance attenuation factor. |
-
----
-
-### `parse_origin(  )`
+### `parse_origin`
 
 Parses and returns the entity origin from its spawn properties.
 
-**Returns** `LuaVector` — The entity origin as a Lua vector.
+`public LuaVector ParseOrigin()`
 
----
-
-### `enable_test_flag(  )`
+### `enable_test_flag`
 
 Enables the internal test flag on this entity.
 
----
+`public void EnableTestFlag()`
 
-### `create( className )`
-
-{: .label .label-blue }
-Static
+### `create`
 
 Creates and spawns a new entity with the given class name.
 
-**Parameters**
+`public static GameEntity Create(string className)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `className` | `string` | The Lua class name of the entity to create. |
-
-**Returns** `GameEntity` — The spawned , or null if not called on the server.
-
----
-
-### `get_entity_by_classname( className )`
-
-{: .label .label-blue }
-Static
+### `get_entity_by_classname`
 
 Returns the first entity whose class name matches the given value.
 
-**Parameters**
+`public static GameEntity GetGameEntityByClassName(string className)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `className` | `string` | The class name to search for. |
+### `get_entity_by_unique_id`
 
-**Returns** `GameEntity` — The first matching , or null if none is found.
+Returns the first entity whose unique id matches the given value.
 
----
+`public static GameEntity GetGameEntityByUniqueId(int uniqueId)`
 
-### `despawn(  )`
+### `get_entity_by_targetname`
+
+Lua member <c>get_entity_by_targetname</c>.
+
+`public static GameEntity GetEntityByTargetName(string className)`
+
+### `despawn`
 
 Despawns and removes the entity from the network.
 
----
+`public virtual void Despawn()`
 
-### `spawn(  )`
+### `spawn`
 
 Spawns the entity on the network.
 
----
+`public virtual void Spawn()`
 
-### `teleport( origin, angles )`
+### `teleport`
 
 Teleports the entity to the given origin and sets its angles.
 
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `origin` | `LuaVector` | The new world position as a Lua vector. |
-| `angles` | `LuaVector` | The new angles as a Lua vector. |
-
----
-
+`public void Teleport(LuaVector origin, LuaVector angles)`

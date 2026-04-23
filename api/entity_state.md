@@ -1,59 +1,38 @@
 ---
-layout: default
 title: entity_state
 parent: API Reference
-nav_order: 8
 ---
 
 # `entity_state`
-{: .no_toc }
 
----
+Lua API object exposed as <c>entity_state</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaEntityState`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaEntityState.cs`
 
----
-
-## Methods
-
-### `create( frame, interval, code )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `frame` | `string` |  |
-| `interval` | `number` |  |
-| `code` | `LuaValue` |  |
-
-**Returns** `number`
-
----
-
-## Fields
+## Members
 
 ### `frame`
 
-**Type:** `string`
+Lua member <c>frame</c>.
 
----
+`public string Frame;`
 
 ### `interval`
 
-**Type:** `number`
+Lua member <c>interval</c>.
 
----
+`public float Interval;`
 
 ### `code`
 
-**Type:** `LuaValue`
+Lua member <c>code</c>.
 
----
+`public LuaValue Code;`
 
+### `create`
+
+Lua member <c>create</c>.
+
+`public static int Create(string frame, float interval, LuaValue code)`

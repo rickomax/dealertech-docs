@@ -1,73 +1,44 @@
 ---
-layout: default
 title: array
 parent: API Reference
-nav_order: 4
 ---
 
 # `array`
-{: .no_toc }
 
----
+Lua API object exposed as <c>array</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaArray`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaArray.cs`
 
----
+## Members
 
-## Methods
+### `create`
 
-### `create( capacity )`
+Lua member <c>create</c>.
 
-{: .label .label-blue }
-Static
+`public static LuaArray Create(int capacity = 1)`
 
-**Parameters**
+### `add`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `capacity` | `number` |  *(default: `1`)* |
+Lua member <c>add</c>.
 
-**Returns** `LuaArray`
+`public void Add(LuaValue value)`
 
----
+### `get`
 
-### `add( value )`
+Lua member <c>get</c>.
 
-**Parameters**
+`public LuaValue Get(int index)`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `LuaValue` |  |
+### `remove_at`
 
----
+Lua member <c>remove_at</c>.
 
-### `get( index )`
+`public void RemoveAt(int index)`
 
-**Parameters**
+### `clear`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `index` | `number` |  |
+Lua member <c>clear</c>.
 
-**Returns** `LuaValue`
-
----
-
-### `remove_at( index )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `index` | `number` |  |
-
----
-
-### `clear(  )`
-
----
-
+`public void Clear()`

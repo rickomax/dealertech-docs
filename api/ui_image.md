@@ -1,74 +1,44 @@
 ---
-layout: default
 title: ui_image
 parent: API Reference
-nav_order: 21
 ---
 
 # `ui_image`
-{: .no_toc }
 
-**Inherits:** `LuaUIElement`
+Lua API object exposed as <c>ui_image</c>.
 
----
+**C# type:** `LuaUIImage`  
 
-## Contents
-{: .no_toc .text-delta }
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaUIImage.cs`
 
-1. TOC
-{:toc}
+## Members
 
----
+### `create`
 
-## Methods
+Lua member <c>create</c>.
 
-### `create( panel )`
+`public static LuaUIImage Create(LuaUIPanel panel)`
 
-{: .label .label-blue }
-Static
+### `set_image`
 
-**Parameters**
+Lua member <c>set_image</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `panel` | `LuaUIPanel` |  |
+`public void SetImage(string filename)`
 
-**Returns** `LuaUIImage`
+### `set_size`
 
----
+Lua member <c>set_size</c>.
 
-### `set_image( filename )`
+`public void SetSize(float width, float height)`
 
-**Parameters**
+### `set_color`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `filename` | `string` |  |
+Lua member <c>set_color</c>.
 
----
+`public void SetColor(LuaVector4 color)`
 
-### `set_size( width, height )`
+### `set_native_size`
 
-**Parameters**
+Lua member <c>set_native_size</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `width` | `number` |  |
-| `height` | `number` |  |
-
----
-
-### `set_color( color )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `color` | `LuaVector4` |  |
-
----
-
-### `set_native_size(  )`
-
----
-
+`public void SetNativeSize()`

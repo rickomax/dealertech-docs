@@ -1,34 +1,20 @@
 ---
-layout: default
 title: light
 parent: API Reference
-nav_order: 2
 ---
 
 # `light`
-{: .no_toc }
 
-**Inherits:** `NetworkBehaviour`
+Lua API object exposed as <c>light</c>.
 
----
+**C# type:** `GameLight`  
 
-## Contents
-{: .no_toc .text-delta }
+**Source:** `Assets/DealerTech/Runtime/Entities/GameLight.cs`
 
-1. TOC
-{:toc}
+## Members
 
----
+### `set_intensity`
 
-## Methods
+Lua member <c>set_intensity</c>.
 
-### `set_intensity( value )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `value` | `number` |  |
-
----
-
+`public void SetIntensity(float value)`

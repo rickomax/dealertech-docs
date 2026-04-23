@@ -1,61 +1,32 @@
 ---
-layout: default
 title: bsp
 parent: API Reference
-nav_order: 5
 ---
 
 # `bsp`
-{: .no_toc }
 
----
+Lua API object exposed as <c>bsp</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaBSP`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaBSP.cs`
 
----
+## Members
 
-## Methods
+### `get_maps`
 
-### `get_maps(  )`
+Lua member <c>get_maps</c>.
 
-{: .label .label-blue }
-Static
+`public static LuaTable GetMaps()`
 
-**Returns** `LuaTable`
+### `point_contents`
 
----
+Lua member <c>point_contents</c>.
 
-### `point_contents( vector )`
+`public static int PointContents(LuaVector vector)`
 
-{: .label .label-blue }
-Static
+### `trace_contents`
 
-**Parameters**
+Lua member <c>trace_contents</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `vector` | `LuaVector` |  |
-
-**Returns** `number`
-
----
-
-### `trace_contents( start, end, result )`
-
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `start` | `LuaVector` |  |
-| `end` | `LuaVector` |  |
-| `result` | `LuaTraceResult` |  |
-
----
-
+`public static void TraceContents(LuaVector start, LuaVector end, LuaTraceResult result`

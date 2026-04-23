@@ -1,45 +1,20 @@
 ---
-layout: default
 title: particles
 parent: API Reference
-nav_order: 16
 ---
 
 # `particles`
-{: .no_toc }
 
----
+Lua API object exposed as <c>particles</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaParticles`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaParticles.cs`
 
----
+## Members
 
-## Methods
+### `spawn`
 
-### `emit_particles( count, effectId, origin, dir, colorBase, colorArg, lifeBase, lifeRand, seed, end, trailType )`
+Lua member <c>spawn</c>.
 
-{: .label .label-blue }
-Static
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `count` | `number` |  |
-| `effectId` | `number` |  |
-| `origin` | `LuaVector` |  |
-| `dir` | `LuaVector` |  |
-| `colorBase` | `number` |  |
-| `colorArg` | `number` |  |
-| `lifeBase` | `number` |  |
-| `lifeRand` | `number` |  |
-| `seed` | `number` |  |
-| `end` | `LuaVector` |  |
-| `trailType` | `number` |  |
-
----
-
+`public static void Spawn(string filename, LuaVector origin, float duration, int count)`

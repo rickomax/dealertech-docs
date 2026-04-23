@@ -1,125 +1,74 @@
 ---
-layout: default
 title: ui_input_field
 parent: API Reference
-nav_order: 22
 ---
 
 # `ui_input_field`
-{: .no_toc }
 
-**Inherits:** `LuaUIElement`
+Lua API object exposed as <c>ui_input_field</c>.
 
----
+**C# type:** `LuaUIInputField`  
 
-## Contents
-{: .no_toc .text-delta }
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaUIInputField.cs`
 
-1. TOC
-{:toc}
+## Members
 
----
+### `create`
 
-## Methods
+Lua member <c>create</c>.
 
-### `create( panel )`
+`public static LuaUIInputField Create(LuaUIPanel panel)`
 
-{: .label .label-blue }
-Static
+### `set_font`
 
-**Parameters**
+Lua member <c>set_font</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `panel` | `LuaUIPanel` |  |
+`public void SetFont(LuaFont font)`
 
-**Returns** `LuaUIInputField`
+### `set_size`
 
----
+Lua member <c>set_size</c>.
 
-### `set_font( font )`
+`public void SetSize(float size)`
 
-**Parameters**
+### `set_color`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `font` | `LuaFont` |  |
+Lua member <c>set_color</c>.
 
----
+`public void SetColor(LuaVector4 color)`
 
-### `set_size( size )`
+### `set_text`
 
-**Parameters**
+Lua member <c>set_text</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `size` | `number` |  |
+`public void SetText(string text)`
 
----
+### `get_text`
 
-### `set_color( color )`
+Lua member <c>get_text</c>.
 
-**Parameters**
+`public string GetText()`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `color` | `LuaVector4` |  |
+### `set_content_type`
 
----
+Lua member <c>set_content_type</c>.
 
-### `set_text( text )`
+`public void SetContentType(string contentType)`
 
-**Parameters**
+### `set_char_limit`
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `text` | `string` |  |
+Lua member <c>set_char_limit</c>.
 
----
+`public void SetCharacterLimit(int limit)`
 
-### `get_text(  )`
+### `on_change`
 
-**Returns** `string`
+Lua member <c>on_change</c>.
 
----
+`public void OnChange(LuaFunction callback)`
 
-### `set_content_type( contentType )`
+### `on_submit`
 
-**Parameters**
+Lua member <c>on_submit</c>.
 
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `contentType` | `string` |  |
-
----
-
-### `set_char_limit( limit )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `limit` | `number` |  |
-
----
-
-### `on_change( callback )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `callback` | `LuaFunction` |  |
-
----
-
-### `on_submit( callback )`
-
-**Parameters**
-
-| Name | Type | Description |
-|:-----|:-----|:------------|
-| `callback` | `LuaFunction` |  |
-
----
-
+`public void OnSubmit(LuaFunction callback)`

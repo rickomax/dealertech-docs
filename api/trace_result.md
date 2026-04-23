@@ -1,76 +1,50 @@
 ---
-layout: default
 title: trace_result
 parent: API Reference
-nav_order: 20
 ---
 
 # `trace_result`
-{: .no_toc }
 
----
+Lua API object exposed as <c>trace_result</c>.
 
-## Contents
-{: .no_toc .text-delta }
+**C# type:** `LuaTraceResult`  
 
-1. TOC
-{:toc}
+**Source:** `Assets/DealerTech/Runtime/Lua/LuaTraceResult.cs`
 
----
-
-## Fields
-
-### `all_solid`
-
-**Type:** `boolean`
-
----
+## Members
 
 ### `start_solid`
 
-**Type:** `boolean`
+Lua member <c>start_solid</c>.
 
----
-
-### `in_water`
-
-**Type:** `boolean`
-
----
-
-### `in_open`
-
-**Type:** `boolean`
-
----
+`public bool StartSolid;`
 
 ### `fraction`
 
-**Type:** `number`
+Lua member <c>fraction</c>.
 
----
+`public float Fraction;`
 
 ### `end_position`
 
-**Type:** `LuaVector`
+Lua member <c>end_position</c>.
 
----
+`public LuaVector EndPosition;`
 
 ### `normal`
 
-**Type:** `LuaVector`
+Lua member <c>normal</c>.
 
----
+`public LuaVector Normal;`
 
-### `plane_distance`
+### `distance`
 
-**Type:** `number`
+Lua member <c>distance</c>.
 
----
+`public float Distance;`
 
 ### `hit_table`
 
-**Type:** `LuaTable`
+Lua member <c>hit_table</c>.
 
----
-
+`public LuaTable HitTable;`
