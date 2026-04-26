@@ -1,3 +1,9 @@
+---
+layout: default
+title: input
+parent: API Reference
+---
+
 # `input`
 
 `input` provides Lua-exposed access to the engine input system.

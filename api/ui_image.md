@@ -1,3 +1,9 @@
+---
+layout: default
+title: ui_image
+parent: API Reference
+---
+
 # `ui_image`
 
 `ui_image` is a UI image element that renders a texture loaded from the engine resources.

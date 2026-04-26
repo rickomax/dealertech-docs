@@ -1,3 +1,9 @@
+---
+layout: default
+title: physics
+parent: API Reference
+---
+
 # `physics`
 
 `physics` provides Lua-exposed physics queries and trace operations.

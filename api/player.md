@@ -1,3 +1,9 @@
+---
+layout: default
+title: player
+parent: API Reference
+---
+
 # `player`
 
 `player` is the Lua-side class used for player-controlled entities.

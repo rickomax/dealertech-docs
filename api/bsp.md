@@ -1,3 +1,9 @@
+---
+layout: default
+title: bsp
+parent: API Reference
+---
+
 # `bsp`
 
 `bsp` provides Lua-exposed BSP map utilities and contents queries based on the currently loaded BSP data.

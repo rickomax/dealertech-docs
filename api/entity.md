@@ -1,3 +1,9 @@
+---
+layout: default
+title: entity
+parent: API Reference
+---
+
 # `entity`
 
 `entity` represents a game entity instance and its Lua-exposed properties, movement, state and networked variables.

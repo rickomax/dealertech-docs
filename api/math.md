@@ -1,3 +1,9 @@
+---
+layout: default
+title: math
+parent: API Reference
+---
+
 # `math`
 
 `math` provides common mathematical constants and functions.

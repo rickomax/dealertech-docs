@@ -14,7 +14,6 @@ All classes exposed to Lua scripts.
 | [`array`](array/) | A dynamic, 1-indexed array of Lua values backed by a managed list. |
 | [`bsp`](bsp/) | Provides Lua access to the loaded BSP map, including map discovery and content queries. |
 | [`config`](config/) | Provides Lua access to the persistent configuration store. |
-| [`console_variable`](console_variable/) | Represents a single console variable that can be read from and written to from Lua. |
 | [`entity`](entity/) | Represents entity properties, movement, state, and network variables to Lua scripts. |
 | [`entity_state`](entity_state/) | Represents a single named animation/logic state that an entity can switch to. |
 | [`font`](font/) | Represents a loaded TextMeshPro font asset used by `ui_label` and `ui_input_field`. |

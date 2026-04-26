@@ -1,3 +1,9 @@
+---
+layout: default
+title: input_data
+parent: API Reference
+---
+
 # `input_data`
 
 `input_data` is a fixed-size float buffer used by the input system to pass raw input values between the engine and Lua.

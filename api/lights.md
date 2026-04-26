@@ -1,3 +1,9 @@
+---
+layout: default
+title: lights
+parent: API Reference
+---
+
 # `lights`
 
 `lights` provides Lua-exposed dynamic light spawning and BSP light style control.

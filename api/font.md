@@ -1,3 +1,9 @@
+---
+layout: default
+title: font
+parent: API Reference
+---
+
 # `font`
 
 `font` represents a font asset loaded from a file in the engine `fonts` folder.

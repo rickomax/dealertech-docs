@@ -1,3 +1,9 @@
+---
+layout: default
+title: trace_result
+parent: API Reference
+---
+
 # `trace_result`
 
 `trace_result` represents the output of a physics trace operation.

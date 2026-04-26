@@ -1,3 +1,9 @@
+---
+layout: default
+title: ui_input_field
+parent: API Reference
+---
+
 # `ui_input_field`
 
 `ui_input_field` is a UI text input element backed by a TextMeshPro input field.

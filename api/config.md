@@ -1,3 +1,9 @@
+---
+layout: default
+title: config
+parent: API Reference
+---
+
 # `config`
 
 `config` provides persistent key/value configuration storage exposed to Lua.
