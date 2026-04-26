@@ -3,7 +3,6 @@ layout: default
 title: bsp
 parent: API Reference
 ---
-
 # `bsp`
 
 `bsp` provides Lua-exposed BSP map utilities and contents queries based on the currently loaded BSP data.
@@ -46,28 +45,3 @@ This function does **not** return a value; it updates the provided `result` obje
 - `start` (`vector`) — Segment start position.
 - `end` (`vector`) — Segment end position.
 - `result` (`trace_result`) — Output object that receives the contents classification.
-
----
-
-## Examples
-
-### List available maps
-```lua
-local maps = bsp.get_maps()
-for i = 1, #maps do
-    print(maps[i])
-end
-```
-
-### Query contents at a point
-```lua
-local p = vector.create(0, 0, 64)
-local c = bsp.point_contents(p)
-print("contents =", c)
-```
-
-### Trace and classify a segment
-```lua
-local tr = trace_result()
-bsp.trace_contents(vector.create(0, 0, 64), vector.create(0, 0, -128), tr)
-```

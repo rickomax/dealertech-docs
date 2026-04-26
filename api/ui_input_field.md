@@ -3,7 +3,6 @@ layout: default
 title: ui_input_field
 parent: API Reference
 ---
-
 # `ui_input_field`
 
 `ui_input_field` is a UI text input element backed by a TextMeshPro input field.
@@ -24,12 +23,6 @@ Creates a new input field element and adds it to the given panel.
 
 **Returns**
 - `ui_input_field`
-
-You can also call the namespace directly:
-
-```lua
-local f = ui_input_field(panel)
-```
 
 ---
 
@@ -110,25 +103,3 @@ Replaces any previously registered change listener.
 
 **Parameters**
 - `callback` (`function`) — Lua function invoked with the submitted text value as its argument.
-
----
-
-## Example
-
-```lua
-local panel = ui_panel.create()
-
-local field = ui_input_field.create(panel)
-field:set_font(font.create("default.ttf"))
-field:set_size(16)
-field:set_content_type("standard")
-field:set_char_limit(32)
-
-field:on_change(function(text)
-    print("editing:", text)
-end)
-
-field:on_submit(function(text)
-    print("submitted:", text)
-end)
-```

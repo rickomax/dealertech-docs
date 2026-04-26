@@ -3,7 +3,6 @@ layout: default
 title: ui_label
 parent: API Reference
 ---
-
 # `ui_label`
 
 `ui_label` is a UI text element backed by TextMeshPro.
@@ -23,12 +22,6 @@ Creates a new label and adds it to the given panel.
 
 **Returns**
 - `ui_label`
-
-You can also call the namespace directly:
-
-```lua
-local l = ui_label(panel)
-```
 
 ---
 
@@ -63,20 +56,3 @@ Sets the displayed text.
 
 **Parameters**
 - `text` (`string`) — Text to display.
-
----
-
-## Example
-
-```lua
-local panel = ui_panel.create()
-
-local label = ui_label.create(panel)
-label:set_font(font.create("default.ttf"))
-label:set_size(18)
-label:set_color(vector4.create(1, 1, 1, 1))
-label:set_text("Score: 0")
-label:set_position(10, 10)
-
-panel:rebuild()
-```

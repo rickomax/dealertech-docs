@@ -3,7 +3,6 @@ layout: default
 title: player
 parent: API Reference
 ---
-
 # `player`
 
 `player` is the Lua-side class used for player-controlled entities.
@@ -171,36 +170,3 @@ The engine uses `out_move` to build the next movement packet. Final collision/gr
 
 ### `player.spawn(self)`
 Optional. Called when the player entity is (re)spawned on the server.
-
----
-
-## Example (skeleton)
-
-```lua
-player = {}
-
-function player.create(self_entity)
-    local self = {}
-    -- store references / initialize
-    return self
-end
-
-function player.read_input(self, input_data)
-    input_data[0] = input.read_raw_float("<Keyboard>/w") - input.read_raw_float("<Keyboard>/s")
-    input_data[1] = input.read_raw_float("<Keyboard>/d") - input.read_raw_float("<Keyboard>/a")
-    input_data[4] = input.is_held("<Keyboard>/space")
-end
-
-function player.process_actions(self, input_data)
-    if input.was_pressed("<Keyboard>/r") == 1 then
-        -- reload
-    end
-end
-
-function player.process_movement(self, input_data, in_move, out_move)
-    out_move.angles      = in_move.angles
-    out_move.velocity    = in_move.velocity
-    out_move.is_grounded = in_move.is_grounded
-    -- apply movement logic using input_data...
-end
-```

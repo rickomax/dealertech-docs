@@ -3,7 +3,6 @@ layout: default
 title: particles
 parent: API Reference
 ---
-
 # `particles`
 
 `particles` provides Lua-exposed particle spawning.
@@ -27,12 +26,3 @@ Spawns a networked particle effect at the given world position.
 
 **Server-only**
 - Has no effect when not running on the server.
-
----
-
-## Example
-
-```lua
--- Spawn a small explosion at the entity origin
-particles.spawn("explosion", self:get_origin(), 0.5, 32)
-```

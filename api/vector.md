@@ -3,7 +3,6 @@ layout: default
 title: vector
 parent: API Reference
 ---
-
 # `vector`
 
 `vector` represents a 3D vector with `x`, `y`, and `z` components.
@@ -37,12 +36,6 @@ Creates a new vector with the given components.
 
 **Returns**
 - `vector`
-
-You can also call the namespace directly:
-
-```lua
-local v = vector(1, 2, 3)
-```
 
 ---
 
@@ -198,20 +191,3 @@ The output vectors are passed by reference and overwritten with the resulting ba
 
 ### String Conversion
 `tostring(a)`
-
----
-
-## Example
-
-```lua
-local origin  = vector.create(0, 0, 64)
-local forward = vector.create(0, 0, 0)
-local right   = vector.create(0, 0, 0)
-local up      = vector.create(0, 0, 0)
-vector.make_vectors(self:get_angles(), right, forward, up)
-
-local target = origin + forward * 256
-local mid    = vector.lerp(origin, target, 0.5)
-
-local dist_sq = vector.squared_length(target - origin)
-```

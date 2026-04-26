@@ -3,7 +3,6 @@ layout: default
 title: ui_image
 parent: API Reference
 ---
-
 # `ui_image`
 
 `ui_image` is a UI image element that renders a texture loaded from the engine resources.
@@ -22,12 +21,6 @@ Creates a new image element and adds it to the given panel.
 
 **Returns**
 - `ui_image`
-
-You can also call the namespace directly:
-
-```lua
-local img = ui_image(panel)
-```
 
 ---
 
@@ -63,17 +56,3 @@ Sets the image tint colour.
 
 ### `ui_image:set_native_size()`
 Resizes the image to match the source texture's native pixel size.
-
----
-
-## Example
-
-```lua
-local panel = ui_panel.create()
-
-local crosshair = ui_image.create(panel)
-crosshair:set_image("hud/crosshair.png")
-crosshair:set_native_size()
-crosshair:set_color(vector4.create(1, 1, 1, 0.8))
-crosshair:center_on_x()
-```

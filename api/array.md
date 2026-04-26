@@ -3,7 +3,6 @@ layout: default
 title: array
 parent: API Reference
 ---
-
 # `array`
 
 `array` is a dynamic, 1-indexed container exposed to Lua.
@@ -23,12 +22,6 @@ Creates a new empty array with the given initial capacity hint.
 
 **Returns**
 - `array`
-
-You can also call the namespace directly:
-
-```lua
-local a = array(8)
-```
 
 ---
 
@@ -71,20 +64,3 @@ Removes all elements from the array.
 ### Length
 
 `#a` returns the number of elements in the array.
-
----
-
-## Example
-
-```lua
-local items = array.create(4)
-items:add("sword")
-items:add("shield")
-
-for i = 1, #items do
-    print(items:get(i))
-end
-
-items:remove_at(1)
-items:clear()
-```

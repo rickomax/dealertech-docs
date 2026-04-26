@@ -3,7 +3,6 @@ layout: default
 title: vector4
 parent: API Reference
 ---
-
 # `vector4`
 
 `vector4` represents a 4D vector with `x`, `y`, `z`, and `w` components.
@@ -43,12 +42,6 @@ Creates a new 4D vector.
 
 **Returns**
 - `vector4`
-
-You can also call the namespace directly:
-
-```lua
-local c = vector4(1, 0, 0, 1)
-```
 
 ---
 
@@ -125,17 +118,3 @@ Returns the squared magnitude of `a`. Prefer this over `length` when comparing d
 
 ### String Conversion
 `tostring(a)`
-
----
-
-## Example
-
-```lua
--- A semi-transparent red colour
-local red = vector4.create(1, 0, 0, 0.5)
-
--- Linearly fade between two colours
-local from = vector4.create(1, 1, 1, 1)
-local to   = vector4.create(0, 0, 0, 1)
-local mid  = vector4.lerp(from, to, 0.5)
-```

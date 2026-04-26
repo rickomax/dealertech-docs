@@ -3,7 +3,6 @@ layout: default
 title: config
 parent: API Reference
 ---
-
 # `config`
 
 `config` provides persistent key/value configuration storage exposed to Lua.
@@ -63,19 +62,3 @@ Sets the string value for the given key.
 **Parameters**
 - `key` (`string`) — The configuration key.
 - `value` (`string`) — The new value.
-
----
-
-## Example
-
-```lua
-config.load()
-
-local sens = config.get_number("mouse_sensitivity")
-if sens == 0 then
-    config.set_number("mouse_sensitivity", 2.5)
-end
-
-config.set_string("last_map", "e1m1")
-config.save()
-```

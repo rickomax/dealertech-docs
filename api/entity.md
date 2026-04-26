@@ -3,7 +3,6 @@ layout: default
 title: entity
 parent: API Reference
 ---
-
 # `entity`
 
 `entity` represents a game entity instance and its Lua-exposed properties, movement, state and networked variables.
@@ -26,12 +25,6 @@ Most setter functions only have an effect when called on the server (they will d
 
 ### `entity[key] : string|nil`
 Gets or sets a string property by key.
-
-**Usage**
-```lua
-local cls = ent["classname"]
-ent["targetname"] = "door01"
-```
 
 **Notes**
 - Returns `nil` if the key does not exist.
@@ -56,12 +49,6 @@ Spawns a new entity with the given class name and returns its Lua instance table
 
 **Returns**
 - `table` — Lua instance table of the spawned entity, or `nil` if not running on the server.
-
-You can also call the namespace directly:
-
-```lua
-local e = entity("monster_army")
-```
 
 ---
 
@@ -359,37 +346,3 @@ Plays a sound at the entity position.
 - `channel` (`integer`) — Audio channel.
 - `volume` (`number`) — Volume in `[0, 1]`.
 - `attenuation` (`number`) — Distance attenuation factor.
-
----
-
-## Examples
-
-### Read and write string properties
-```lua
-print(ent["classname"])
-ent["targetname"] = "enemy_01"
-```
-
-### Spawn an entity
-```lua
-local e = entity.create("monster_army")
-e:set_origin(vector.create(0, 0, 64))
-e:set_health(100)
-```
-
-### Set a state-machine state
-```lua
-local walk_01 = entity_state.create("walk_01", 0.1, function(self)
-    return "walk_02"   -- next state name
-end)
-
-ent:set_state(walk_01)
-```
-
-### Networked variables
-```lua
-self:set_net_number("ammo", 50)
-print(self:get_net_number("ammo"))
-
-self:set_net_vector("home", vector.create(0, 0, 64))
-```
