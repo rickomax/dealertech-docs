@@ -1,33 +1,72 @@
----
-layout: default
-title: lights
-parent: API Reference
----
-
 # `lights`
 
-Provides Lua access to the global light style table and helpers for spawning dynamic or static lights on the server.
+`lights` provides Lua-exposed dynamic light spawning and BSP light style control.
 
-**C# type:** `LuaLights`  
+All functions are static and accessed directly from the `lights` table.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaLights.cs`
+Most functions only have an effect when called on the server.
 
-## Members
+---
 
-### `get_computed_style`
+## Functions
 
-Returns the currently computed intensity for the light style at the given index. Only runs on the server; returns `0` otherwise.
+### `lights.get_computed_style(index) -> number`
+Returns the current computed brightness for a BSP light style index.
 
-`public static float GetComputedStyle(int index)`
+**Parameters**
+- `index` (`integer`) — The light style index.
 
-### `set_style`
+**Returns**
+- `number` — The computed brightness, or `0` if not running on the server.
 
-Sets the pattern string for a light style. Each character represents the relative intensity at that tick (e.g. `"mmamammmmammamamaaamammma"`). Only runs on the server.
+---
 
-`public static void SetStyle(int index, string style)`
+### `lights.set_style(index, style)`
+Sets the animation pattern for a BSP light style index.
 
-### `create_light`
+The pattern string is a sequence of brightness levels, where:
+- `'a'` is the darkest level
+- `'z'` is the brightest level
+- One character is consumed per tick, looping back to the start.
 
-Spawns a new networked light on the server and returns it.
+**Parameters**
+- `index` (`integer`) — The light style index.
+- `style` (`string`) — The animation pattern string.
 
-`public static GameLight CreateLight(LuaVector position, LuaVector color, float intensity, float radius, bool isStatic, GameEntity parent = null)`
+**Server-only**
+- Has no effect when not running on the server.
+
+---
+
+### `lights.create_light(position, color, intensity, radius, is_static, parent) -> light|nil`
+Spawns a networked dynamic light.
+
+**Parameters**
+- `position` (`vector`) — World position of the light.
+- `color` (`vector`) — RGB colour with each component in the range `[0, 1]`.
+- `intensity` (`number`) — Light intensity.
+- `radius` (`number`) — Light range/radius.
+- `is_static` (`boolean`) — When `true`, the light affects only the static lighting layer.
+- `parent` (`entity|nil`) — Optional entity to parent the light to.
+
+**Returns**
+- `light|nil` — The spawned light, or `nil` if not running on the server.
+
+---
+
+## Example
+
+```lua
+-- Flicker pattern for style 3
+lights.set_style(3, "mmnmmommommnonmmonqnmmo")
+
+-- Spawn a torchlight attached to this entity
+local torch = lights.create_light(
+    self:get_origin(),
+    vector.create(1.0, 0.7, 0.3),
+    2.0,
+    256.0,
+    false,
+    self
+)
+```

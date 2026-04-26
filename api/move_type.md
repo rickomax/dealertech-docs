@@ -1,69 +1,48 @@
----
-layout: default
-title: move_type
-parent: API Reference
----
-
 # `move_type`
 
-Provides integer constants that identify the movement types used by `entity.set_move_type`.
+`move_type` exposes the movement type constants used with `entity:set_move_type`.
 
-**C# type:** `LuaMoveType`  
+All members are integer constants accessed directly from the `move_type` table.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaMoveType.cs`
+---
 
-## Members
+## Constants
 
-### `none`
+### `move_type.none` : `integer`
+No movement processing applied.
 
-The entity is not moved by the physics simulation.
+### `move_type.walk` : `integer`
+Walking movement with ground friction.
 
-`public int None`
+### `move_type.step` : `integer`
+Stepped movement used by NPCs that snap to the ground.
 
-### `walk`
+### `move_type.fly` : `integer`
+Free-flight movement with no gravity.
 
-The entity walks on the ground using character controller movement.
+### `move_type.toss` : `integer`
+Tossed projectile movement affected by gravity.
 
-`public int Walk`
+### `move_type.flymissile` : `integer`
+Flying projectile movement that ignores gravity.
 
-### `step`
+### `move_type.bounce` : `integer`
+Bouncing movement that reflects off surfaces.
 
-The entity steps along the ground, snapping to surfaces.
+### `move_type.push` : `integer`
+Pushed movement, used by movers such as doors and platforms.
 
-`public int Step`
+### `move_type.noclip` : `integer`
+Free movement that ignores all collisions.
 
-### `fly`
+---
 
-The entity flies, ignoring gravity.
+## Example
 
-`public int Fly`
+```lua
+-- Make this entity a tossed projectile
+self:set_move_type(move_type.toss)
 
-### `toss`
-
-The entity is tossed and affected by gravity, stopping on collision.
-
-`public int Toss`
-
-### `flymissile`
-
-The entity flies as a missile, ignoring gravity and stopping on collision.
-
-`public int FlyMissile`
-
-### `bounce`
-
-The entity bounces off surfaces it collides with.
-
-`public int Bounce`
-
-### `push`
-
-The entity is push-driven, moving other entities out of the way.
-
-`public int Push`
-
-### `noclip`
-
-The entity moves freely and ignores world collision.
-
-`public int NoClip`
+-- Make a door
+self:set_move_type(move_type.push)
+```

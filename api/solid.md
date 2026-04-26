@@ -1,45 +1,36 @@
----
-layout: default
-title: solid
-parent: API Reference
----
-
 # `solid`
 
-Provides integer constants that identify the solid/collision types used by `entity.set_solid`.
+`solid` exposes the solid type constants used with `entity:set_solid`.
 
-**C# type:** `LuaSolid`  
+All members are integer constants accessed directly from the `solid` table.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaSolid.cs`
+---
 
-## Members
+## Constants
 
-### `none`
+### `solid.none` : `integer`
+The entity has no collision.
 
-The entity is non-solid and does not interact with the collision system.
+### `solid.trigger` : `integer`
+The entity is a non-blocking trigger volume.
 
-`public int Not`
+### `solid.bbox` : `integer`
+The entity uses an axis-aligned bounding box for collision.
 
-### `trigger`
+### `solid.slidebox` : `integer`
+The entity uses a sliding axis-aligned bounding box for collision.
 
-The entity reports touch events but does not block movement.
+### `solid.bsp` : `integer`
+The entity uses BSP brush collision.
 
-`public int Trigger`
+---
 
-### `bbox`
+## Example
 
-The entity collides as an axis-aligned bounding box.
+```lua
+self:set_solid(solid.bbox)
+self:set_size(vector.create(-16, -16, -24), vector.create(16, 16, 32))
 
-`public int BBox`
-
-### `slidebox`
-
-The entity collides as a bounding box and slides along contact surfaces.
-
-`public int SlideBox`
-
-### `bsp`
-
-The entity collides using BSP brush geometry.
-
-`public int BSP`
+-- Trigger volume
+trigger_ent:set_solid(solid.trigger)
+```

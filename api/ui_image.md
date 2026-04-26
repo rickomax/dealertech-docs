@@ -1,45 +1,73 @@
----
-layout: default
-title: ui_image
-parent: API Reference
----
-
 # `ui_image`
 
-Exposes a raw image UI element to Lua. Created as a child of a `ui_panel` via `ui_image.create(panel)`.
+`ui_image` is a UI image element that renders a texture loaded from the engine resources.
 
-**C# type:** `LuaUIImage`  
+`ui_image` inherits from [`ui_element`](ui_element.md): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaUIImage.cs`
+---
 
-## Members
+## Creation
 
-### `create`
+### `ui_image.create(panel) -> ui_image`
+Creates a new image element and adds it to the given panel.
 
-Creates a new image element and parents it under the given panel.
+**Parameters**
+- `panel` (`ui_panel`) — Parent panel.
 
-`public static LuaUIImage Create(LuaUIPanel panel)`
+**Returns**
+- `ui_image`
 
-### `set_image`
+You can also call the namespace directly:
 
-Sets the texture displayed by the image.
+```lua
+local img = ui_image(panel)
+```
 
-`public void SetImage(string filename)`
+---
 
-### `set_size`
+## Functions
 
-Sets the explicit size of the image in pixels.
+### `ui_image:set_image(filename)`
+Sets the image texture from a resource filename.
 
-`public void SetSize(float width, float height)`
+**Parameters**
+- `filename` (`string`) — Texture filename.
 
-### `set_color`
+**Errors**
+- Throws if the texture cannot be found.
 
-Sets the tint color of the image (RGBA in the range [0, 1]).
+---
 
-`public void SetColor(LuaVector4 color)`
+### `ui_image:set_size(width, height)`
+Sets the rendered size of the image, in UI units.
 
-### `set_native_size`
+**Parameters**
+- `width` (`number`) — Width in UI units.
+- `height` (`number`) — Height in UI units.
 
-Resizes the image to match the native pixel dimensions of its texture.
+---
 
-`public void SetNativeSize()`
+### `ui_image:set_color(color)`
+Sets the image tint colour.
+
+**Parameters**
+- `color` (`vector4`) — Tint colour as RGBA in `[0, 1]`.
+
+---
+
+### `ui_image:set_native_size()`
+Resizes the image to match the source texture's native pixel size.
+
+---
+
+## Example
+
+```lua
+local panel = ui_panel.create()
+
+local crosshair = ui_image.create(panel)
+crosshair:set_image("hud/crosshair.png")
+crosshair:set_native_size()
+crosshair:set_color(vector4.create(1, 1, 1, 0.8))
+crosshair:center_on_x()
+```

@@ -1,21 +1,40 @@
----
-layout: default
-title: font
-parent: API Reference
----
-
 # `font`
 
-Represents a loaded TextMeshPro font asset that can be assigned to `ui_label` and `ui_input_field` elements.
+`font` represents a font asset loaded from a file in the engine `fonts` folder.
 
-**C# type:** `LuaFont`  
+Font instances are passed to UI text elements such as `ui_label` and `ui_input_field` to control their appearance.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaFont.cs`
+---
 
-## Members
+## Creation
 
-### `create`
+### `font.create(filename) -> font`
+Loads a font asset from the `fonts` folder.
 
-Loads and returns a font from the given filename under the `fonts` directory.
+**Parameters**
+- `filename` (`string`) — The font filename relative to the `fonts` folder.
 
-`public static LuaFont Create(string filename)`
+**Returns**
+- `font`
+
+**Errors**
+- Throws if the font file cannot be found.
+
+You can also call the namespace directly:
+
+```lua
+local f = font("default.ttf")
+```
+
+---
+
+## Example
+
+```lua
+local f = font.create("default.ttf")
+
+local panel = ui_panel.create()
+local label = ui_label.create(panel)
+label:set_font(f)
+label:set_text("Hello, world!")
+```

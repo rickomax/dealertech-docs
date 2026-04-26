@@ -1,33 +1,67 @@
----
-layout: default
-title: bsp
-parent: API Reference
----
-
 # `bsp`
 
-Provides Lua access to the loaded BSP (Binary Space Partitioning) map, including map discovery and content queries.
+`bsp` provides Lua-exposed BSP map utilities and contents queries based on the currently loaded BSP data.
 
-**C# type:** `LuaBSP`  
+It can be used to enumerate available maps, query *contents* at a point, and classify a line segment against the BSP.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaBSP.cs`
+> Notes:
+> - `point_contents` and `trace_contents` depend on BSP clip/leaf/plane data being available (typically after loading a BSP).
+> - Contents values are returned as integers (the same numeric IDs used by the engine for contents types).
 
-## Members
+---
 
-### `get_maps`
+## Functions
 
-Returns the list of available BSP maps (without the `.bsp` extension) found under the `maps` directory.
+### `bsp.get_maps() -> table`
+Returns a 1-indexed table of every BSP map name (without extension) available in the engine's `maps` folder.
 
-`public static LuaTable GetMaps()`
+**Returns**
+- `table` — `{ [1] = "e1m1", [2] = "e1m2", ... }`
 
-### `point_contents`
+---
 
-Returns the contents flags of the BSP leaf that contains the given point.
+### `bsp.point_contents(pos) -> integer`
+Returns the contents value of the BSP leaf containing the given point.
 
-`public static int PointContents(LuaVector vector)`
+**Parameters**
+- `pos` (`vector`) — Point to test.
 
-### `trace_contents`
+**Returns**
+- `integer` — Contents id at that point.
 
-Traces a line through the BSP tree and fills <paramref name="result"/> with any contents hit.
+---
 
-`public static void TraceContents(LuaVector start, LuaVector end, LuaTraceResult result)`
+### `bsp.trace_contents(start, end, result)`
+Classifies a segment from `start` to `end` against the BSP and writes the contents flags into `result`.
+
+This function does **not** return a value; it updates the provided `result` object in place.
+
+**Parameters**
+- `start` (`vector`) — Segment start position.
+- `end` (`vector`) — Segment end position.
+- `result` (`trace_result`) — Output object that receives the contents classification.
+
+---
+
+## Examples
+
+### List available maps
+```lua
+local maps = bsp.get_maps()
+for i = 1, #maps do
+    print(maps[i])
+end
+```
+
+### Query contents at a point
+```lua
+local p = vector.create(0, 0, 64)
+local c = bsp.point_contents(p)
+print("contents =", c)
+```
+
+### Trace and classify a segment
+```lua
+local tr = trace_result()
+bsp.trace_contents(vector.create(0, 0, 64), vector.create(0, 0, -128), tr)
+```

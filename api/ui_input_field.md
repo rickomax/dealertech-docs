@@ -1,75 +1,128 @@
----
-layout: default
-title: ui_input_field
-parent: API Reference
----
-
 # `ui_input_field`
 
-Exposes a TextMeshPro single-line input field UI element to Lua. Created as a child of a `ui_panel` via `ui_input_field.create(panel)`.
+`ui_input_field` is a UI text input element backed by a TextMeshPro input field.
 
-**C# type:** `LuaUIInputField`  
+It supports change/submit callbacks and multiple content types (integer, decimal, password, email, standard).
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaUIInputField.cs`
+`ui_input_field` inherits from [`ui_element`](ui_element.md): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.
 
-## Members
+---
 
-### `create`
+## Creation
 
-Creates a new input field element and parents it under the given panel.
+### `ui_input_field.create(panel) -> ui_input_field`
+Creates a new input field element and adds it to the given panel.
 
-`public static LuaUIInputField Create(LuaUIPanel panel)`
+**Parameters**
+- `panel` (`ui_panel`) — Parent panel.
 
-### `set_font`
+**Returns**
+- `ui_input_field`
 
-Sets the font used to render the input field's text.
+You can also call the namespace directly:
 
-`public void SetFont(LuaFont font)`
+```lua
+local f = ui_input_field(panel)
+```
 
-### `set_size`
+---
 
-Sets the font size, in points, used to render the input field's text.
+## Functions
 
-`public void SetSize(float size)`
+### `ui_input_field:set_font(font)`
+Sets the font used for the text and placeholder.
 
-### `set_color`
+**Parameters**
+- `font` (`font`) — The font to apply.
 
-Sets the color of the input field's text (RGBA in the range [0, 1]).
+---
 
-`public void SetColor(LuaVector4 color)`
+### `ui_input_field:set_size(size)`
+Sets the font size for the text and placeholder.
 
-### `set_text`
+**Parameters**
+- `size` (`number`) — Font size in UI units.
 
-Sets the current text content of the input field.
+---
 
-`public void SetText(string text)`
+### `ui_input_field:set_color(color)`
+Sets the text colour.
 
-### `get_text`
+**Parameters**
+- `color` (`vector4`) — Colour as RGBA in `[0, 1]`.
 
-Returns the current text content of the input field.
+---
 
-`public string GetText()`
+### `ui_input_field:set_text(text)`
+Sets the current text value.
 
-### `set_content_type`
+**Parameters**
+- `text` (`string`) — New text content.
 
-Sets the content validation type of the input field. Supported values are `"integer"`, `"decimal"`, `"password"`, `"email"`; any other value is treated as standard text.
+---
 
-`public void SetContentType(string contentType)`
+### `ui_input_field:get_text() -> string`
+Returns the current text value.
 
-### `set_char_limit`
+---
 
-Sets the maximum number of characters the field will accept.
+### `ui_input_field:set_content_type(content_type)`
+Sets the content validation mode for the input field.
 
-`public void SetCharacterLimit(int limit)`
+**Parameters**
+- `content_type` (`string`) — One of:
+  - `"integer"`
+  - `"decimal"`
+  - `"password"`
+  - `"email"`
+  - any other value defaults to `"standard"`
 
-### `on_change`
+---
 
-Installs a Lua callback that fires whenever the field's text value changes. The callback is invoked with the new text string as its single argument.
+### `ui_input_field:set_char_limit(limit)`
+Sets the maximum number of characters allowed in the input field.
 
-`public void OnChange(LuaFunction callback)`
+**Parameters**
+- `limit` (`integer`) — Character limit. Use `0` for no limit.
 
-### `on_submit`
+---
 
-Installs a Lua callback that fires when the user submits the field (e.g. pressing Enter). The callback is invoked with the submitted text string as its single argument.
+### `ui_input_field:on_change(callback)`
+Registers a callback invoked every time the text value changes.
 
-`public void OnSubmit(LuaFunction callback)`
+Replaces any previously registered change listener.
+
+**Parameters**
+- `callback` (`function`) — Lua function invoked with the new text value as its argument.
+
+---
+
+### `ui_input_field:on_submit(callback)`
+Registers a callback invoked when the user submits the input (e.g. presses Enter).
+
+Replaces any previously registered change listener.
+
+**Parameters**
+- `callback` (`function`) — Lua function invoked with the submitted text value as its argument.
+
+---
+
+## Example
+
+```lua
+local panel = ui_panel.create()
+
+local field = ui_input_field.create(panel)
+field:set_font(font.create("default.ttf"))
+field:set_size(16)
+field:set_content_type("standard")
+field:set_char_limit(32)
+
+field:on_change(function(text)
+    print("editing:", text)
+end)
+
+field:on_submit(function(text)
+    print("submitted:", text)
+end)
+```

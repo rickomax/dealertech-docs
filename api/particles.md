@@ -1,21 +1,32 @@
----
-layout: default
-title: particles
-parent: API Reference
----
-
 # `particles`
 
-Provides Lua access to the particle system. All calls are server-side.
+`particles` provides Lua-exposed particle spawning.
 
-**C# type:** `LuaParticles`  
+All functions are static and accessed directly from the `particles` table.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaParticles.cs`
+All functions only have an effect when called on the server.
 
-## Members
+---
 
-### `spawn`
+## Functions
 
-Spawns a burst of particles from the effect file at the given origin. Only runs on the server.
+### `particles.spawn(filename, origin, duration, count)`
+Spawns a networked particle effect at the given world position.
 
-`public static void Spawn(string filename, LuaVector origin, float duration, int count)`
+**Parameters**
+- `filename` (`string`) — The particle effect filename.
+- `origin` (`vector`) — World position where the effect is emitted.
+- `duration` (`number`) — Lifetime of the effect, in seconds.
+- `count` (`integer`) — Number of particles to emit.
+
+**Server-only**
+- Has no effect when not running on the server.
+
+---
+
+## Example
+
+```lua
+-- Spawn a small explosion at the entity origin
+particles.spawn("explosion", self:get_origin(), 0.5, 32)
+```

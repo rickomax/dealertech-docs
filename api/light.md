@@ -1,21 +1,38 @@
----
-layout: default
-title: light
-parent: API Reference
----
-
 # `light`
 
-Represents a networked point light attached to the world or to a parent entity. Exposed to Lua as `light`; instances are created from Lua through `lights.create_light`.
+`light` represents a networked dynamic light spawned via `lights.create_light`.
 
-**C# type:** `GameLight`  
+Each light synchronizes its position, colour, intensity and radius across clients.
 
-**Source:** `Assets/DealerTech/Runtime/Entities/GameLight.cs`
+Lights are usually created through the `lights.create_light` factory rather than constructed directly.
 
-## Members
+---
 
-### `set_intensity`
+## Functions
 
-Sets the intensity of this light. Only runs on the server.
+### `light:set_intensity(value)`
+Sets the light intensity.
 
-`public void SetIntensity(float value)`
+**Parameters**
+- `value` (`number`) — The new intensity value.
+
+**Server-only**
+- Has no effect when not running on the server.
+
+---
+
+## Example
+
+```lua
+local torch = lights.create_light(
+    self:get_origin(),
+    vector.create(1.0, 0.7, 0.3),
+    2.0,                      -- intensity
+    256.0,                    -- radius
+    false,                    -- isStatic
+    self                      -- parent entity
+)
+
+-- Later, dim it down
+torch:set_intensity(0.5)
+```

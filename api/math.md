@@ -1,195 +1,139 @@
----
-layout: default
-title: math
-parent: API Reference
----
-
 # `math`
 
-Exposes common numeric helpers, trigonometry, and random-number utilities to Lua.
+`math` provides common mathematical constants and functions.
 
-**C# type:** `LuaMath`  
+All functions are static and accessed directly from the `math` table.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaMath.cs`
+---
 
-## Members
+## Constants
 
-### `pi`
+### `math.pi() -> number`
+Returns the value of π (pi).
 
-Returns the value of Pi (3.14159...).
+---
 
-`public static float Pi()`
-
-### `deg2rad`
-
+### `math.deg2rad : number`
 Conversion factor from degrees to radians.
 
-`public static float Deg2Rad`
+---
 
-### `rad2deg`
-
+### `math.rad2deg : number`
 Conversion factor from radians to degrees.
 
-`public static float Rad2Deg`
+---
 
-### `random`
+## Random
 
-Returns a deterministic random number in the range [0, 1]. The underlying generator is seeded from the current server tick so that all peers agree on the result.
+### `math.random() -> number`
+Returns a random value in the range `[0, 1]`.
 
-`public static float Random()`
+---
 
-### `random_range`
+### `math.random_range(min, max) -> number`
+Returns a random value between `min` and `max`.
 
-Returns a deterministic random number in the range [<paramref name="min"/>, <paramref name="max"/>]. The underlying generator is seeded from the current server tick so that all peers agree on the result.
+**Parameters**
+- `min` (`number`)
+- `max` (`number`)
 
-`public static float RandomRange(float min, float max)`
+---
 
-### `sin`
+## Trigonometry
 
-Returns the sine of the given angle in radians.
+### `math.sin(v) -> number`
+### `math.cos(v) -> number`
+### `math.tan(v) -> number`
+### `math.asin(v) -> number`
+### `math.acos(v) -> number`
+### `math.atan(v) -> number`
+### `math.atan2(y, x) -> number`
 
-`public static float Sin(float v)`
+Standard trigonometric functions.
 
-### `cos`
+---
 
-Returns the cosine of the given angle in radians.
+## Basic Math
 
-`public static float Cos(float v)`
+### `math.abs(v) -> number`
+Returns the absolute value.
 
-### `tan`
+### `math.sign(v) -> number`
+Returns the sign of the value (-1, 0, or 1).
 
-Returns the tangent of the given angle in radians.
+### `math.sqrt(v) -> number`
+Returns the square root.
 
-`public static float Tan(float v)`
+### `math.pow(a, b) -> number`
+Returns `a` raised to the power of `b`.
 
-### `asin`
+### `math.exp(v) -> number`
+Returns e raised to the power of `v`.
 
-Returns the arc sine of <paramref name="v"/> in radians.
+### `math.log(v) -> number`
+Natural logarithm.
 
-`public static float Asin(float v)`
+### `math.log10(v) -> number`
+Base-10 logarithm.
 
-### `acos`
+---
 
-Returns the arc cosine of <paramref name="v"/> in radians.
+## Rounding
 
-`public static float Acos(float v)`
+### `math.floor(v) -> number`
+Rounds down.
 
-### `atan`
+### `math.ceil(v) -> number`
+Rounds up.
 
-Returns the arc tangent of <paramref name="v"/> in radians.
+### `math.round(v) -> number`
+Rounds to the nearest integer.
 
-`public static float Atan(float v)`
+---
 
-### `atan2`
+## Min / Max / Clamp
 
-Returns the angle in radians whose tangent is <paramref name="y"/>/<paramref name="x"/>, using the signs of both arguments to determine the correct quadrant.
+### `math.min(a, b) -> number`
+Returns the smaller value.
 
-`public static float Atan2(float y, float x)`
+### `math.max(a, b) -> number`
+Returns the larger value.
 
-### `abs`
+### `math.clamp(v, min, max) -> number`
+Clamps `v` between `min` and `max`.
 
-Returns the absolute value of <paramref name="v"/>.
+---
 
-`public static float Abs(float v)`
+## Interpolation
 
-### `sign`
+### `math.lerp(a, b, t) -> number`
+Linearly interpolates between `a` and `b`.
 
-Returns the sign of <paramref name="v"/>.
+### `math.lerp_unclamped(a, b, t) -> number`
+Linear interpolation without clamping `t`.
 
-`public static float Sign(float v)`
+### `math.inverse_lerp(a, b, v) -> number`
+Returns the interpolation factor `t` such that `lerp(a, b, t) = v`.
 
-### `sqrt`
+---
 
-Returns the square root of <paramref name="v"/>.
+## Repetition
 
-`public static float Sqrt(float v)`
+### `math.repeat(t, length) -> number`
+Loops `t` so it wraps around `length`.
 
-### `pow`
+### `math.pingpong(t, length) -> number`
+Returns a value that moves back and forth between `0` and `length`.
 
-Returns <paramref name="a"/> raised to the power of <paramref name="b"/>.
+---
 
-`public static float Pow(float a, float b)`
+## Example
 
-### `exp`
+```lua
+local angle = 45 * math.deg2rad
+local s = math.sin(angle)
 
-Returns e raised to the power of <paramref name="v"/>.
+local r = math.random_range(10, 20)
 
-`public static float Exp(float v)`
-
-### `log`
-
-Returns the natural (base-e) logarithm of <paramref name="v"/>.
-
-`public static float Log(float v)`
-
-### `log10`
-
-Returns the base-10 logarithm of <paramref name="v"/>.
-
-`public static float Log10(float v)`
-
-### `floor`
-
-Returns the largest integer less than or equal to <paramref name="v"/>.
-
-`public static float Floor(float v)`
-
-### `ceil`
-
-Returns the smallest integer greater than or equal to <paramref name="v"/>.
-
-`public static float Ceil(float v)`
-
-### `round`
-
-Returns <paramref name="v"/> rounded to the nearest integer.
-
-`public static float Round(float v)`
-
-### `min`
-
-Returns the smallest of two values.
-
-`public static float Min(float a, float b)`
-
-### `max`
-
-Returns the largest of two values.
-
-`public static float Max(float a, float b)`
-
-### `clamp`
-
-Clamps <paramref name="v"/> into the range [<paramref name="min"/>, <paramref name="max"/>].
-
-`public static float Clamp(float v, float min, float max)`
-
-### `lerp`
-
-Linearly interpolates between <paramref name="a"/> and <paramref name="b"/>. The interpolation factor is clamped to [0, 1].
-
-`public static float Lerp(float a, float b, float t)`
-
-### `lerp_unclamped`
-
-Linearly interpolates between <paramref name="a"/> and <paramref name="b"/> without clamping the interpolation factor.
-
-`public static float LerpUnclamped(float a, float b, float t)`
-
-### `inverse_lerp`
-
-Returns the interpolation factor `t` in the range [0, 1] such that `lerp(a, b, t) == v`.
-
-`public static float InverseLerp(float a, float b, float v)`
-
-### `repeat`
-
-Wraps <paramref name="t"/> into the range [0, <paramref name="length"/>] so that it never exceeds <paramref name="length"/> or goes negative.
-
-`public static float Repeat(float t, float length)`
-
-### `pingpong`
-
-Returns a value that oscillates back and forth between 0 and <paramref name="length"/> as <paramref name="t"/> increases.
-
-`public static float PingPong(float t, float length)`
+local clamped = math.clamp(15, 0, 10)
+```

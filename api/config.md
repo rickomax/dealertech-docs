@@ -1,51 +1,75 @@
----
-layout: default
-title: config
-parent: API Reference
----
-
 # `config`
 
-Provides Lua access to the persistent configuration store (typically user preferences and console variables).
+`config` provides persistent key/value configuration storage exposed to Lua.
 
-**C# type:** `LuaConfig`  
+Values are stored as named numbers or strings and survive between sessions.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaConfig.cs`
+All functions are static and accessed directly from the `config` table.
 
-## Members
+---
 
-### `load`
+## Functions
 
-Loads the configuration from disk, replacing any in-memory values.
+### `config.load()`
+Loads the configuration values from disk into memory.
 
-`public static void Load()`
+---
 
-### `save`
+### `config.save()`
+Saves the in-memory configuration values to disk.
 
-Writes the current in-memory configuration to disk.
+---
 
-`public static void Save()`
+### `config.get_number(key) -> number`
+Returns the stored numeric value for the given key.
 
-### `get_number`
+**Parameters**
+- `key` (`string`) — The configuration key.
 
-Returns the numeric value stored under the given key.
+**Returns**
+- `number` — The stored value, or `0` if the key does not exist.
 
-`public static float GetNumber(string key)`
+---
 
-### `set_number`
+### `config.set_number(key, value)`
+Sets the numeric value for the given key.
 
-Sets the numeric value stored under the given key.
+**Parameters**
+- `key` (`string`) — The configuration key.
+- `value` (`number`) — The new value.
 
-`public static void SetNumber(string key, float value)`
+---
 
-### `get_string`
+### `config.get_string(key) -> string`
+Returns the stored string value for the given key.
 
-Returns the string value stored under the given key.
+**Parameters**
+- `key` (`string`) — The configuration key.
 
-`public static string GetString(string key)`
+**Returns**
+- `string|nil` — The stored value, or `nil` if the key does not exist.
 
-### `set_string`
+---
 
-Sets the string value stored under the given key.
+### `config.set_string(key, value)`
+Sets the string value for the given key.
 
-`public static void SetString(string key, string value)`
+**Parameters**
+- `key` (`string`) — The configuration key.
+- `value` (`string`) — The new value.
+
+---
+
+## Example
+
+```lua
+config.load()
+
+local sens = config.get_number("mouse_sensitivity")
+if sens == 0 then
+    config.set_number("mouse_sensitivity", 2.5)
+end
+
+config.set_string("last_map", "e1m1")
+config.save()
+```

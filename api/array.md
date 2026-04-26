@@ -1,45 +1,84 @@
----
-layout: default
-title: array
-parent: API Reference
----
-
 # `array`
 
-A dynamic, 1-indexed array of Lua values backed by a managed list. Unlike a plain Lua table, the array is reusable and can be preallocated through `array.create(capacity)`.
+`array` is a dynamic, 1-indexed container exposed to Lua.
+It stores arbitrary values and supports the `#` length operator.
 
-**C# type:** `LuaArray`  
+Most engine APIs that return a list of entities (such as `physics.get_entities_in_radius`) return an `array`.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaArray.cs`
+---
 
-## Members
+## Creation
 
-### `create`
+### `array.create(capacity) -> array`
+Creates a new empty array with the given initial capacity hint.
 
-Creates a new empty array with the given initial capacity.
+**Parameters**
+- `capacity` (`integer`, default `1`) — Initial capacity hint.
 
-`public static LuaArray Create(int capacity = 1)`
+**Returns**
+- `array`
 
-### `add`
+You can also call the namespace directly:
 
-Appends <paramref name="value"/> to the end of the array.
+```lua
+local a = array(8)
+```
 
-`public void Add(LuaValue value)`
+---
 
-### `get`
+## Functions
 
-Returns the value stored at the given 1-based index.
+### `array:add(value)`
+Appends a value to the end of the array.
 
-`public LuaValue Get(int index)`
+**Parameters**
+- `value` (`any`) — The value to append.
 
-### `remove_at`
+---
 
-Removes the element at the given 1-based index, shifting subsequent elements left.
+### `array:get(index) -> any`
+Returns the value at a 1-based index.
 
-`public void RemoveAt(int index)`
+**Parameters**
+- `index` (`integer`) — The 1-based index of the element to retrieve.
 
-### `clear`
+**Returns**
+- `any` — The value stored at `index`.
 
+---
+
+### `array:remove_at(index)`
+Removes the element at a 1-based index.
+
+**Parameters**
+- `index` (`integer`) — The 1-based index of the element to remove.
+
+---
+
+### `array:clear()`
 Removes all elements from the array.
 
-`public void Clear()`
+---
+
+## Operators
+
+### Length
+
+`#a` returns the number of elements in the array.
+
+---
+
+## Example
+
+```lua
+local items = array.create(4)
+items:add("sword")
+items:add("shield")
+
+for i = 1, #items do
+    print(items:get(i))
+end
+
+items:remove_at(1)
+items:clear()
+```

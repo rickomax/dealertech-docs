@@ -1,255 +1,389 @@
----
-layout: default
-title: entity
-parent: API Reference
----
-
 # `entity`
 
-Represents entity properties, movement, state, and network variables to Lua scripts.
+`entity` represents a game entity instance and its Lua-exposed properties, movement, state and networked variables.
 
-**C# type:** `GameEntity`  
+It exposes helpers for:
+- Reading/writing string properties
+- Finding other entities
+- Querying and changing transform / movement data
+- Managing simple state-machine state (`entity_state`)
+- Reading/writing networked numbers, strings and vectors
+- Spawning, despawning and teleporting entities
+- Basic line-of-sight client checks
+- Playing sounds
 
-**Source:** `Assets/DealerTech/Runtime/Entities/GameEntity/GameEntityLua.cs`
+Most setter functions only have an effect when called on the server (they will do nothing when called on a non-server instance).
 
-## Members
+---
 
-### `indexer`
+## Property Access
 
-Gets or sets a property value by key.
+### `entity[key] : string|nil`
+Gets or sets a string property by key.
 
-`public string this[string key]`
+**Usage**
+```lua
+local cls = ent["classname"]
+ent["targetname"] = "door01"
+```
 
-### `get_unique_id`
+**Notes**
+- Returns `nil` if the key does not exist.
+- Values are stored as strings.
 
-Returns the entity unique ID.
+---
 
-`public int GetUniqueId()`
+## Identity
 
-### `get_velocity`
+### `entity:get_unique_id() -> integer`
+Returns the entity's unique id.
 
-Returns the current velocity of the entity.
+---
 
-`public LuaVector GetVelocity()`
+## Spawning / Lifecycle
 
-### `get_angle`
+### `entity.create(className) -> table`
+Spawns a new entity with the given class name and returns its Lua instance table.
 
-Returns the current yaw angle of the entity.
+**Parameters**
+- `className` (`string`)
 
-`public float GetAngle()`
+**Returns**
+- `table` — Lua instance table of the spawned entity, or `nil` if not running on the server.
 
-### `get_angles`
+You can also call the namespace directly:
 
-Returns the current angles of the entity.
+```lua
+local e = entity("monster_army")
+```
 
-`public LuaVector GetAngles()`
+---
 
-### `get_brush_size`
+### `entity:spawn()`
+Spawns this entity on the network.
 
-Returns the brush size of the entity.
+**Server-only**
+- Has no effect when not running on the server.
 
-`public LuaVector GetBrushSize()`
+---
 
-### `get_frame`
-
-Returns the current animation frame name of the entity.
-
-`public string GetFrame()`
-
-### `get_health`
-
-Returns the current health of the entity.
-
-`public float GetHealth()`
-
-### `get_model`
-
-Returns the current model filename of the entity.
-
-`public string GetModel()`
-
-### `get_origin`
-
-Returns the current origin of the entity.
-
-`public LuaVector GetOrigin()`
-
-### `get_state`
-
-Returns the current state index of the entity.
-
-`public string GetState()`
-
-### `is_grounded`
-
-Returns whether the entity is grounded.
-
-`public bool IsGrounded()`
-
-### `set_angle`
-
-Sets the entity yaw angle.
-
-`public void SetAngle(float value)`
-
-### `set_angles`
-
-Sets the entity pitch, yaw and roll angles.
-
-`public void SetAngles(LuaVector angles)`
-
-### `set_frame`
-
-Sets the entity animation frame.
-
-`public void SetFrame(string name)`
-
-### `set_skin`
-
-Sets the entity skin.
-
-`public void SetSkin(int skinIndex)`
-
-### `set_health`
-
-Sets the entity health.
-
-`public void SetHealth(float value)`
-
-### `set_label`
-
-Sets the debug label text displayed on the entity.
-
-`public void SetLabel(string label)`
-
-### `set_model`
-
-Sets the entity model.
-
-`public void SetModel(string filename)`
-
-### `set_move_type`
-
-Sets the entity move type.
-
-`public void SetMoveType(int value)`
-
-### `set_origin`
-
-Sets the entity origin.
-
-`public void SetOrigin(LuaVector origin)`
-
-### `set_size`
-
-Sets the entity axis-aligned bounding box.
-
-`public void SetSize(LuaVector min, LuaVector max)`
-
-### `set_solid`
-
-Sets the entity solid type.
-
-`public void SetSolid(int value)`
-
-### `set_state`
-
-Sets the entity state.
-
-`public void SetState(int value)`
-
-### `get_net_number`
-
-Returns the value of a networked number variable.
-
-`public float GetNetworkNumber(string key)`
-
-### `set_net_number`
-
-Sets the value of a networked number variable. Creates the variable if it does not already exist.
-
-`public void SetNetworkNumber(string key, float value)`
-
-### `get_net_string`
-
-Returns the value of a networked string variable.
-
-`public string GetNetworkString(string key)`
-
-### `set_net_string`
-
-Sets the value of a networked string variable. Creates the variable if it does not already exist.
-
-`public void SetNetworkString(string key, string value)`
-
-### `move`
-
-Moves the entity by the given velocity and sets its angles.
-
-`public void Move(LuaVector velocity, LuaVector angles)`
-
-### `check_client`
-
-Checks the next player in the list for line-of-sight visibility from this entity. Iterates through all connected players in a round-robin fashion.
-
-`public LuaValue CheckClient()`
-
-### `play_sound`
-
-Plays a sound at the entity position.
-
-`public void PlaySound(string filename, int channel, float volume, float attenuation)`
-
-### `parse_origin`
-
-Parses and returns the entity origin from its spawn properties.
-
-`public LuaVector ParseOrigin()`
-
-### `enable_test_flag`
-
-Enables the internal test flag on this entity.
-
-`public void EnableTestFlag()`
-
-### `create`
-
-Creates and spawns a new entity with the given class name.
-
-`public static GameEntity Create(string className)`
-
-### `get_entity_by_classname`
-
-Returns the first entity whose class name matches the given value.
-
-`public static GameEntity GetGameEntityByClassName(string className)`
-
-### `get_entity_by_unique_id`
-
-Returns the first entity whose unique id matches the given value.
-
-`public static GameEntity GetGameEntityByUniqueId(int uniqueId)`
-
-### `get_entity_by_targetname`
-
-Returns the first entity whose `targetname` property matches the given value.
-
-`public static GameEntity GetEntityByTargetName(string className)`
-
-### `despawn`
-
+### `entity:despawn()`
 Despawns and removes the entity from the network.
 
-`public virtual void Despawn()`
+**Server-only**
+- Has no effect when not running on the server.
 
-### `spawn`
+---
 
-Spawns the entity on the network.
+### `entity:enable_test_flag()`
+Enables an internal test flag on this entity. Used by gameplay diagnostics.
 
-`public virtual void Spawn()`
+---
 
-### `teleport`
+## Lookup
 
-Teleports the entity to the given origin and sets its angles.
+### `entity.get_entity_by_classname(className) -> entity|nil`
+Returns the first entity whose class name matches `className`.
 
-`public void Teleport(LuaVector origin, LuaVector angles)`
+**Parameters**
+- `className` (`string`)
+
+---
+
+### `entity.get_entity_by_unique_id(id) -> entity|nil`
+Returns the first entity whose unique id matches `id`.
+
+**Parameters**
+- `id` (`integer`)
+
+---
+
+### `entity.get_entity_by_targetname(targetName) -> entity|nil`
+Returns the first entity whose `targetname` property matches `targetName`.
+
+**Parameters**
+- `targetName` (`string`)
+
+---
+
+## Ownership
+
+### `entity:get_owner() -> table|nil`
+Returns the Lua instance table of the entity that owns this entity, or `nil` if no owner is set.
+
+### `entity:set_owner(owner)`
+Sets the entity that owns this entity.
+
+**Parameters**
+- `owner` (`entity|nil`) — Owner entity, or `nil` to clear ownership.
+
+**Server-only**
+
+---
+
+## Visibility / Targeting
+
+### `entity:check_client() -> table|nil`
+Cycles through connected players in round-robin fashion and returns the Lua instance table of the next player that is alive and visible from this entity (line-of-sight check). Returns `nil` if no player matches.
+
+**Server-only**
+- Returns `nil` when not running on the server.
+
+---
+
+## Angle / Orientation
+
+### `entity:get_angle() -> number`
+Returns the entity yaw angle, in degrees.
+
+### `entity:get_angles() -> vector`
+Returns the entity orientation angles (pitch, yaw, roll) as a vector.
+
+### `entity:set_angle(angle)`
+Sets the entity yaw angle.
+
+**Parameters**
+- `angle` (`number`) — Yaw angle in degrees.
+
+**Server-only**
+
+### `entity:set_angles(angles)`
+Sets the entity orientation angles.
+
+**Parameters**
+- `angles` (`vector`)
+
+**Server-only**
+
+---
+
+## Position / Size / Velocity
+
+### `entity:get_origin() -> vector`
+Returns the current world position.
+
+### `entity:set_origin(origin)`
+Sets the entity world position.
+
+**Parameters**
+- `origin` (`vector`)
+
+**Server-only**
+
+### `entity:get_velocity() -> vector`
+Returns the current velocity.
+
+### `entity:set_size(min, max)`
+Sets the entity axis-aligned bounding box.
+
+**Parameters**
+- `min` (`vector`) — Minimum corner.
+- `max` (`vector`) — Maximum corner.
+
+**Server-only**
+
+### `entity:get_brush_size() -> vector`
+Returns the brush size for BSP/brush entities.
+
+**Returns**
+- `vector` — Returns a zero vector if the entity solid type is not `solid.bsp`.
+
+### `entity:is_grounded() -> boolean`
+Returns whether the entity is currently grounded.
+
+### `entity:parse_origin() -> vector`
+Parses the entity origin from its raw spawn `"origin"` property and returns it as a vector.
+
+---
+
+## Movement
+
+### `entity:move(velocity, angles)`
+Moves the entity by the given velocity for one simulation step, and updates its angles.
+
+**Parameters**
+- `velocity` (`vector`) — Velocity to apply.
+- `angles` (`vector|nil`, default `nil`) — Optional new angles. If omitted, the current angles are kept.
+
+**Notes**
+- Has no effect when not running on the server.
+- Has no effect if the entity move type is `move_type.none` or velocity is zero.
+- For BSP-solid entities, the angles input is ignored.
+
+---
+
+### `entity:teleport(origin, angles)`
+Teleports the entity to the given world position and orientation.
+
+**Parameters**
+- `origin` (`vector`)
+- `angles` (`vector`)
+
+---
+
+### `entity:set_move_type(value)`
+Sets the entity move type.
+
+**Parameters**
+- `value` (`integer`) — A `move_type.*` constant.
+
+**Server-only**
+
+---
+
+### `entity:set_solid(value)`
+Sets the entity solid type.
+
+**Parameters**
+- `value` (`integer`) — A `solid.*` constant.
+
+**Server-only**
+
+---
+
+## Visuals
+
+### `entity:get_frame() -> string`
+Returns the current animation frame name.
+
+### `entity:set_frame(name)`
+Sets the entity animation frame.
+
+**Parameters**
+- `name` (`string`)
+
+### `entity:get_model() -> string`
+Returns the current MDL filename.
+
+### `entity:set_model(filename)`
+Sets the entity model.
+
+**Parameters**
+- `filename` (`string`)
+
+### `entity:set_skin(index)`
+Sets the entity skin.
+
+**Parameters**
+- `index` (`integer`)
+
+### `entity:set_label(label)`
+Sets the debug label text displayed on the entity.
+
+**Parameters**
+- `label` (`string`)
+
+---
+
+## Health
+
+### `entity:get_health() -> number`
+Returns the current health value.
+
+### `entity:set_health(value)`
+Sets the entity health.
+
+**Parameters**
+- `value` (`number`)
+
+**Server-only**
+
+---
+
+## State Machine
+
+### `entity:get_state() -> string`
+Returns the current state index, as a string.
+
+### `entity:set_state(stateIndex)`
+Assigns the current state index for this entity.
+
+**Parameters**
+- `stateIndex` (`integer`) — A state index returned by `entity_state.create`. Pass `-1` to clear the current state.
+
+**Behavior**
+- If the new state has a non-empty `frame`, the entity frame is updated immediately.
+- If the new state's `interval` is negative, it will not automatically advance.
+- Otherwise the state is scheduled to advance after `interval` seconds.
+
+---
+
+## Networked Variables
+
+### `entity:get_net_number(key) -> number`
+Returns the value of a networked number variable.
+
+**Parameters**
+- `key` (`string`)
+
+### `entity:set_net_number(key, value)`
+Sets the value of a networked number variable. Creates the variable if it does not already exist.
+
+**Parameters**
+- `key` (`string`)
+- `value` (`number`)
+
+**Server-only**
+
+### `entity:get_net_string(key) -> string`
+Returns the value of a networked string variable.
+
+### `entity:set_net_string(key, value)`
+Sets the value of a networked string variable. Creates the variable if it does not already exist.
+
+**Server-only**
+
+### `entity:get_net_vector(key) -> vector`
+Returns the value of a networked vector variable.
+
+### `entity:set_net_vector(key, value)`
+Sets the value of a networked vector variable. Creates the variable if it does not already exist.
+
+**Server-only**
+
+---
+
+## Sound
+
+### `entity:play_sound(filename, channel, volume, attenuation)`
+Plays a sound at the entity position.
+
+**Parameters**
+- `filename` (`string`) — Sound filename.
+- `channel` (`integer`) — Audio channel.
+- `volume` (`number`) — Volume in `[0, 1]`.
+- `attenuation` (`number`) — Distance attenuation factor.
+
+---
+
+## Examples
+
+### Read and write string properties
+```lua
+print(ent["classname"])
+ent["targetname"] = "enemy_01"
+```
+
+### Spawn an entity
+```lua
+local e = entity.create("monster_army")
+e:set_origin(vector.create(0, 0, 64))
+e:set_health(100)
+```
+
+### Set a state-machine state
+```lua
+local walk_01 = entity_state.create("walk_01", 0.1, function(self)
+    return "walk_02"   -- next state name
+end)
+
+ent:set_state(walk_01)
+```
+
+### Networked variables
+```lua
+self:set_net_number("ammo", 50)
+print(self:get_net_number("ammo"))
+
+self:set_net_vector("home", vector.create(0, 0, 64))
+```

@@ -1,39 +1,57 @@
----
-layout: default
-title: entity_state
-parent: API Reference
----
-
 # `entity_state`
 
-Represents a single named animation/logic state that an entity can switch to. Created from Lua via `entity_state.create` and registered in the global state table.
+`entity_state` represents a single state entry used by the engine's entity state machine.
 
-**C# type:** `LuaEntityState`  
+Each state defines:
+- The animation frame to use.
+- The duration of the state.
+- Optional Lua code to execute when the state runs.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaEntityState.cs`
+---
 
-## Members
+## Fields
 
-### `frame`
+### `frame` : `string`
+Name of the animation frame associated with this state.
 
-The animation frame name played while this state is active.
+---
 
-`public string Frame`
+### `interval` : `number`
+Duration (in seconds) that the entity remains in this state before advancing.
 
-### `interval`
+---
 
-The tick interval, in seconds, at which the state's code runs.
+### `code` : `LuaValue`
+Lua function or value executed when the state is processed.
 
-`public float Interval`
+Typically this is a function containing the logic to run during this state.
 
-### `code`
+---
 
-The Lua value (string or function) executed at each state tick. When a function is supplied, it may return the name of the next state to enter.
+## Creation
 
-`public LuaValue Code`
+### `entity_state.create(frame, interval, code) -> entity_state`
 
-### `create`
+Creates a new entity state instance.
 
-Registers a new state with the given frame, tick interval, and code, and returns its index.
+**Parameters**
+- `frame` (`string`) — Animation frame name.
+- `interval` (`number`) — Duration in seconds.
+- `code` (`LuaValue`) — Lua function or value to execute for this state.
 
-`public static int Create(string frame, float interval, LuaValue code)`
+**Returns**
+- `entity_state`
+
+---
+
+## Example
+
+```lua
+local state = entity_state.create(
+    "walk_01",
+    0.1,
+    function(self)
+        self:move_forward()
+    end
+)
+```

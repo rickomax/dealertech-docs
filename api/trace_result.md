@@ -1,51 +1,85 @@
----
-layout: default
-title: trace_result
-parent: API Reference
----
-
 # `trace_result`
 
-Represents the result of a physics trace query such as `physics.trace_line` or `physics.trace_hull`.
+`trace_result` represents the output of a physics trace operation.
 
-**C# type:** `LuaTraceResult`  
+It contains collision information and surface data for the first hit.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaTraceResult.cs`
+Instances are typically returned by:
+- `physics.trace_line`
+- `physics.trace_hull`
 
-## Members
+---
 
-### `start_solid`
+## Fields
 
-`true` if the trace started inside a solid volume.
+### `start_solid` : `boolean`
+`true` if the starting point of the trace was inside a blocking volume.
 
-`public bool StartSolid`
+---
 
-### `fraction`
+### `fraction` : `number`
+Normalized distance traveled before impact, in the range `[0, 1]`.
 
-The fraction of the trace's length, in the range [0, 1], at which the hit occurred. A value of `1` indicates the trace completed without hitting anything.
+- `1.0` → No hit (reached full distance)
+- `< 1.0` → Hit occurred before reaching the end
 
-`public float Fraction`
+---
 
-### `end_position`
+### `end_position` : `vector`
+Final position of the trace.
 
-The final position of the trace; equal to the hit point on collision, or the trace's end point otherwise.
+- If no collision occurred, this equals the trace end.
+- If a collision occurred, this is the impact point.
 
-`public LuaVector EndPosition`
+---
 
-### `normal`
+### `normal` : `vector`
+Surface normal at the impact point.
 
-The surface normal at the hit point, or a zero vector when nothing was hit.
+Zero vector if no collision occurred.
 
-`public LuaVector Normal`
+---
 
-### `distance`
+### `distance` : `number`
+World distance traveled before impact.
 
-The distance along the trace at which the hit occurred.
+---
 
-`public float Distance`
+### `hit_table` : `table|nil`
+Lua instance table of the entity that was hit, or `nil` if nothing was hit or the hit collider does not belong to an entity.
 
-### `hit_table`
+---
 
-The Lua instance table of the hit entity, or `nil` when nothing was hit.
+## Creation
 
-`public LuaTable HitTable`
+Trace results are created internally by the engine.
+
+```lua
+local tr = physics.trace_line(...)
+```
+
+---
+
+## Typical Usage
+
+```lua
+local tr = physics.trace_line(
+    self:get_origin(),
+    self:get_origin() + forward * 2048,
+    0,        -- collisionType
+    self,     -- ignore
+    false     -- debug
+)
+
+if tr.fraction < 1 then
+    print("Hit at:", tostring(tr.end_position))
+    print("Distance:", tr.distance)
+    if tr.hit_table ~= nil then
+        print("Hit entity:", tr.hit_table)
+    end
+end
+
+if tr.start_solid then
+    print("Started inside solid")
+end
+```
