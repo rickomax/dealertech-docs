@@ -3,7 +3,6 @@ layout: default
 title: physics
 parent: API Reference
 ---
-
 # `physics`
 
 `physics` provides Lua-exposed physics queries and trace operations.
@@ -102,50 +101,3 @@ This is typically used for hitscan, visibility checks, or simple probes.
 - `normal` (`vector`)
 - `distance` (`number`)
 - `hit_table` (`table|nil`)
-
----
-
-## Examples
-
-### Line trace (hitscan)
-```lua
-local origin = self:get_origin()
-local forward = vector.create(0, 0, 0)
-local _, _, _ = vector.make_vectors(self:get_angles(), vector.create(0, 0, 0), forward, vector.create(0, 0, 0))
-
-local tr = physics.trace_line(
-    origin,
-    origin + forward * 2048,
-    0,        -- collisionType
-    self,     -- ignore
-    false     -- debug
-)
-
-if tr.fraction < 1 then
-    print("Hit something at:", tostring(tr.end_position))
-end
-```
-
-### Hull trace (movement)
-```lua
-local tr = physics.trace_hull(
-    start_pos,
-    goal_pos,
-    vector.create(-16, -16, -24),
-    vector.create( 16,  16,  32),
-    0,
-    self,
-    false
-)
-
-self:set_origin(tr.end_position)
-```
-
-### Overlap query
-```lua
-local hits = physics.get_entities_in_radius(self:get_origin(), 256)
-for i = 1, #hits do
-    local ent = hits:get(i)
-    -- ...
-end
-```

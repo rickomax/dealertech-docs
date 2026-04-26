@@ -3,7 +3,6 @@ layout: default
 title: trace_result
 parent: API Reference
 ---
-
 # `trace_result`
 
 `trace_result` represents the output of a physics trace operation.
@@ -59,33 +58,3 @@ Lua instance table of the entity that was hit, or `nil` if nothing was hit or th
 ## Creation
 
 Trace results are created internally by the engine.
-
-```lua
-local tr = physics.trace_line(...)
-```
-
----
-
-## Typical Usage
-
-```lua
-local tr = physics.trace_line(
-    self:get_origin(),
-    self:get_origin() + forward * 2048,
-    0,        -- collisionType
-    self,     -- ignore
-    false     -- debug
-)
-
-if tr.fraction < 1 then
-    print("Hit at:", tostring(tr.end_position))
-    print("Distance:", tr.distance)
-    if tr.hit_table ~= nil then
-        print("Hit entity:", tr.hit_table)
-    end
-end
-
-if tr.start_solid then
-    print("Started inside solid")
-end
-```

@@ -3,7 +3,6 @@ layout: default
 title: font
 parent: API Reference
 ---
-
 # `font`
 
 `font` represents a font asset loaded from a file in the engine `fonts` folder.
@@ -25,22 +24,3 @@ Loads a font asset from the `fonts` folder.
 
 **Errors**
 - Throws if the font file cannot be found.
-
-You can also call the namespace directly:
-
-```lua
-local f = font("default.ttf")
-```
-
----
-
-## Example
-
-```lua
-local f = font.create("default.ttf")
-
-local panel = ui_panel.create()
-local label = ui_label.create(panel)
-label:set_font(f)
-label:set_text("Hello, world!")
-```

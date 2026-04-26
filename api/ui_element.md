@@ -3,7 +3,6 @@ layout: default
 title: ui_element
 parent: API Reference
 ---
-
 # `ui_element`
 
 `ui_element` is the base class shared by all UI elements exposed to Lua.
@@ -53,18 +52,3 @@ Centers this element horizontally inside the standard 320-unit reference width.
 Forces an immediate layout rebuild of this element and its content.
 
 Call after changing text or sizes if you depend on the new layout being applied immediately.
-
----
-
-## Example
-
-```lua
-local panel = ui_panel.create()
-local label = ui_label.create(panel)
-label:set_text("Click me")
-label:set_position(10, 20)
-label:set_selectable(function()
-    print("clicked")
-end, vector4.create(1, 1, 0, 1))
-panel:rebuild()
-```

@@ -3,7 +3,6 @@ layout: default
 title: lights
 parent: API Reference
 ---
-
 # `lights`
 
 `lights` provides Lua-exposed dynamic light spawning and BSP light style control.
@@ -57,22 +56,3 @@ Spawns a networked dynamic light.
 
 **Returns**
 - `light|nil` — The spawned light, or `nil` if not running on the server.
-
----
-
-## Example
-
-```lua
--- Flicker pattern for style 3
-lights.set_style(3, "mmnmmommommnonmmonqnmmo")
-
--- Spawn a torchlight attached to this entity
-local torch = lights.create_light(
-    self:get_origin(),
-    vector.create(1.0, 0.7, 0.3),
-    2.0,
-    256.0,
-    false,
-    self
-)
-```

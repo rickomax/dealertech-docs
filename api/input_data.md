@@ -3,7 +3,6 @@ layout: default
 title: input_data
 parent: API Reference
 ---
-
 # `input_data`
 
 `input_data` is a fixed-size float buffer used by the input system to pass raw input values between the engine and Lua.
@@ -37,21 +36,3 @@ The exact meaning of each slot is decided by your `read_input` implementation. A
 | 4     | Jump (held)          |
 | 5     | Fire (held)          |
 | ...   | game-specific        |
-
----
-
-## Example
-
-```lua
-function player.read_input(self, input_data)
-    input_data[0] = input.read_raw_float("<Keyboard>/w") - input.read_raw_float("<Keyboard>/s")
-    input_data[1] = input.read_raw_float("<Keyboard>/d") - input.read_raw_float("<Keyboard>/a")
-    input_data[4] = input.is_held("<Keyboard>/space")
-end
-
-function player.process_movement(self, input_data, in_move, out_move)
-    local fwd = input_data[0]
-    local side = input_data[1]
-    -- ...
-end
-```

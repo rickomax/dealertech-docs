@@ -3,7 +3,6 @@ layout: default
 title: move_type
 parent: API Reference
 ---
-
 # `move_type`
 
 `move_type` exposes the movement type constants used with `entity:set_move_type`.
@@ -40,15 +39,3 @@ Pushed movement, used by movers such as doors and platforms.
 
 ### `move_type.noclip` : `integer`
 Free movement that ignores all collisions.
-
----
-
-## Example
-
-```lua
--- Make this entity a tossed projectile
-self:set_move_type(move_type.toss)
-
--- Make a door
-self:set_move_type(move_type.push)
-```

@@ -3,7 +3,6 @@ layout: default
 title: input
 parent: API Reference
 ---
-
 # `input`
 
 `input` provides Lua-exposed access to the engine input system.
@@ -76,21 +75,3 @@ Returns `1` if the action was pressed during the current frame, `0` otherwise.
 
 ### `input.read_input_pressed(actionPath) -> number`  *(deprecated)*
 Returns `1` while the action is currently held down, `0` otherwise.
-
----
-
-## Example
-
-```lua
-input.bind("<Keyboard>/escape", "show_menu()")
-
-local mouseX = input.read_raw_float("<Mouse>/delta/x")
-
-if input.is_held("<Keyboard>/w") == 1 then
-    -- moving forward
-end
-
-if input.was_pressed("<Keyboard>/space") == 1 then
-    -- jump pressed this frame
-end
-```

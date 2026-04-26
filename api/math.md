@@ -3,7 +3,6 @@ layout: default
 title: math
 parent: API Reference
 ---
-
 # `math`
 
 `math` provides common mathematical constants and functions.
@@ -47,12 +46,6 @@ Returns a random value between `min` and `max`.
 
 ## Trigonometry
 
-### `math.sin(v) -> number`
-### `math.cos(v) -> number`
-### `math.tan(v) -> number`
-### `math.asin(v) -> number`
-### `math.acos(v) -> number`
-### `math.atan(v) -> number`
 ### `math.atan2(y, x) -> number`
 
 Standard trigonometric functions.
@@ -130,16 +123,3 @@ Loops `t` so it wraps around `length`.
 
 ### `math.pingpong(t, length) -> number`
 Returns a value that moves back and forth between `0` and `length`.
-
----
-
-## Example
-
-```lua
-local angle = 45 * math.deg2rad
-local s = math.sin(angle)
-
-local r = math.random_range(10, 20)
-
-local clamped = math.clamp(15, 0, 10)
-```

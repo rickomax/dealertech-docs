@@ -3,7 +3,6 @@ layout: default
 title: solid
 parent: API Reference
 ---
-
 # `solid`
 
 `solid` exposes the solid type constants used with `entity:set_solid`.
@@ -28,15 +27,3 @@ The entity uses a sliding axis-aligned bounding box for collision.
 
 ### `solid.bsp` : `integer`
 The entity uses BSP brush collision.
-
----
-
-## Example
-
-```lua
-self:set_solid(solid.bbox)
-self:set_size(vector.create(-16, -16, -24), vector.create(16, 16, 32))
-
--- Trigger volume
-trigger_ent:set_solid(solid.trigger)
-```

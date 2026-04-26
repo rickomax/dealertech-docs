@@ -3,7 +3,6 @@ layout: default
 title: ui_panel
 parent: API Reference
 ---
-
 # `ui_panel`
 
 `ui_panel` is a UI container element that holds child UI elements (`ui_label`, `ui_image`, `ui_input_field`, or other `ui_panel`s).
@@ -26,36 +25,9 @@ Creates a new UI panel.
 **Returns**
 - `ui_panel`
 
-You can also call the namespace directly:
-
-```lua
-local p = ui_panel(parent, true)
-```
-
 ---
 
 ## Behavior
 
 - Plain panels resize themselves to wrap their children when `rebuild()` is called.
 - Scrollable panels keep their outer size at `320 × 240` and grow their inner content container to wrap children.
-
----
-
-## Example
-
-```lua
-local root = ui_panel.create()
-root:set_position(10, 10)
-
-local label = ui_label.create(root)
-label:set_text("Hello")
-
-local list = ui_panel.create(root, true)   -- scrollable child panel
-for i = 1, 30 do
-    local row = ui_label.create(list)
-    row:set_text("Item " .. i)
-    row:set_position(0, (i - 1) * 16)
-end
-
-root:rebuild()
-```

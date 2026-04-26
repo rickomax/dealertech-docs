@@ -3,7 +3,6 @@ layout: default
 title: entity_state
 parent: API Reference
 ---
-
 # `entity_state`
 
 `entity_state` represents a single state entry used by the engine's entity state machine.
@@ -47,17 +46,3 @@ Creates a new entity state instance.
 
 **Returns**
 - `entity_state`
-
----
-
-## Example
-
-```lua
-local state = entity_state.create(
-    "walk_01",
-    0.1,
-    function(self)
-        self:move_forward()
-    end
-)
-```
