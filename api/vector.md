@@ -1,3 +1,9 @@
+---
+layout: default
+title: vector
+parent: API Reference
+---
+
 # `vector`
 
 `vector` represents a 3D vector with `x`, `y`, and `z` components.

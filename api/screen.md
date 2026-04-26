@@ -1,3 +1,9 @@
+---
+layout: default
+title: screen
+parent: API Reference
+---
+
 # `screen`
 
 `screen` provides Lua-exposed control over fullscreen visual effects.

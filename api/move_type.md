@@ -1,3 +1,9 @@
+---
+layout: default
+title: move_type
+parent: API Reference
+---
+
 # `move_type`
 
 `move_type` exposes the movement type constants used with `entity:set_move_type`.

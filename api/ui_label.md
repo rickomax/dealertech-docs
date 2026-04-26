@@ -1,3 +1,9 @@
+---
+layout: default
+title: ui_label
+parent: API Reference
+---
+
 # `ui_label`
 
 `ui_label` is a UI text element backed by TextMeshPro.

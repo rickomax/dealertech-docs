@@ -1,3 +1,9 @@
+---
+layout: default
+title: entity_state
+parent: API Reference
+---
+
 # `entity_state`
 
 `entity_state` represents a single state entry used by the engine's entity state machine.

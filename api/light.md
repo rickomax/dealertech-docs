@@ -1,3 +1,9 @@
+---
+layout: default
+title: light
+parent: API Reference
+---
+
 # `light`
 
 `light` represents a networked dynamic light spawned via `lights.create_light`.

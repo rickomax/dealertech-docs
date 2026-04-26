@@ -1,3 +1,9 @@
+---
+layout: default
+title: particles
+parent: API Reference
+---
+
 # `particles`
 
 `particles` provides Lua-exposed particle spawning.

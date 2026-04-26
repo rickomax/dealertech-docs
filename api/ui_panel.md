@@ -1,3 +1,9 @@
+---
+layout: default
+title: ui_panel
+parent: API Reference
+---
+
 # `ui_panel`
 
 `ui_panel` is a UI container element that holds child UI elements (`ui_label`, `ui_image`, `ui_input_field`, or other `ui_panel`s).

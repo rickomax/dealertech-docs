@@ -1,3 +1,9 @@
+---
+layout: default
+title: array
+parent: API Reference
+---
+
 # `array`
 
 `array` is a dynamic, 1-indexed container exposed to Lua.

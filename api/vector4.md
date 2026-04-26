@@ -1,3 +1,9 @@
+---
+layout: default
+title: vector4
+parent: API Reference
+---
+
 # `vector4`
 
 `vector4` represents a 4D vector with `x`, `y`, `z`, and `w` components.

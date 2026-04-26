@@ -1,3 +1,9 @@
+---
+layout: default
+title: solid
+parent: API Reference
+---
+
 # `solid`
 
 `solid` exposes the solid type constants used with `entity:set_solid`.

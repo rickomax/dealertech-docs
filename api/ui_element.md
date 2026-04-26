@@ -1,3 +1,9 @@
+---
+layout: default
+title: ui_element
+parent: API Reference
+---
+
 # `ui_element`
 
 `ui_element` is the base class shared by all UI elements exposed to Lua.
