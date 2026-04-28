@@ -41,6 +41,7 @@ Lua globals registered in `LuaInterface.SetupEnvironment` and refreshed each fra
 - `unload_ui` → `new LuaFunction(GameController.UnloadUI)`
 - `move_type` → `new LuaMoveType()`
 - `solid` → `new LuaSolid()`
+- `screen` → `new LuaScreen()`
 - `frame_time` → `NetworkController.Instance.DeltaTime`
 - `time` → `NetworkController.Instance.ServerTime` (refreshed each frame)
 - `me` → the Lua instance table of the local player (set via `LuaInterface.SetMe` after player spawn)

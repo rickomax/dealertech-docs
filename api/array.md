@@ -8,8 +8,6 @@ parent: API Reference
 `array` is a dynamic, 1-indexed container exposed to Lua.
 It stores arbitrary values and supports the `#` length operator.
 
-Most engine APIs that return a list of entities (such as `physics.get_entities_in_radius`) return an `array`.
-
 ---
 
 ## Creation

@@ -46,9 +46,28 @@ Returns a random value between `min` and `max`.
 
 ## Trigonometry
 
-### `math.atan2(y, x) -> number`
+All trigonometric functions take and return values in radians (use `math.deg2rad` / `math.rad2deg` to convert).
 
-Standard trigonometric functions.
+### `math.sin(v) -> number`
+Returns the sine of `v` (in radians).
+
+### `math.cos(v) -> number`
+Returns the cosine of `v` (in radians).
+
+### `math.tan(v) -> number`
+Returns the tangent of `v` (in radians).
+
+### `math.asin(v) -> number`
+Returns the arcsine of `v`, in radians.
+
+### `math.acos(v) -> number`
+Returns the arccosine of `v`, in radians.
+
+### `math.atan(v) -> number`
+Returns the arctangent of `v`, in radians.
+
+### `math.atan2(y, x) -> number`
+Returns the angle in radians whose tangent is `y / x`.
 
 ---
 

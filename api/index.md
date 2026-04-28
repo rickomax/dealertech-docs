@@ -29,8 +29,10 @@ All classes exposed to Lua scripts.
 | [`particles`](particles/) | Provides Lua access to the particle system. |
 | [`physics`](physics/) | Provides Lua-exposed physics queries and trace operations. |
 | [`player`](player/) | Represents player-specific Lua bindings for input, movement, camera and view model control. |
+| [`screen`](screen/) | Provides Lua-exposed control over fullscreen visual effects. |
 | [`solid`](solid/) | Integer constants identifying entity solid/collision types. |
 | [`trace_result`](trace_result/) | Represents the result of a physics trace query. |
+| [`ui_element`](ui_element/) | Base class shared by all UI elements exposed to Lua. |
 | [`ui_image`](ui_image/) | Exposes a raw image UI element to Lua. |
 | [`ui_input_field`](ui_input_field/) | Exposes a TextMeshPro single-line input field UI element to Lua. |
 | [`ui_label`](ui_label/) | Exposes a TextMeshPro text label UI element to Lua. |

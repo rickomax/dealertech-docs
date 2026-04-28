@@ -9,41 +9,37 @@ parent: API Reference
 
 The trace functions return a `trace_result` object describing the first hit (if any), including impact normal, end position, traveled distance and the hit entity's instance table.
 
-The overlap functions return an `array` of entity instance tables found inside a volume.
+The overlap functions return a 1-indexed Lua `table` of entity instance tables found inside a volume.
 
 ---
 
 ## Functions
 
-### `physics.get_entities_in_bounds(mins, maxs) -> array`
+### `physics.get_entities_in_bounds(mins, maxs, debug) -> table`
 
-Returns the entities found inside an axis-aligned bounding box.
+Returns the entities whose colliders overlap an axis-aligned bounding volume.
 
 **Parameters**
 - `mins` (`vector`) — Minimum corner in world coordinates
 - `maxs` (`vector`) — Maximum corner in world coordinates
+- `debug` (`boolean`, default `false`) — When `true`, draws a debug wireframe of the volume
 
 **Returns**
-- `array` — Each element is the Lua instance table of an entity whose collider intersects the volume.
-
-**Notes**
-- The returned array is reused between calls. Copy the values you need before calling another `physics` function.
+- `table` — A 1-indexed table where each value is the Lua instance table of an entity intersecting the volume.
 
 ---
 
-### `physics.get_entities_in_radius(origin, radius) -> array`
+### `physics.get_entities_in_radius(origin, radius, debug) -> table`
 
-Returns the entities found inside a sphere.
+Returns the entities whose colliders overlap a sphere.
 
 **Parameters**
 - `origin` (`vector`) — Sphere center in world coordinates
 - `radius` (`number`) — Sphere radius
+- `debug` (`boolean`, default `false`) — When `true`, draws a debug wireframe of the sphere
 
 **Returns**
-- `array` — Each element is the Lua instance table of an entity whose collider intersects the sphere.
-
-**Notes**
-- The returned array is reused between calls. Copy the values you need before calling another `physics` function.
+- `table` — A 1-indexed table where each value is the Lua instance table of an entity intersecting the sphere.
 
 ---
 

@@ -41,11 +41,13 @@ Returns the entity's unique id.
 
 ## Spawning / Lifecycle
 
-### `entity.create(className) -> table`
+### `entity.create(className, origin, angles) -> table`
 Spawns a new entity with the given class name and returns its Lua instance table.
 
 **Parameters**
-- `className` (`string`)
+- `className` (`string`) — The entity class name.
+- `origin` (`vector|nil`, default zero vector) — Initial world position.
+- `angles` (`vector|nil`, default zero vector) — Initial pitch, yaw and roll angles.
 
 **Returns**
 - `table` — Lua instance table of the spawned entity, or `nil` if not running on the server.
@@ -234,6 +236,19 @@ Sets the entity solid type.
 
 ---
 
+### `entity:get_yaw_speed() -> number`
+Returns the entity yaw rotation speed, in degrees per second.
+
+### `entity:set_yaw_speed(speed)`
+Sets the entity yaw rotation speed.
+
+**Parameters**
+- `speed` (`number`) — Yaw speed in degrees per second.
+
+**Server-only**
+
+---
+
 ## Visuals
 
 ### `entity:get_frame() -> string`
@@ -331,6 +346,21 @@ Returns the value of a networked vector variable.
 
 ### `entity:set_net_vector(key, value)`
 Sets the value of a networked vector variable. Creates the variable if it does not already exist.
+
+**Server-only**
+
+### `entity:get_net_entity(key) -> entity|nil`
+Returns the entity referenced by a networked entity variable, or `nil` if the key does not exist or the referenced entity could not be found.
+
+**Parameters**
+- `key` (`string`)
+
+### `entity:set_net_entity(key, value)`
+Sets the entity referenced by a networked entity variable. Creates the variable if it does not already exist. Pass `nil` to clear the reference.
+
+**Parameters**
+- `key` (`string`)
+- `value` (`entity|nil`)
 
 **Server-only**
 
