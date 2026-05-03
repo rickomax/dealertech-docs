@@ -16,8 +16,12 @@ Each state defines:
 
 ## Fields
 
-### `frame` : `string`
-Name of the animation frame associated with this state.
+### `frame` : `string|number`
+Animation frame applied when the state begins.
+
+Accepts either:
+- a `string` — the frame name as defined in the entity's model, or
+- a `number` — a 1-based frame index.
 
 ---
 
@@ -40,7 +44,7 @@ Typically this is a function containing the logic to run during this state.
 Creates a new entity state instance.
 
 **Parameters**
-- `frame` (`string`) — Animation frame name.
+- `frame` (`string|number`) — Animation frame name, or a 1-based frame index.
 - `interval` (`number`) — Duration in seconds.
 - `code` (`LuaValue`) — Lua function or value to execute for this state.
 
