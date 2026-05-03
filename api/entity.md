@@ -62,8 +62,14 @@ Spawns this entity on the network.
 
 ---
 
-### `entity:despawn()`
-Despawns and removes the entity from the network.
+### `entity:despawn(delay)`
+Despawns and removes the entity from the network, optionally after a delay.
+
+**Parameters**
+- `delay` (`number|nil`, default `0`) — Delay in seconds before despawn. `0` or negative despawns immediately.
+
+**Returns**
+- `boolean` — `true` if a delayed despawn was scheduled, `false` if despawned immediately or the call was ignored.
 
 **Server-only**
 - Has no effect when not running on the server.
@@ -216,6 +222,18 @@ Teleports the entity to the given world position and orientation.
 
 ---
 
+### `entity:add_force_velocity(force)`
+Applies an instantaneous velocity change to the entity's rigid body.
+
+**Parameters**
+- `force` (`vector`) — Velocity change to add, in world coordinates.
+
+**Notes**
+- Has no effect when not running on the server.
+- Has no effect unless the entity move type is `move_type.physics`.
+
+---
+
 ### `entity:set_move_type(value)`
 Sets the entity move type.
 
@@ -251,14 +269,16 @@ Sets the entity yaw rotation speed.
 
 ## Visuals
 
-### `entity:get_frame() -> string`
-Returns the current animation frame name.
+### `entity:get_frame_index() -> integer`
+Returns the current animation frame index.
 
-### `entity:set_frame(name)`
+The returned index is 1-based, or `0` if no frame is set.
+
+### `entity:set_frame(value)`
 Sets the entity animation frame.
 
 **Parameters**
-- `name` (`string`)
+- `value` (`string|number`) — Frame name (for models with named frames) or 1-based frame index.
 
 ### `entity:get_model() -> string`
 Returns the current MDL filename.
