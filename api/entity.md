@@ -54,8 +54,14 @@ Spawns a new entity with the given class name and returns its Lua instance table
 
 ---
 
-### `entity:spawn()`
-Spawns this entity on the network.
+### `entity:spawn(delay)`
+Spawns this entity on the network, optionally after a delay.
+
+**Parameters**
+- `delay` (`number|nil`, default `0`) — Delay in seconds before spawn. `0` or negative spawns immediately.
+
+**Returns**
+- `boolean` — `true` if a delayed spawn was scheduled, `false` if spawned immediately or the call was ignored.
 
 **Server-only**
 - Has no effect when not running on the server.
@@ -289,17 +295,14 @@ Sets the entity model.
 **Parameters**
 - `filename` (`string`)
 
+### `entity:get_skin() -> integer`
+Returns the entity's current 1-based skin index.
+
 ### `entity:set_skin(index)`
 Sets the entity skin.
 
 **Parameters**
-- `index` (`integer`)
-
-### `entity:set_label(label)`
-Sets the debug label text displayed on the entity.
-
-**Parameters**
-- `label` (`string`)
+- `index` (`integer`) — 1-based skin index.
 
 ---
 
@@ -366,6 +369,24 @@ Returns the value of a networked vector variable.
 
 ### `entity:set_net_vector(key, value)`
 Sets the value of a networked vector variable. Creates the variable if it does not already exist.
+
+**Server-only**
+
+### `entity:get_net_table(key) -> any`
+Returns the value of a networked table variable. The stored Lua source string is deserialized back into a Lua value.
+
+**Parameters**
+- `key` (`string`)
+
+**Returns**
+- The deserialized Lua value, or `nil` if the key does not exist.
+
+### `entity:set_net_table(key, value)`
+Sets the value of a networked table variable. The value is serialized to a Lua source string and stored in the underlying networked string slot. Creates the variable if it does not already exist.
+
+**Parameters**
+- `key` (`string`)
+- `value` (`any`) — Tables and primitives are supported. Functions, userdata and shared/cyclic references follow the engine's serializer rules.
 
 **Server-only**
 
