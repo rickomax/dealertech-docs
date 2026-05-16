@@ -12,6 +12,7 @@ Lua globals registered in `LuaInterface.SetupEnvironment` and refreshed each fra
 
 - `load_bsp` → `new LuaFunction(BSPLoader.LoadBSP)`
 - `load_mdl` → `new LuaFunction(MDLLoader.LoadMDL)`
+- `load_spr` → `new LuaFunction(SPRLoader.LoadSPR)`
 - `load_wav` → `new LuaFunction(WAVLoader.LoadWAV)`
 - `load_png` → `new LuaFunction(PNGLoader.LoadPNG)`
 - `load_pfx` → `new LuaFunction(PFXLoader.LoadPFX)`
@@ -19,16 +20,17 @@ Lua globals registered in `LuaInterface.SetupEnvironment` and refreshed each fra
 - `connect` → `new LuaFunction(NetworkController.Connect)`
 - `run` → `new LuaFunction(RunScript)`
 - `quit_game` → `new LuaFunction(GameController.Quit)`
+- `game` → `LuaGame.Instance` (networked game session state)
 - `config` → `new LuaConfig()`
 - `bsp` → `new LuaBSP()`
 - `entity` → `new GameObject("DummyGameEntity").AddComponent<GameEntity>()`
+- `light_source` → `<DummyGameEntity>.AddComponent<GameLight>()`
 - `input` → `new LuaInput()`
 - `math` → `new LuaMath()`
 - `vector` → `new LuaVector()`
 - `vector4` → `new LuaVector4()`
 - `physics` → `new LuaPhysics()`
 - `particles` → `new LuaParticles()`
-- `lights` → `new LuaLights()`
 - `input_data` → `new LuaInputData()`
 - `movement_data` → `new LuaMovementData()`
 - `entity_state` → `new LuaEntityState()`

@@ -31,8 +31,8 @@ Tossed projectile movement affected by gravity.
 ### `move_type.flymissile` : `integer`
 Flying projectile movement that ignores gravity.
 
-### `move_type.bounce` : `integer`
-Bouncing movement that reflects off surfaces.
+### `move_type.physics` : `integer`
+Physics-controlled movement. Required to use `entity:add_force_velocity`.
 
 ### `move_type.push` : `integer`
 Pushed movement, used by movers such as doors and platforms.

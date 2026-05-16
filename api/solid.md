@@ -27,3 +27,6 @@ The entity uses a sliding axis-aligned bounding box for collision.
 
 ### `solid.bsp` : `integer`
 The entity uses BSP brush collision.
+
+### `solid.nonbsp` : `integer`
+The entity collides with BSP only.

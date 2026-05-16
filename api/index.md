@@ -17,11 +17,11 @@ All classes exposed to Lua scripts.
 | [`entity`](entity/) | Represents entity properties, movement, state, and network variables to Lua scripts. |
 | [`entity_state`](entity_state/) | Represents a single named animation/logic state that an entity can switch to. |
 | [`font`](font/) | Represents a loaded TextMeshPro font asset used by `ui_label` and `ui_input_field`. |
+| [`game`](game/) | Provides Lua access to the global game session state (skill level and game type). |
 | [`globals`](globals/) | Lua globals registered in `LuaInterface.SetupEnvironment`. |
 | [`input`](input/) | Provides access to the input system. |
 | [`input_data`](input_data/) | A fixed-size float buffer used by the input system to pass raw input values. |
-| [`light`](light/) | Represents a networked point light attached to the world or to a parent entity. |
-| [`lights`](lights/) | Provides Lua access to the global light style table and helpers for spawning lights. |
+| [`light_source`](light_source/) | Represents a networked dynamic light and provides BSP light style helpers. |
 | [`math`](math/) | Exposes common numeric helpers, trigonometry, and random-number utilities to Lua. |
 | [`move_type`](move_type/) | Integer constants identifying entity movement types. |
 | [`movement`](movement/) | Output movement written by the Lua `process_movement` function each tick. |
