@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity.create(className, origin, angles) -> table`"
+title: "entity.create(className, origin, angles) -> table"
 parent: entity
 grand_parent: API Reference
 nav_order: 5
@@ -18,4 +18,3 @@ Spawns a new entity with the given class name and returns its Lua instance table
 **Returns**
 - `table` — Lua instance table of the spawned entity, or `nil` if not running on the server.
 
----

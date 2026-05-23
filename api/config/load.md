@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`config.load()`"
+title: "config.load()"
 parent: config
 grand_parent: API Reference
 nav_order: 1
@@ -10,4 +10,3 @@ nav_order: 1
 
 Loads the configuration values from disk into memory.
 
----

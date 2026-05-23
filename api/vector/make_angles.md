@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.make_angles(right, forward, up) -> vector`"
+title: "vector.make_angles(right, forward, up) -> vector"
 parent: vector
 grand_parent: API Reference
 nav_order: 17
@@ -18,4 +18,3 @@ Builds Euler angles (pitch / yaw / roll) from three basis vectors.
 **Returns**
 - `vector` — The orientation as pitch / yaw / roll.
 
----

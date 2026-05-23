@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_input_field.create(panel) -> ui_input_field`"
+title: "ui_input_field.create(panel) -> ui_input_field"
 parent: ui_input_field
 grand_parent: API Reference
 nav_order: 1
@@ -16,6 +16,3 @@ Creates a new input field element and adds it to the given panel.
 **Returns**
 - `ui_input_field`
 
----
-
-## Functions

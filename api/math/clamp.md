@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`math.clamp(v, min, max) -> number`"
+title: "math.clamp(v, min, max) -> number"
 parent: math
 grand_parent: API Reference
 nav_order: 25
@@ -10,6 +10,3 @@ nav_order: 25
 
 Clamps `v` between `min` and `max`.
 
----
-
-## Interpolation

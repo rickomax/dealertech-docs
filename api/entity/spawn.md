@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:spawn(delay)`"
+title: "entity:spawn(delay)"
 parent: entity
 grand_parent: API Reference
 nav_order: 6
@@ -19,4 +19,3 @@ Spawns this entity on the network, optionally after a delay.
 **Server-only**
 - Has no effect when not running on the server.
 
----

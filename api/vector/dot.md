@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.dot(a, b) -> number`"
+title: "vector.dot(a, b) -> number"
 parent: vector
 grand_parent: API Reference
 nav_order: 13
@@ -16,4 +16,3 @@ Returns `1` if the vectors point the same way, `0` if perpendicular, `-1` if opp
 - `a` (`vector`)
 - `b` (`vector`)
 
----

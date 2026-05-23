@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_label.create(panel) -> ui_label`"
+title: "ui_label.create(panel) -> ui_label"
 parent: ui_label
 grand_parent: API Reference
 nav_order: 1
@@ -16,6 +16,3 @@ Creates a new label and adds it to the given panel.
 **Returns**
 - `ui_label`
 
----
-
-## Functions

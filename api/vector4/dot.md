@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector4.dot(a, b) -> number`"
+title: "vector4.dot(a, b) -> number"
 parent: vector4
 grand_parent: API Reference
 nav_order: 9
@@ -14,4 +14,3 @@ Returns the dot product of `a` and `b`.
 - `a` (`vector4`)
 - `b` (`vector4`)
 
----

@@ -9,3 +9,4 @@ nav_order: 6
 # Length
 
 `#a` returns the number of elements in the array.
+

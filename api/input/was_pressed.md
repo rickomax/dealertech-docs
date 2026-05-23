@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`input.was_pressed(path) -> number`"
+title: "input.was_pressed(path) -> number"
 parent: input
 grand_parent: API Reference
 nav_order: 4
@@ -18,8 +18,5 @@ The previous value is tracked internally per `path`, so this should be polled on
 **Returns**
 - `number` — `1` on the press transition, `0` otherwise.
 
----
 
-## Deprecated
 
-The following functions read from named input actions defined in the engine's input asset. They are deprecated in favor of the raw-control functions above.

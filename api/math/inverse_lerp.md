@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`math.inverse_lerp(a, b, v) -> number`"
+title: "math.inverse_lerp(a, b, v) -> number"
 parent: math
 grand_parent: API Reference
 nav_order: 28
@@ -10,6 +10,3 @@ nav_order: 28
 
 Returns the interpolation factor `t` such that `lerp(a, b, t) = v`.
 
----
-
-## Repetition

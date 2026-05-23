@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`physics.trace_hull(start, end, mins, maxs, collisionType, ignore, debug) -> trace_result`"
+title: "physics.trace_hull(start, end, mins, maxs, collisionType, ignore, debug) -> trace_result"
 parent: physics
 grand_parent: API Reference
 nav_order: 3
@@ -34,4 +34,3 @@ This is typically used for character / entity movement where the object has volu
 - `distance` (`number`) — World distance traveled before impact
 - `hit_table` (`table|nil`) — Lua instance table of the hit entity (when the hit collider belongs to an entity)
 
----

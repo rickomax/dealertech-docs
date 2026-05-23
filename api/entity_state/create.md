@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity_state.create(frame, interval, code) -> integer`"
+title: "entity_state.create(frame, interval, code) -> integer"
 parent: entity_state
 grand_parent: API Reference
 nav_order: 4
@@ -17,3 +17,4 @@ Creates a new entity state and returns its state index. The returned index is us
 
 **Returns**
 - `integer` — The state index.
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`bsp.point_contents(pos) -> integer`"
+title: "bsp.point_contents(pos) -> integer"
 parent: bsp
 grand_parent: API Reference
 nav_order: 2
@@ -16,4 +16,3 @@ Returns the contents value of the BSP leaf containing the given point.
 **Returns**
 - `integer` — Contents id at that point.
 
----

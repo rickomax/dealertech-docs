@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`game.set_name(value)`"
+title: "game.set_name(value)"
 parent: game
 grand_parent: API Reference
 nav_order: 5
@@ -16,4 +16,3 @@ Sets the current game name.
 **Server-only**
 - Has no effect when not running on the server.
 
----

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`physics.trace_line(start, end, collisionType, ignore, debug) -> trace_result`"
+title: "physics.trace_line(start, end, collisionType, ignore, debug) -> trace_result"
 parent: physics
 grand_parent: API Reference
 nav_order: 4
@@ -30,3 +30,4 @@ This is typically used for hitscan, visibility checks, or simple probes.
 - `normal` (`vector`)
 - `distance` (`number`)
 - `hit_table` (`table|nil`)
+

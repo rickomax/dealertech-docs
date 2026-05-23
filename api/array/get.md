@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`array:get(index) -> any`"
+title: "array:get(index) -> any"
 parent: array
 grand_parent: API Reference
 nav_order: 3
@@ -16,4 +16,3 @@ Returns the value at a 1-based index.
 **Returns**
 - `any` — The value stored at `index`.
 
----

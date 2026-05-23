@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.length(a) -> number`"
+title: "vector.length(a) -> number"
 parent: vector
 grand_parent: API Reference
 nav_order: 15
@@ -13,4 +13,3 @@ Returns the magnitude (length) of `a`.
 **Parameters**
 - `a` (`vector`)
 
----

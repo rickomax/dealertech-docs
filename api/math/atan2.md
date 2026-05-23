@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`math.atan2(y, x) -> number`"
+title: "math.atan2(y, x) -> number"
 parent: math
 grand_parent: API Reference
 nav_order: 12
@@ -10,6 +10,3 @@ nav_order: 12
 
 Returns the angle in radians whose tangent is `y / x`.
 
----
-
-## Basic Math

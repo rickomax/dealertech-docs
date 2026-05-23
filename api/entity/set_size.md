@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_size(min, max)`"
+title: "entity:set_size(min, max)"
 parent: entity
 grand_parent: API Reference
 nav_order: 23
@@ -15,3 +15,4 @@ Sets the entity axis-aligned bounding box.
 - `max` (`vector`) — Maximum corner.
 
 **Server-only**
+

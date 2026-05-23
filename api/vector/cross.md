@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.cross(a, b) -> vector`"
+title: "vector.cross(a, b) -> vector"
 parent: vector
 grand_parent: API Reference
 nav_order: 14
@@ -14,4 +14,3 @@ Returns the cross product of `a` and `b`. The result is perpendicular to both in
 - `a` (`vector`)
 - `b` (`vector`)
 
----

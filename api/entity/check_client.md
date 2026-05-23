@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:check_client() -> table|nil`"
+title: "entity:check_client() -> table|nil"
 parent: entity
 grand_parent: API Reference
 nav_order: 14
@@ -13,6 +13,3 @@ Cycles through connected players in round-robin fashion and returns the Lua inst
 **Server-only**
 - Returns `nil` when not running on the server.
 
----
-
-## Angle / Orientation

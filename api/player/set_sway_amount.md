@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`player:set_sway_amount(value)`"
+title: "player:set_sway_amount(value)"
 parent: player
 grand_parent: API Reference
 nav_order: 14
@@ -15,4 +15,3 @@ Sets the weapon sway amount for this player.
 
 **Server-only**
 
----

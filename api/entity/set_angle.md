@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_angle(angle)`"
+title: "entity:set_angle(angle)"
 parent: entity
 grand_parent: API Reference
 nav_order: 17
@@ -14,3 +14,4 @@ Sets the entity yaw angle.
 - `angle` (`number`) — Yaw angle in degrees.
 
 **Server-only**
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`array:clear()`"
+title: "array:clear()"
 parent: array
 grand_parent: API Reference
 nav_order: 5
@@ -10,6 +10,3 @@ nav_order: 5
 
 Removes all elements from the array.
 
----
-
-## Operators

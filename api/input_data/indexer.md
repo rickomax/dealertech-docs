@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`input_data[index]` : `number`"
+title: "input_data[index] : number"
 parent: input_data
 grand_parent: API Reference
 nav_order: 1
@@ -28,3 +28,4 @@ The exact meaning of each slot is decided by your `read_input` implementation. A
 | 4     | Jump (held)          |
 | 5     | Fire (held)          |
 | ...   | game-specific        |
+

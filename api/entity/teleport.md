@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:teleport(origin, angles)`"
+title: "entity:teleport(origin, angles)"
 parent: entity
 grand_parent: API Reference
 nav_order: 28
@@ -14,4 +14,3 @@ Teleports the entity to the given world position and orientation.
 - `origin` (`vector`)
 - `angles` (`vector`)
 
----

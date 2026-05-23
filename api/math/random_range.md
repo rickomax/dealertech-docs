@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`math.random_range(min, max) -> number`"
+title: "math.random_range(min, max) -> number"
 parent: math
 grand_parent: API Reference
 nav_order: 5
@@ -14,8 +14,5 @@ Returns a random value between `min` and `max`.
 - `min` (`number`)
 - `max` (`number`)
 
----
 
-## Trigonometry
 
-All trigonometric functions take and return values in radians (use `math.deg2rad` / `math.rad2deg` to convert).

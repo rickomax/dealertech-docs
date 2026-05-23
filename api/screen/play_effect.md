@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`screen.play_effect(filename, duration)`"
+title: "screen.play_effect(filename, duration)"
 parent: screen
 grand_parent: API Reference
 nav_order: 1
@@ -14,4 +14,3 @@ Plays a fullscreen visual effect for the given duration.
 - `filename` (`string`) — The screen effect filename.
 - `duration` (`number`) — Effect duration, in seconds.
 
----

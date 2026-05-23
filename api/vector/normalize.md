@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.normalize(a) -> vector`"
+title: "vector.normalize(a) -> vector"
 parent: vector
 grand_parent: API Reference
 nav_order: 8
@@ -13,4 +13,3 @@ Returns `a` scaled to a magnitude of `1`.
 **Parameters**
 - `a` (`vector`)
 
----

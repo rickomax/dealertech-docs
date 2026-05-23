@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`player.process_actions(self, input_data)`"
+title: "player.process_actions(self, input_data)"
 parent: player
 grand_parent: API Reference
 nav_order: 18
@@ -14,4 +14,3 @@ Processes button-style actions (jump, fire, weapon switch, etc.) using the value
 - `self` (`table`) — Player instance table.
 - `input_data` (`input_data`)
 
----

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`game.get_name() -> string`"
+title: "game.get_name() -> string"
 parent: game
 grand_parent: API Reference
 nav_order: 6
@@ -12,3 +12,4 @@ Returns the current game name.
 
 **Returns**
 - `string` — The current game name.
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.make_vectors(angles, right, forward, up)`"
+title: "vector.make_vectors(angles, right, forward, up)"
 parent: vector
 grand_parent: API Reference
 nav_order: 18
@@ -18,4 +18,3 @@ Decomposes an angles vector into right, forward and up basis vectors.
 
 The output vectors are passed by reference and overwritten with the resulting basis vectors.
 
----

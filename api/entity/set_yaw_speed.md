@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_yaw_speed(speed)`"
+title: "entity:set_yaw_speed(speed)"
 parent: entity
 grand_parent: API Reference
 nav_order: 35
@@ -15,6 +15,3 @@ Sets the entity yaw rotation speed.
 
 **Server-only**
 
----
-
-## Visuals

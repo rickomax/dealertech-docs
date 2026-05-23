@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_image:set_size(width, height)`"
+title: "ui_image:set_size(width, height)"
 parent: ui_image
 grand_parent: API Reference
 nav_order: 3
@@ -14,4 +14,3 @@ Sets the rendered size of the image, in UI units.
 - `width` (`number`) — Width in UI units.
 - `height` (`number`) — Height in UI units.
 
----

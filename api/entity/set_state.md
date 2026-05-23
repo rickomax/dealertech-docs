@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_state(stateIndex)`"
+title: "entity:set_state(stateIndex)"
 parent: entity
 grand_parent: API Reference
 nav_order: 50
@@ -18,6 +18,3 @@ Assigns the current state index for this entity.
 - If the new state's `interval` is negative, it will not automatically advance.
 - Otherwise the state is scheduled to advance after `interval` seconds.
 
----
-
-## Networked Variables

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector4.project(a, b) -> vector4`"
+title: "vector4.project(a, b) -> vector4"
 parent: vector4
 grand_parent: API Reference
 nav_order: 7
@@ -14,4 +14,3 @@ Projects vector `a` onto vector `b`.
 - `a` (`vector4`)
 - `b` (`vector4`)
 
----

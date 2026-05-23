@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity.register_type(name, type)`"
+title: "entity.register_type(name, type)"
 parent: entity
 grand_parent: API Reference
 nav_order: 2
@@ -23,6 +23,3 @@ returning it as a string.
 - The keys `origin`, `angle` and `spawnflags` are pre-registered as `vector`,
   `float` and `float` respectively.
 
----
-
-## Identity

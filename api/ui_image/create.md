@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_image.create(panel) -> ui_image`"
+title: "ui_image.create(panel) -> ui_image"
 parent: ui_image
 grand_parent: API Reference
 nav_order: 1
@@ -16,6 +16,3 @@ Creates a new image element and adds it to the given panel.
 **Returns**
 - `ui_image`
 
----
-
-## Functions

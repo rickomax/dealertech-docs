@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`font.create(filename, image, glyph_size) -> font`"
+title: "font.create(filename, image, glyph_size) -> font"
 parent: font
 grand_parent: API Reference
 nav_order: 1
@@ -21,3 +21,4 @@ Loads a font asset from a TTF/OTF file in the `fonts` folder, or builds a bitmap
 **Errors**
 - Throws if the font file cannot be found.
 - Throws if neither a valid font filename nor a valid bitmap image is provided.
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_angles(angles)`"
+title: "entity:set_angles(angles)"
 parent: entity
 grand_parent: API Reference
 nav_order: 18
@@ -15,6 +15,3 @@ Sets the entity orientation angles.
 
 **Server-only**
 
----
-
-## Position / Size / Velocity

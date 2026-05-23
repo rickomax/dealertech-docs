@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_move_type(value)`"
+title: "entity:set_move_type(value)"
 parent: entity
 grand_parent: API Reference
 nav_order: 31
@@ -15,4 +15,3 @@ Sets the entity move type.
 
 **Server-only**
 
----

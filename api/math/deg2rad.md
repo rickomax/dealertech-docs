@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`math.deg2rad : number`"
+title: "math.deg2rad : number"
 parent: math
 grand_parent: API Reference
 nav_order: 2
@@ -10,4 +10,3 @@ nav_order: 2
 
 Conversion factor from degrees to radians.
 
----

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_solid(value)`"
+title: "entity:set_solid(value)"
 parent: entity
 grand_parent: API Reference
 nav_order: 33
@@ -15,4 +15,3 @@ Sets the entity solid type.
 
 **Server-only**
 
----

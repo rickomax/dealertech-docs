@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector4.create(x, y, z, w) -> vector4`"
+title: "vector4.create(x, y, z, w) -> vector4"
 parent: vector4
 grand_parent: API Reference
 nav_order: 5
@@ -19,6 +19,3 @@ Creates a new 4D vector.
 **Returns**
 - `vector4`
 
----
-
-## Vector Operations

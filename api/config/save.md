@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`config.save()`"
+title: "config.save()"
 parent: config
 grand_parent: API Reference
 nav_order: 2
@@ -10,4 +10,3 @@ nav_order: 2
 
 Saves the in-memory configuration values to disk.
 
----

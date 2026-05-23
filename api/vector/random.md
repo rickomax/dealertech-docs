@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.random() -> vector`"
+title: "vector.random() -> vector"
 parent: vector
 grand_parent: API Reference
 nav_order: 7
@@ -10,6 +10,3 @@ nav_order: 7
 
 Returns a random vector with magnitude `1` or less, uniformly distributed inside the unit sphere.
 
----
-
-## Vector Operations

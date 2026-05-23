@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:get_net_entity(key) -> entity|nil`"
+title: "entity:get_net_entity(key) -> entity|nil"
 parent: entity
 grand_parent: API Reference
 nav_order: 59
@@ -12,3 +12,4 @@ Returns the entity referenced by a networked entity variable, or `nil` if the ke
 
 **Parameters**
 - `key` (`string`)
+

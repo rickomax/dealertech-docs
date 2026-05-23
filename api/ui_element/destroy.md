@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_element:destroy()`"
+title: "ui_element:destroy()"
 parent: ui_element
 grand_parent: API Reference
 nav_order: 3
@@ -10,4 +10,3 @@ nav_order: 3
 
 Destroys this element and removes it from the scene.
 
----

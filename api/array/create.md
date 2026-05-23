@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`array.create() -> array`"
+title: "array.create() -> array"
 parent: array
 grand_parent: API Reference
 nav_order: 1
@@ -13,6 +13,3 @@ Creates a new empty array.
 **Returns**
 - `array`
 
----
-
-## Functions

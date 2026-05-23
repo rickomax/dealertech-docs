@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.project_on_plane(a, b) -> vector`"
+title: "vector.project_on_plane(a, b) -> vector"
 parent: vector
 grand_parent: API Reference
 nav_order: 10
@@ -14,4 +14,3 @@ Projects vector `a` onto a plane defined by its normal `b`.
 - `a` (`vector`)
 - `b` (`vector`) — Plane normal.
 
----

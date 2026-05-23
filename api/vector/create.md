@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.create(x, y, z) -> vector`"
+title: "vector.create(x, y, z) -> vector"
 parent: vector
 grand_parent: API Reference
 nav_order: 4
@@ -18,4 +18,3 @@ Creates a new vector with the given components.
 **Returns**
 - `vector`
 
----

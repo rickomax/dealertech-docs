@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`player:set_third_person(enabled)`"
+title: "player:set_third_person(enabled)"
 parent: player
 grand_parent: API Reference
 nav_order: 10
@@ -15,6 +15,3 @@ Enables or disables third-person camera mode.
 
 **Server-only**
 
----
-
-## Punch / Roll / Sway

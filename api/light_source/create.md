@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`light_source.create(position, color, intensity, radius, is_static, parent) -> light_source|nil`"
+title: "light_source.create(position, color, intensity, radius, is_static, parent) -> light_source|nil"
 parent: light_source
 grand_parent: API Reference
 nav_order: 1
@@ -34,6 +34,3 @@ local l1 = light_source.create(pos, color, 1.0, 256, false)
 local l2 = light_source(pos, color, 1.0, 256, false)
 ```
 
----
-
-## BSP Light Styles

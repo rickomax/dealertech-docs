@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`light_source:set_intensity(value)`"
+title: "light_source:set_intensity(value)"
 parent: light_source
 grand_parent: API Reference
 nav_order: 4
@@ -15,3 +15,4 @@ Sets the light intensity.
 
 **Server-only**
 - Has no effect when not running on the server.
+

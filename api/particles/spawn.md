@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`particles.spawn(filename, origin, duration, count, direction)`"
+title: "particles.spawn(filename, origin, duration, count, direction)"
 parent: particles
 grand_parent: API Reference
 nav_order: 1
@@ -19,3 +19,4 @@ Spawns a networked particle effect at the given world position.
 
 **Server-only**
 - Has no effect when not running on the server.
+

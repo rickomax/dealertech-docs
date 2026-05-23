@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`game.set_skill(value)`"
+title: "game.set_skill(value)"
 parent: game
 grand_parent: API Reference
 nav_order: 1
@@ -16,4 +16,3 @@ Sets the current skill level.
 **Server-only**
 - Has no effect when not running on the server.
 
----

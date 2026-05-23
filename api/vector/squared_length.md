@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.squared_length(a) -> number`"
+title: "vector.squared_length(a) -> number"
 parent: vector
 grand_parent: API Reference
 nav_order: 16
@@ -13,6 +13,3 @@ Returns the squared magnitude of `a`. Prefer this over `length` when comparing d
 **Parameters**
 - `a` (`vector`)
 
----
-
-## Angle / Direction Utilities

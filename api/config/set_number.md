@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`config.set_number(key, value)`"
+title: "config.set_number(key, value)"
 parent: config
 grand_parent: API Reference
 nav_order: 4
@@ -14,4 +14,3 @@ Sets the numeric value for the given key.
 - `key` (`string`) — The configuration key.
 - `value` (`number`) — The new value.
 
----

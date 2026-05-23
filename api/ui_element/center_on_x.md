@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_element:center_on_x()`"
+title: "ui_element:center_on_x()"
 parent: ui_element
 grand_parent: API Reference
 nav_order: 4
@@ -10,4 +10,3 @@ nav_order: 4
 
 Centers this element horizontally inside the standard 320-unit reference width.
 
----

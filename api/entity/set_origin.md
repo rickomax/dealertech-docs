@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_origin(origin)`"
+title: "entity:set_origin(origin)"
 parent: entity
 grand_parent: API Reference
 nav_order: 20
@@ -14,3 +14,4 @@ Sets the entity world position.
 - `origin` (`vector`)
 
 **Server-only**
+

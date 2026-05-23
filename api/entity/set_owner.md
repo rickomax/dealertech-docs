@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_owner(owner)`"
+title: "entity:set_owner(owner)"
 parent: entity
 grand_parent: API Reference
 nav_order: 13
@@ -15,6 +15,3 @@ Sets the entity that owns this entity.
 
 **Server-only**
 
----
-
-## Visibility / Targeting

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_label:set_size(size)`"
+title: "ui_label:set_size(size)"
 parent: ui_label
 grand_parent: API Reference
 nav_order: 3
@@ -13,4 +13,3 @@ Sets the font size used to render the text.
 **Parameters**
 - `size` (`number`) — Font size in UI units.
 
----

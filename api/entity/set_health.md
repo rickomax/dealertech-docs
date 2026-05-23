@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_health(value)`"
+title: "entity:set_health(value)"
 parent: entity
 grand_parent: API Reference
 nav_order: 48
@@ -15,6 +15,3 @@ Sets the entity health.
 
 **Server-only**
 
----
-
-## State Machine

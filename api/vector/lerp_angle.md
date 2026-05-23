@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`vector.lerp_angle(a, b, t) -> number`"
+title: "vector.lerp_angle(a, b, t) -> number"
 parent: vector
 grand_parent: API Reference
 nav_order: 12
@@ -15,4 +15,3 @@ Linearly interpolates between two angles, correctly wrapping around 360 degrees.
 - `b` (`number`) — End angle in degrees.
 - `t` (`number`) — Interpolation factor, clamped to `[0, 1]`.
 
----

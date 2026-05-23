@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:get_table() -> table`"
+title: "entity:get_table() -> table"
 parent: entity
 grand_parent: API Reference
 nav_order: 4
@@ -10,6 +10,3 @@ nav_order: 4
 
 Returns the Lua instance table associated with this entity.
 
----
-
-## Spawning / Lifecycle

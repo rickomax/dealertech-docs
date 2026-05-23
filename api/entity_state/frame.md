@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`frame` : `string|number`"
+title: "frame : string|number"
 parent: entity_state
 grand_parent: API Reference
 nav_order: 1
@@ -14,4 +14,3 @@ Accepts either:
 - a `string` — the frame name as defined in the entity's model, or
 - a `number` — a 1-based frame index.
 
----

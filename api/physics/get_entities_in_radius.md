@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`physics.get_entities_in_radius(origin, radius, debug) -> table`"
+title: "physics.get_entities_in_radius(origin, radius, debug) -> table"
 parent: physics
 grand_parent: API Reference
 nav_order: 2
@@ -18,4 +18,3 @@ Returns the entities whose colliders overlap a sphere.
 **Returns**
 - `table` — A 1-indexed table where each value is the Lua instance table of an entity intersecting the sphere.
 
----

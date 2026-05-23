@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:despawn(delay)`"
+title: "entity:despawn(delay)"
 parent: entity
 grand_parent: API Reference
 nav_order: 7
@@ -19,4 +19,3 @@ Despawns and removes the entity from the network, optionally after a delay.
 **Server-only**
 - Has no effect when not running on the server.
 
----

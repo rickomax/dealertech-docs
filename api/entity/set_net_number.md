@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_net_number(key, value)`"
+title: "entity:set_net_number(key, value)"
 parent: entity
 grand_parent: API Reference
 nav_order: 52
@@ -15,3 +15,4 @@ Sets the value of a networked number variable. Creates the variable if it does n
 - `value` (`number`)
 
 **Server-only**
+

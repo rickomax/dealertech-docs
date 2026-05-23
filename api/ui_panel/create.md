@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_panel.create(parent, scrollable) -> ui_panel`"
+title: "ui_panel.create(parent, scrollable) -> ui_panel"
 parent: ui_panel
 grand_parent: API Reference
 nav_order: 1
@@ -23,3 +23,4 @@ Creates a new UI panel.
 
 - Plain panels resize themselves to wrap their children when `rebuild()` is called.
 - Scrollable panels keep their outer size at `320 × 240` and grow their inner content container to wrap children.
+

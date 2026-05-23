@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`math.random() -> number`"
+title: "math.random() -> number"
 parent: math
 grand_parent: API Reference
 nav_order: 4
@@ -10,4 +10,3 @@ nav_order: 4
 
 Returns a random value in the range `[0, 1]`.
 
----

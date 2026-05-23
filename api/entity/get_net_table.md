@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:get_net_table(key) -> any`"
+title: "entity:get_net_table(key) -> any"
 parent: entity
 grand_parent: API Reference
 nav_order: 57
@@ -15,3 +15,4 @@ Returns the value of a networked table variable. The stored Lua source string is
 
 **Returns**
 - The deserialized Lua value, or `nil` if the key does not exist.
+

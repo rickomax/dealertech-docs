@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_net_string(key, value)`"
+title: "entity:set_net_string(key, value)"
 parent: entity
 grand_parent: API Reference
 nav_order: 54
@@ -11,3 +11,4 @@ nav_order: 54
 Sets the value of a networked string variable. Creates the variable if it does not already exist.
 
 **Server-only**
+

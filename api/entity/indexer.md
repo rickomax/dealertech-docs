@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity[key]`"
+title: "entity[key]"
 parent: entity
 grand_parent: API Reference
 nav_order: 1
@@ -19,4 +19,3 @@ Gets or sets a spawn property by key.
   `number` and `number` respectively.
 - When writing, the assigned value is converted back to a string via `tostring`.
 
----

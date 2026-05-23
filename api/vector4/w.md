@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`w` : `number`"
+title: "w : number"
 parent: vector4
 grand_parent: API Reference
 nav_order: 4
@@ -10,6 +10,3 @@ nav_order: 4
 
 Gets or sets the W component (alpha channel when used as a colour).
 
----
-
-## Creation

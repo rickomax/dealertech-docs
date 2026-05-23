@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:play_sound(filename, channel, volume, attenuation)`"
+title: "entity:play_sound(filename, channel, volume, attenuation)"
 parent: entity
 grand_parent: API Reference
 nav_order: 61
@@ -15,3 +15,4 @@ Plays a sound at the entity position.
 - `channel` (`integer`) — Audio channel.
 - `volume` (`number`) — Volume in `[0, 1]`.
 - `attenuation` (`number`) — Distance attenuation factor.
+

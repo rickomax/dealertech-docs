@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`light_source.set_style(index, style)`"
+title: "light_source.set_style(index, style)"
 parent: light_source
 grand_parent: API Reference
 nav_order: 3
@@ -22,6 +22,3 @@ The pattern string is a sequence of brightness levels, where:
 **Server-only**
 - Has no effect when not running on the server.
 
----
-
-## Instance Functions

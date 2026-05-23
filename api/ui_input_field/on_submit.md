@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`ui_input_field:on_submit(callback)`"
+title: "ui_input_field:on_submit(callback)"
 parent: ui_input_field
 grand_parent: API Reference
 nav_order: 10
@@ -14,3 +14,4 @@ Replaces any previously registered change listener.
 
 **Parameters**
 - `callback` (`function`) — Lua function invoked with the submitted text value as its argument.
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:set_net_entity(key, value)`"
+title: "entity:set_net_entity(key, value)"
 parent: entity
 grand_parent: API Reference
 nav_order: 60
@@ -16,6 +16,3 @@ Sets the entity referenced by a networked entity variable. Creates the variable 
 
 **Server-only**
 
----
-
-## Sound

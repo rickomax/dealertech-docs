@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`distance` : `number`"
+title: "distance : number"
 parent: trace_result
 grand_parent: API Reference
 nav_order: 5
@@ -10,4 +10,3 @@ nav_order: 5
 
 World distance traveled before impact.
 
----

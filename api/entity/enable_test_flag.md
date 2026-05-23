@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`entity:enable_test_flag()`"
+title: "entity:enable_test_flag()"
 parent: entity
 grand_parent: API Reference
 nav_order: 8
@@ -10,6 +10,3 @@ nav_order: 8
 
 Enables an internal test flag on this entity. Used by gameplay diagnostics.
 
----
-
-## Lookup

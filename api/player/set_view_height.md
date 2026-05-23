@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "`player:set_view_height(height)`"
+title: "player:set_view_height(height)"
 parent: player
 grand_parent: API Reference
 nav_order: 4
@@ -15,4 +15,3 @@ Sets the view height of the player.
 
 **Server-only**
 
----
