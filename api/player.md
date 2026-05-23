@@ -67,11 +67,14 @@ Sets the view model displayed in first-person for this player.
 
 ---
 
+### `player:get_view_frame() -> integer`
+Returns the current animation frame index of the player's view model.
+
 ### `player:set_view_frame(name)`
 Sets the current animation frame of the player's view model.
 
 **Parameters**
-- `name` (`string`) — Animation frame name.
+- `name` (`string|number`) — Frame name or 1-based frame index.
 
 ---
 

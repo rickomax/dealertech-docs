@@ -30,7 +30,7 @@ Duration (in seconds) that the entity remains in this state before advancing.
 
 ---
 
-### `code` : `LuaValue`
+### `code` : `function|any`
 Lua function or value executed when the state is processed.
 
 Typically this is a function containing the logic to run during this state.
@@ -39,14 +39,14 @@ Typically this is a function containing the logic to run during this state.
 
 ## Creation
 
-### `entity_state.create(frame, interval, code) -> entity_state`
+### `entity_state.create(frame, interval, code) -> integer`
 
-Creates a new entity state instance.
+Creates a new entity state and returns its state index. The returned index is used with `entity:set_state`.
 
 **Parameters**
 - `frame` (`string|number`) — Animation frame name, or a 1-based frame index.
 - `interval` (`number`) — Duration in seconds.
-- `code` (`LuaValue`) — Lua function or value to execute for this state.
+- `code` (`function|any`) — Lua function or value to execute for this state.
 
 **Returns**
-- `entity_state`
+- `integer` — The state index.

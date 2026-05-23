@@ -6,52 +6,33 @@ parent: API Reference
 
 # `movement`
 
-Output movement written by the Lua `process_movement` function each tick. The engine reads these values back to apply the new state to the player.
+`movement` is the output movement state written by the Lua `process_movement` function each tick. The engine reads these fields after the callback returns to build the next movement packet.
 
-**C# type:** `LuaMovement`  
+Passed to `player.process_movement(self, input_data, in_move, out_move)` as `out_move`.
 
-**Source:** `Assets/DealerTech/Runtime/Lua/LuaMovementData.cs`
+> Note: `movement` does not have a `position` field — the engine derives it from the resulting collision step.
 
-## Members
+---
 
-### `angles`
+## Fields
 
+### `angles` : `vector`
 The new pitch/yaw/roll angles to apply to the player.
 
-`public LuaVector Angles`
-
-### `velocity`
-
+### `velocity` : `vector`
 The new velocity vector to apply to the player.
 
-`public LuaVector Velocity`
-
-### `is_grounded`
-
+### `is_grounded` : `boolean`
 Whether the player should be considered grounded after this tick.
 
-`public bool IsGrounded`
-
-### `flag1`
-
+### `flag1` : `boolean`
 Generic script-defined flag written back to the server tick state.
 
-`public bool Flag1`
-
-### `flag2`
-
+### `flag2` : `boolean`
 Generic script-defined flag written back to the server tick state.
 
-`public bool Flag2`
-
-### `flag3`
-
+### `flag3` : `boolean`
 Generic script-defined flag written back to the server tick state.
 
-`public bool Flag3`
-
-### `flag4`
-
+### `flag4` : `boolean`
 Generic script-defined flag written back to the server tick state.
-
-`public bool Flag4`

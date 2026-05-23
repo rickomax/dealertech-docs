@@ -6,9 +6,9 @@ parent: API Reference
 # `game`
 
 `game` provides Lua access to the global game session state, including the
-current skill level and the active game type.
+current skill level, the active game type, and the game name.
 
-Both values are networked from the server to all clients. The setter functions
+All values are networked from the server to all clients. The setter functions
 only have an effect when called on the server.
 
 ---
@@ -50,3 +50,22 @@ Returns the current game type identifier.
 
 **Returns**
 - `string` — The current game type, lower-cased.
+
+---
+
+### `game.set_name(value)`
+Sets the current game name.
+
+**Parameters**
+- `value` (`string`) — The game name.
+
+**Server-only**
+- Has no effect when not running on the server.
+
+---
+
+### `game.get_name() -> string`
+Returns the current game name.
+
+**Returns**
+- `string` — The current game name.

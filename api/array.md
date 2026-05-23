@@ -12,11 +12,8 @@ It stores arbitrary values and supports the `#` length operator.
 
 ## Creation
 
-### `array.create(capacity) -> array`
-Creates a new empty array with the given initial capacity hint.
-
-**Parameters**
-- `capacity` (`integer`, default `1`) — Initial capacity hint.
+### `array.create() -> array`
+Creates a new empty array.
 
 **Returns**
 - `array`

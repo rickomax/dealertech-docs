@@ -17,7 +17,7 @@ All classes exposed to Lua scripts.
 | [`entity`](entity/) | Represents entity properties, movement, state, and network variables to Lua scripts. |
 | [`entity_state`](entity_state/) | Represents a single named animation/logic state that an entity can switch to. |
 | [`font`](font/) | Represents a loaded TextMeshPro font asset used by `ui_label` and `ui_input_field`. |
-| [`game`](game/) | Provides Lua access to the global game session state (skill level and game type). |
+| [`game`](game/) | Provides Lua access to the global game session state (skill level, game type and game name). |
 | [`globals`](globals/) | Lua globals registered in `LuaInterface.SetupEnvironment`. |
 | [`input`](input/) | Provides access to the input system. |
 | [`input_data`](input_data/) | A fixed-size float buffer used by the input system to pass raw input values. |

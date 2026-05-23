@@ -57,8 +57,11 @@ returning it as a string.
 
 ## Identity
 
-### `entity:get_unique_id() -> integer`
-Returns the entity's unique id.
+### `entity:get_instance_id() -> integer`
+Returns the entity's unique instance id.
+
+### `entity:get_table() -> table`
+Returns the Lua instance table associated with this entity.
 
 ---
 
@@ -203,6 +206,13 @@ Sets the entity world position.
 ### `entity:get_velocity() -> vector`
 Returns the current velocity.
 
+### `entity:get_size(min, max)`
+Returns the entity axis-aligned bounding box corners via output parameters.
+
+**Parameters**
+- `min` (`vector`, out) — Receives the minimum corner.
+- `max` (`vector`, out) — Receives the maximum corner.
+
 ### `entity:set_size(min, max)`
 Sets the entity axis-aligned bounding box.
 
@@ -263,6 +273,9 @@ Applies an instantaneous velocity change to the entity's rigid body.
 
 ---
 
+### `entity:get_move_type() -> integer`
+Returns the entity move type as a `move_type.*` constant.
+
 ### `entity:set_move_type(value)`
 Sets the entity move type.
 
@@ -272,6 +285,9 @@ Sets the entity move type.
 **Server-only**
 
 ---
+
+### `entity:get_solid() -> integer`
+Returns the entity solid type as a `solid.*` constant.
 
 ### `entity:set_solid(value)`
 Sets the entity solid type.
@@ -303,6 +319,9 @@ Returns the current animation frame index.
 
 The returned index is 1-based, or `0` if no frame is set.
 
+### `entity:get_frame() -> integer`
+Returns the current animation frame index.
+
 ### `entity:set_frame(value)`
 Sets the entity animation frame.
 
@@ -317,6 +336,24 @@ Sets the entity model.
 
 **Parameters**
 - `filename` (`string`)
+
+### `entity:get_model_index() -> integer`
+Returns the current model index.
+
+### `entity:set_model_index(index)`
+Sets the entity model by index.
+
+**Parameters**
+- `index` (`integer`) — Model index.
+
+### `entity:get_sprite_index() -> integer`
+Returns the current sprite index.
+
+### `entity:set_sprite_index(index)`
+Sets the entity sprite by index.
+
+**Parameters**
+- `index` (`integer`) — Sprite index.
 
 ### `entity:get_skin() -> integer`
 Returns the entity's current 1-based skin index.
