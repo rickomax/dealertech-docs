@@ -4,8 +4,11 @@ title: API Reference
 nav_order: 2
 has_children: true
 ---
+
 # API Reference
+
 All classes exposed to Lua scripts.
+
 | Class | Summary |
 |:------|:--------|
 | [`array`](array.html) | A dynamic, 1-indexed array of Lua values backed by a managed list. |
