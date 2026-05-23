@@ -2,60 +2,11 @@
 layout: default
 title: array
 parent: API Reference
+has_children: true
+nav_order: 1
 ---
+
 # `array`
 
 `array` is a dynamic, 1-indexed container exposed to Lua.
 It stores arbitrary values and supports the `#` length operator.
-
----
-
-## Creation
-
-### `array.create() -> array`
-Creates a new empty array.
-
-**Returns**
-- `array`
-
----
-
-## Functions
-
-### `array:add(value)`
-Appends a value to the end of the array.
-
-**Parameters**
-- `value` (`any`) — The value to append.
-
----
-
-### `array:get(index) -> any`
-Returns the value at a 1-based index.
-
-**Parameters**
-- `index` (`integer`) — The 1-based index of the element to retrieve.
-
-**Returns**
-- `any` — The value stored at `index`.
-
----
-
-### `array:remove_at(index)`
-Removes the element at a 1-based index.
-
-**Parameters**
-- `index` (`integer`) — The 1-based index of the element to remove.
-
----
-
-### `array:clear()`
-Removes all elements from the array.
-
----
-
-## Operators
-
-### Length
-
-`#a` returns the number of elements in the array.
