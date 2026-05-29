@@ -40,6 +40,8 @@ This guide explains how to attach the [ZeroBrane Studio](https://studio.zerobran
 
 Once the game connects, execution will pause at any breakpoints you set in ZeroBrane Studio, and you can step through code, inspect locals, and evaluate expressions.
 
+> **Note:** As soon as the debugger has successfully connected, ZeroBrane Studio pauses execution — even if no breakpoint has been hit yet. Press **Continue** (or **Project → Continue**) to resume the game.
+
 ## Tips
 
 - Set breakpoints in ZeroBrane *before* (or while) the game is running — the debugger attaches at runtime.
