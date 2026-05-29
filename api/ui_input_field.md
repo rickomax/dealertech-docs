@@ -12,4 +12,4 @@ nav_order: 26
 
 It supports change/submit callbacks and multiple content types (integer, decimal, password, email, standard).
 
-`ui_input_field` inherits from [`ui_element`](ui_element.md): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.
+`ui_input_field` inherits from [`ui_element`](ui_element.html): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.

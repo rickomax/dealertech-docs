@@ -12,4 +12,4 @@ nav_order: 28
 
 A panel can be plain or scrollable. Scrollable panels are sized to the engine's reference resolution of `320 × 240` and provide auto-hiding horizontal/vertical scrollbars.
 
-`ui_panel` inherits from [`ui_element`](ui_element.md): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.
+`ui_panel` inherits from [`ui_element`](ui_element.html): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.

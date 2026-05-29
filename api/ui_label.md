@@ -11,4 +11,4 @@ nav_order: 27
 `ui_label` is a UI text element backed by TextMeshPro.
 It auto-fits to the size of its text content.
 
-`ui_label` inherits from [`ui_element`](ui_element.md): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.
+`ui_label` inherits from [`ui_element`](ui_element.html): `set_position`, `set_selectable`, `destroy`, `center_on_x`, `rebuild`.

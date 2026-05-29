@@ -12,4 +12,4 @@ nav_order: 18
 
 In addition to the base `entity` API, `player` exposes view-related helpers and is expected to implement input handling callbacks used by the engine simulation.
 
-`player` inherits everything from [`entity`](entity.md).
+`player` inherits everything from [`entity`](entity.html).
