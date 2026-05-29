@@ -8,7 +8,7 @@ nav_order: 1
 
 # `entity[key]`
 
-Gets or sets a spawn property by key.
+Gets a spawn property by key. This indexer is **read-only**.
 
 **Notes**
 - Returns `nil` if the key does not exist.
@@ -17,5 +17,4 @@ Gets or sets a spawn property by key.
   configured type when read.
 - The keys `origin`, `angle` and `spawnflags` are pre-registered as `vector`,
   `number` and `number` respectively.
-- When writing, the assigned value is converted back to a string via `tostring`.
 

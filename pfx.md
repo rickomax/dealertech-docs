@@ -152,50 +152,6 @@ These read from float and color buffers passed by Lua. In particle mode they ret
 | `GET_CB` | — → float | Blue channel of the color register. |
 | `GET_CA` | — → float | Alpha channel of the color register. |
 
-## Examples
-
-### Explosion (particle effect)
-
-```
-start:
-GET_EX GET_RND CONST 32 MUL CONST 16 SUB ADD SET_PX
-GET_EY GET_RND CONST 32 MUL CONST 16 SUB ADD SET_PY
-GET_EZ GET_RND CONST 32 MUL CONST 16 SUB ADD SET_PZ
-
-GET_RND CONST 2 MUL CONST 1 SUB CONST 100 MUL SET_VX
-GET_RND CONST 2 MUL CONST 1 SUB CONST 100 MUL SET_VY
-GET_RND CONST 2 MUL CONST 1 SUB CONST 100 MUL SET_VZ
-
-CONST 6 SET_PS
-CONST 1 SET_PA
-
-update:
-GET_PX GET_VX GET_DT MUL ADD SET_PX
-GET_PY GET_VY GET_DT MUL ADD SET_PY
-GET_PZ GET_VZ GET_DT MUL ADD SET_PZ
-
-CONST 1 GET_AGE GET_LIFE DIV SUB SET_PA
-```
-
-The `start:` section places each particle at the emitter origin with a random offset of ±16 units, gives it a random velocity up to ±100, sets the size to 6 and alpha to 1. The `update:` section moves each particle by its velocity scaled by delta time and fades alpha to 0 over its lifetime.
-
-### Screen Distortion (screen effect)
-
-```
-update:
-GET_EY CONST 25 MUL GET_TIME CONST 4 MUL ADD SIN
-GET_TX CONST 10 MUL MUL
-GET_EX ADD SET_SX
-GET_EY SET_SY
-SAMPLE
-GET_SR SET_PR
-GET_SG SET_PG
-GET_SB SET_PB
-GET_SA SET_PA
-```
-
-This screen effect samples the screen with a horizontal sine wave offset based on the V coordinate and time, creating a wavy distortion.
-
 ## Loading and Playing
 
 ```lua
