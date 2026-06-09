@@ -11,7 +11,7 @@ ASP is the XML/HTML-like markup language used to build user interfaces. An `.asp
 ASP files live in `StreamingAssets/ui/` and are loaded from Lua with `load_ui`:
 
 ```lua
-local root = ui_panel(nil)
+local root = ui_panel()
 load_ui("menu.asp", root)
 ```
 
@@ -228,48 +228,9 @@ A typical entry point creates a root container and loads a menu into it:
 
 ```lua
 function load_main_menu()
-    local root_panel = ui_panel(nil)
+    local root_panel = ui_panel()
     load_ui("menu.asp", root_panel)
     root_panel:rebuild()
 end
 ```
 
-## Worked Example
-
-```
-<image ref="bg" image="bg.png" native_size />
-
-<template name="main_menu">
-    <panel ref="panel" selectable>
-        <label font="<%= main_font %>" text="new game" position="0, 16" center_on_x on_select="show(maps_menu)" />
-        <label font="<%= main_font %>" text="quit"     position="0, 34" center_on_x on_select="quit_game()" />
-    </panel>
-</template>
-
-<template name="maps_menu">
-    <panel ref="panel" selectable>
-        <label font="<%= main_font %>" text="go back" size="8" position="0, 10" center_on_x on_select="show(main_menu)" />
-        <% local maps = bsp.get_maps() %>
-        <% for i = 1, #maps do %>
-        <label font="<%= main_font %>" text="<%= maps[i] %>" size="8" position="0, (i + 1) * 10" center_on_x on_select="start_map(maps[i])" />
-        <% end %>
-    </panel>
-</template>
-
-<%
-local current
-
-function show(screen)
-    if current then current:destroy() end
-    current = screen(__parent)
-    __parent:rebuild()
-end
-
-function start_map(name)
-    load_bsp(name .. ".bsp")
-    __parent:destroy()
-end
-
-show(main_menu)
-%>
-```
