@@ -55,7 +55,7 @@ Elements may be self-closed (`<image ... />`) or contain children:
 ```
 <panel ref="panel">
     <image image="crosshair.png" native_size />
-    <label text="Ready" position="0, 16" />
+    <label text="Ready" x="0" y="16" />
 </panel>
 ```
 
@@ -64,8 +64,8 @@ Elements may be self-closed (`<image ... />`) or contain children:
 By default each element is assigned an auto-generated local (`v0`, `v1`, …), scoped to where it appears — inside a `<template>`, only to that builder function. Add `ref="name"` to bind it to a named handle that is shared across the **entire loaded asp**: every template builder and the trailing `<% %>` block can read or assign it.
 
 ```
-<panel ref="panel" selectable>
-    <label ref="title" text="Main Menu" position="0, 16" center_on_x />
+<panel ref="panel" scrollable>
+    <label ref="title" text="Main Menu" x="0" y="16" center_on_x />
 </panel>
 <% title:set_color(vector4(1, 1, 0, 1)) %>
 ```
@@ -93,8 +93,12 @@ The set of usable attributes therefore matches the element's `set_*` methods —
 | `font` | `font="<%= main_font %>"` | `:set_font(main_font)` |
 | `image` | `image="face.png"` | `:set_image("face.png")` |
 | `size` | `size="8"` | `:set_size(8)` |
+| `x` | `x="112"` | `:set_x(112)` |
+| `y` | `y="216"` | `:set_y(216)` |
 | `native_size` | `native_size` | `:set_native_size()` |
 | `center_on_x` | `center_on_x` | `:set_center_on_x()` |
+
+Use `x` and `y` to position an element (`set_x` / `set_y`); the Y axis grows downward, matching screen-space coordinates.
 
 ### Attribute Values
 
@@ -104,7 +108,7 @@ How a value is compiled depends on its content:
 - **Bare number** — passed through unquoted: `size="8"` → `:set_size(8)`.
 - **`<%= expr %>`** — treated as a Lua expression, inserted verbatim: `font="<%= main_font %>"` → `:set_font(main_font)`.
 
-Because a plain literal is quoted, to pass a Lua **variable** or expression you must escape into Lua with `<%= %>` — `font="main_font"` would pass the *string* `"main_font"`, not the font object.
+Because a plain literal is quoted, to pass a Lua **variable** or expression you must escape into Lua with `<%= %>` — `font="main_font"` would pass the *string* `"main_font"`, not the font object. The same applies to computed positions: `y="<%= (i + 1) * 10 %>"`.
 
 ### Special Attributes
 
@@ -112,20 +116,20 @@ A few attributes have dedicated handling instead of the `set_<attr>` convention:
 
 | Attribute | Element | Compiles to |
 |:----------|:--------|:------------|
-| `position="x, y"` | any | `:set_position(x, y)` — the raw value is inserted as the argument list, so two numbers become two arguments. |
-| `selectable` | `<panel>` | `ui_panel(parent, true)` — a flag consumed by the constructor, producing a selectable panel. |
-| `on_select="..."` | any | `:set_selectable(function() ... end)` — the body becomes the click callback. |
-| `on_submit="..."` | `<input_field>` | `:set_submit(function(value) ... end)` — `value` is the submitted text. |
+| `scrollable` | `<panel>` | `ui_panel(parent, true)` — a flag consumed by the constructor, producing a scrollable panel with auto-managed scrollbars. |
+| `on_select="..."` | any | `:set_on_select(function() ... end)` — the body becomes the click callback. |
+| `on_submit="..."` | `<input_field>` | `:set_on_submit(function(value) ... end)` — `value` is the submitted text. |
 
 ```
-<label text="quit" position="0, 70" center_on_x on_select="quit_game()" />
+<label text="quit" x="0" y="70" center_on_x on_select="quit_game()" />
 ```
 ```lua
 local v0 = ui_label(__parent)
 v0:set_text("quit")
-v0:set_position(0, 70)
+v0:set_x(0)
+v0:set_y(70)
 v0:set_center_on_x()
-v0:set_selectable(function()
+v0:set_on_select(function()
     quit_game()
 end)
 ```
@@ -149,10 +153,10 @@ Two tags let you mix Lua into the markup:
 - **`<% code %>`** — raw statements, emitted inline at that point in the generated chunk. Use it for locals, loops, and any code that runs while the UI is built.
 
 ```
-<panel ref="panel" selectable>
+<panel ref="panel" scrollable>
     <% local maps = bsp.get_maps() %>
     <% for i = 1, #maps do %>
-    <label text="<%= maps[i] %>" position="0, i * 10" center_on_x />
+    <label text="<%= maps[i] %>" x="0" y="<%= i * 10 %>" center_on_x />
     <% end %>
 </panel>
 ```
@@ -164,7 +168,7 @@ The `for` wraps the `<label>` element, so one label is created per map. Each ite
 When the **entire** value of an attribute (or an element's text) is `<%=# expr %>`, it compiles to a reactive *binding* instead of a one-shot set. The element re-derives that attribute from `expr` every tick and pushes the result through `set_<attr>`:
 
 ```
-<label font="<%= main_font %>" text='<%=# "Time: " .. tostring(time) %>' position="0, 88" center_on_x />
+<label font="<%= main_font %>" text='<%=# "Time: " .. tostring(time) %>' x="0" y="88" center_on_x />
 ```
 ```lua
 local v0 = ui_label(panel)
@@ -172,11 +176,22 @@ v0:set_font(main_font)
 v0:add_binding(
     function() return "Time: " .. tostring(time) end,
     function(...) v0:set_text(...) end)
-v0:set_position(0, 88)
+v0:set_x(0)
+v0:set_y(88)
 v0:set_center_on_x()
 ```
 
-The getter is re-evaluated each tick; the setter is only called when the value actually changes. All getter results are forwarded, so multi-argument setters such as `set_position` work if the getter returns multiple values.
+The getter is re-evaluated each tick; the setter is only called when the value actually changes. All getter results are forwarded, so multi-argument setters work if the getter returns multiple values.
+
+You can also wire a binding manually with [`add_binding`](api/ui_element/add_binding.html):
+
+```lua
+label:add_binding(
+    function() return get_score() end,
+    function(value) label:set_text(value) end)
+```
+
+`add_binding(getter, setter)` registers a binding on the element; it is removed automatically when the element is destroyed.
 
 > **Quoting:** the markup attribute delimiter and Lua strings both use quotes. Delimit the attribute with `'` to use double-quoted Lua strings inside (as above), or with `"` to use single-quoted Lua strings. The marker is `<%=#` with no space; `<%= #t %>` (with a space) is an ordinary length-operator expression.
 
@@ -186,9 +201,9 @@ A `<template name="x">...</template>` block does **not** create elements where i
 
 ```
 <template name="main_menu">
-    <panel ref="panel" selectable>
-        <label text="new game" position="0, 16" center_on_x on_select="show(maps_menu)" />
-        <label text="quit"     position="0, 34" center_on_x on_select="quit_game()" />
+    <panel ref="panel" scrollable>
+        <label text="new game" x="0" y="16" center_on_x on_select="show(maps_menu)" />
+        <label text="quit"     x="0" y="34" center_on_x on_select="quit_game()" />
     </panel>
 </template>
 
@@ -214,15 +229,26 @@ end
 `<!-- ... -->` is a markup comment. Its contents are skipped entirely and not transpiled, so you can comment out elements and embedded code:
 
 ```
-<!-- <label text="WIP" position="0, 96" /> -->
+<!-- <label text="WIP" x="0" y="96" /> -->
 ```
 
 ## Loading from Lua
 
-| Function | Description |
-|:---------|:------------|
-| `load_ui(file, parent)` | Loads `StreamingAssets/ui/<file>`, transpiles and runs it with `parent` bound to `__parent`, and returns the root element. |
-| `unload_ui(...)` | Tears down a loaded UI. |
+UI documents are loaded and unloaded through two global functions.
+
+### `load_ui(file, parent)`
+
+Loads `StreamingAssets/ui/<file>`, transpiles it, runs the resulting chunk with `parent` bound to `__parent`, and returns the root element (the first top-level element declared in the file).
+
+**Parameters**
+- `file` (`string`) — the file name under `StreamingAssets/ui/`, e.g. `"menu.asp"`.
+- `parent` (`ui_element`, optional) — the element the document is built into; bound to `__parent`. When omitted, top-level elements attach to the canvas root.
+
+**Returns** — the root `ui_element`. Raises an error if the file does not exist or the markup fails to compile (the error message includes the generated Lua).
+
+### `unload_ui(...)`
+
+Tears down a loaded UI.
 
 A typical entry point creates a root container and loads a menu into it:
 
@@ -233,4 +259,3 @@ function load_main_menu()
     root_panel:rebuild()
 end
 ```
-
