@@ -1,13 +1,11 @@
 ---
 layout: default
-title: "ui_element:center_on_x()"
+title: "ui_element:set_center_on_x()"
 parent: ui_element
 grand_parent: API Reference
-nav_order: 4
+nav_order: 10
 ---
 
-# `ui_element:center_on_x()`
-
-**Deprecated** — use [`set_center_on_x`](set_center_on_x.html) instead.
+# `ui_element:set_center_on_x()`
 
 Centers this element horizontally inside the standard 320-unit reference width.
