@@ -8,7 +8,7 @@ nav_order: 26
 
 # `ui_input_field`
 
-`ui_input_field` is a UI text input element backed by a TextMeshPro input field.
+`ui_input_field` is a UI text input element.
 
 It supports change/submit callbacks and multiple content types (integer, decimal, password, email, standard).
 

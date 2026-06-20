@@ -16,7 +16,7 @@ All classes exposed to Lua scripts.
 | [`config`](config.html) | Provides Lua access to the persistent configuration store. |
 | [`entity`](entity.html) | Represents entity properties, movement, state, and network variables to Lua scripts. |
 | [`entity_state`](entity_state.html) | Represents a single named animation/logic state that an entity can switch to. |
-| [`font`](font.html) | Represents a loaded TextMeshPro font asset used by `ui_label` and `ui_input_field`. |
+| [`font`](font.html) | Represents a loaded font asset used by `ui_label` and `ui_input_field`. |
 | [`game`](game.html) | Provides Lua access to the global game session state (skill level, game type and game name). |
 | [`globals`](globals.html) | Lua globals registered in `LuaInterface.SetupEnvironment`. |
 | [`input`](input.html) | Provides access to the input system. |
@@ -34,8 +34,8 @@ All classes exposed to Lua scripts.
 | [`trace_result`](trace_result.html) | Represents the result of a physics trace query. |
 | [`ui_element`](ui_element.html) | Base class shared by all UI elements exposed to Lua. |
 | [`ui_image`](ui_image.html) | Exposes a raw image UI element to Lua. |
-| [`ui_input_field`](ui_input_field.html) | Exposes a TextMeshPro single-line input field UI element to Lua. |
-| [`ui_label`](ui_label.html) | Exposes a TextMeshPro text label UI element to Lua. |
+| [`ui_input_field`](ui_input_field.html) | Exposes a single-line input field UI element to Lua. |
+| [`ui_label`](ui_label.html) | Exposes a text label UI element to Lua. |
 | [`ui_panel`](ui_panel.html) | Exposes a container UI panel to Lua. |
 | [`vector`](vector.html) | A three-component vector object. |
 | [`vector4`](vector4.html) | A four-component vector object. |
