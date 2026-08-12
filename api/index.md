@@ -13,11 +13,13 @@ All classes exposed to Lua scripts.
 |:------|:--------|
 | [`array`](array.html) | A dynamic, 1-indexed array of Lua values backed by a managed list. |
 | [`bsp`](bsp.html) | Provides Lua access to the loaded BSP map, including map discovery and content queries. |
+| [`contents`](contents.html) | Integer constants identifying BSP leaf contents. |
 | [`config`](config.html) | Provides Lua access to the persistent configuration store. |
 | [`entity`](entity.html) | Represents entity properties, movement, state, and network variables to Lua scripts. |
 | [`entity_state`](entity_state.html) | Represents a single named animation/logic state that an entity can switch to. |
 | [`font`](font.html) | Represents a loaded font asset used by `ui_label` and `ui_input_field`. |
 | [`game`](game.html) | Provides Lua access to the global game session state (skill level, game type and game name). |
+| [`game_mode`](game_mode.html) | A game mode definition; the current one sets the game name and type. |
 | [`globals`](globals.html) | Lua globals registered in `LuaInterface.SetupEnvironment`. |
 | [`input`](input.html) | Provides access to the input system. |
 | [`input_data`](input_data.html) | A fixed-size float buffer used by the input system to pass raw input values. |
@@ -25,12 +27,14 @@ All classes exposed to Lua scripts.
 | [`math`](math.html) | Exposes common numeric helpers, trigonometry, and random-number utilities to Lua. |
 | [`move_type`](move_type.html) | Integer constants identifying entity movement types. |
 | [`movement`](movement.html) | Output movement written by the Lua `process_movement` function each tick. |
-| [`movement_data`](movement_data.html) | Input movement snapshot passed into the Lua `process_movement` function each tick. |
+| [`movement_data`](movementdata.html) | Input movement snapshot passed into the Lua `process_movement` function each tick. |
 | [`particles`](particles.html) | Provides Lua access to the particle system. |
 | [`physics`](physics.html) | Provides Lua-exposed physics queries and trace operations. |
 | [`player`](player.html) | Represents player-specific Lua bindings for input, movement, camera and view model control. |
 | [`screen`](screen.html) | Provides Lua-exposed control over fullscreen visual effects. |
 | [`solid`](solid.html) | Integer constants identifying entity solid/collision types. |
+| [`sound_atten`](sound_atten.html) | Integer constants controlling how a sound fades with distance. |
+| [`sound_channel`](sound_channel.html) | Integer constants identifying the channel a sound plays on. |
 | [`trace_result`](trace_result.html) | Represents the result of a physics trace query. |
 | [`ui_element`](ui_element.html) | Base class shared by all UI elements exposed to Lua. |
 | [`ui_image`](ui_image.html) | Exposes a raw image UI element to Lua. |
